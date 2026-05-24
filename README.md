@@ -65,3 +65,13 @@ The platform centralise product, inventory, and order data to ensure that all ch
 - Provide separate entry points for `POS`, `Retail`, and `Online` workflows
 - Support channel specific request handling and validation
 - Isolate external traffic from the core backend application
+
+
+## Technical Overview
+
+StockFlow is built using a modular monolith architecture instead of a distributed microservices architecture to keep development, testing, deployment, and database transactions simpler during the early stages of the project. The system is designed with clear module boundaries so that individual modules can be extracted into independent microservices more easily as the system scales in the future.
+
+The platform serves several channels, including `Point of Sale (POS)`, `Retail Ordering`, and `Online Ordering` workflows. Each gateway is responsible for handling external traffic, request validation, authentication, and channel-specific API processing before forwarding requests to the backend application.
+
+The core of the system provides a shared inventory domain across all ordering channels. This allows multiple gateways to process orders concurrently while maintaining inventory consistency throughout the platform.
+
