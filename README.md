@@ -31,43 +31,14 @@ Each gateway acts as an entry point to the system and is responsible for functio
     StockFlow_Backend --> Database;
 ```
 
-## Functional Overview
+## Core Features
 
-StockFlow provides a shared backend platform for managing orders and inventory across multiple sales channels, including `Point of Sale (POS)`, `Retail Ordering`, and `Online Ordering`.
-
-The platform centralise product, inventory, and order data to ensure that all channels operate against a consistent inventory source. This allows different ordering workflows to process transactions concurrently while maintaining inventory accuracy across the system.
-
-#### Inventory Management
-
-- Track product inventory and stock availability
-- Maintain shared inventory across multiple sales channels
-- Record inventory movements and stock adjustments
-- Support inventory reservation during order processing
-
-#### Order Management
-
-- Create and manage orders from multiple channels
-- Support different order workflows and statuses
-- Maintain order history and transaction records
-- Handle order cancellations and inventory updates
-
-#### Product Management
-
-- Manage products, categories, and pricing
-- Support product lookup and product search
-
-#### Authentication and Access Control
-
-- Manage user accounts and authentication
-- Support user roles such as `Manager` and `Admin`
-- Assign permissions to roles such as `PRODUCT_READ_PERMISSION` and `PRODUCT_DELETE_PERMISSION`
-- Protect backend functions based on assigned roles and authorities
-
-#### Gateways
-
-- Provide separate entry points for `POS`, `Retail`, and `Online` workflows
-- Support channel specific request handling and validation
-- Isolate external traffic from the core backend application
+- Supports `POS`, `Retail`, and `Online` ordering workflows through separate channel gateways.
+- Maintains a centralised inventory source across all sales channels.
+- Creates, tracks, and manages orders from multiple channels.
+- Manages products, categories, pricing, and shared product data.
+- Supports user accounts, roles, authorities, and permission-based access control.
+- Separates external traffic by channel before forwarding requests to the backend application.
 
 
 ## Technical Overview
