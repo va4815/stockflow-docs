@@ -58,3 +58,20 @@ Each gateway acts as an entry point to the system and is responsible for functio
 
 - **Cloud-Native Deployment**
   - The project is designed to deploy a containerised backend using Docker and Kubernetes to practise production-style infrastructure patterns.
+
+
+## Status Definitions
+
+The following statuses are used to indicate the current state of documentation sections and related repositories.
+
+| Status | Meaning |
+|---|---|
+| Active | Currently available and being maintained |
+| In Progress | Currently being written, implemented, or updated |
+| Planned | Intended for a future phase |
+
+### Documentation Structure
+
+
+### Related Repositories
+
