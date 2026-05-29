@@ -72,6 +72,25 @@ The following statuses are used to indicate the current state of documentation s
 
 ### Documentation Structure
 
+| Section | Description | Status |
+|---|---|---|
+| `README.md` | Project overview, goals, architecture summary, technical decisions, and documentation navigation | Active |
+| `architecture/` | High-level architecture design, gateway design, modular monolith design, and system diagrams | Planned |
+| `functional-specifications/` | Functional requirements, business workflows and behaviour | Planned |
+| `technical-specifications/` | Technical design details, API design, transaction handling, and concurrency strategy | Planned |
+| `database/` | Database schema design, ERD, table relationships, and PostgreSQL schema strategy | Planned |
+| `modules/` | Module responsibilities, service boundaries, and ownership of business capabilities | Planned |
+| `deployment/` | Docker, Kubernetes, and cloud deployment documentation | Planned |
 
 ### Related Repositories
+
+| Repository | Description | Status |
+|---|---|---|
+| `stockflow-docs` | Project documentation and system design materials | Active |
+| `stockflow-backend` | Core backend application using modular monolith architecture | Planned |
+| `stockflow-pos-gateway` | Gateway for Point of Sale traffic and POS-specific API handling | Planned |
+| `stockflow-retail-gateway` | Gateway for retail ordering traffic and retail-specific API handling | Planned |
+| `stockflow-online-gateway` | Gateway for online ordering traffic and online-store API handling | Planned |
+
+
 
