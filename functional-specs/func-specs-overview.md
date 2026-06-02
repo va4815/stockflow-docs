@@ -8,6 +8,18 @@ StockFlow provides a centralised backend platform for merchants who want to mana
 
 The purpose of StockFlow is to reduce the complexity of managing separate platforms and provide a consistent foundation for multi-channel order and inventory management.
 
+## Scope
+
+The initial scope of StockFlow includes:
+
+- Order creation through `POS`, `Retail`, and `Online` channels
+- Merchant order confirmation, modification, and cancellation
+- Product creation, modification, and deletion
+- Product category creation, modification, and deletion
+- Inventory refill and stock adjustment
+- Shared inventory tracking across all ordering channels
+- Basic user authentication and access control
+
 ## Problems Solved
 
 Merchants often spend significant time managing separate systems for POS ordering, inventory management, and online ordering. This can lead to duplicated product data, inconsistent stock levels, manual updates, and a higher risk of overselling.
