@@ -28,3 +28,27 @@ StockFlow addresses these problems by centralising product, inventory, and order
 
 This allows merchants to focus more on business operations and customer service instead of maintaining the same data across multiple platforms.
 
+## User Roles
+
+StockFlow defines user roles to represent different levels of access across the platform, merchant businesses, and customer-facing ordering workflows.
+
+### Initial Scope Roles
+
+| Role | Description | Main Responsibilities |
+|---|---|---|
+| `Platform Owner` | Owner or operator of the StockFlow platform | Manage merchant accounts, platform-level configuration, and subscription-related administration |
+| `Merchant` | Business owner using StockFlow to manage their sales channels | Manage business profile, products, inventory, orders, and staff access |
+| `Merchant Manager` | Business manager responsible for daily operations | Manage products, categories, inventory updates, order reviews, and order changes |
+| `Merchant Staff` | Operational user responsible for day-to-day order handling | Create orders, view product information, check stock availability, and support customer checkout workflows |
+| `Customer` | External customer placing orders through online or retail/restaurant workflows | Browse products, add items to cart, place online orders, and complete checkout |
+
+### Future Scope Roles
+
+| Role | Description | Main Responsibilities |
+|---|---|---|
+| `Platform Admin` | Platform administrator responsible for supporting merchants | Handle merchant enquiries, operational issues, and platform support tasks |
+| `Merchant Admin` | Business administrator responsible for account and settlement operations | Manage merchant account settings, staff access, settlement records, and administrative business tasks |
+
+
+Access control is based on roles and authorities. Detailed role-permission mapping will be documented in [`authentication-access-control.md`](./authentication-access-control.md).
+
