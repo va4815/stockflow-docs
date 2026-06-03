@@ -52,3 +52,18 @@ StockFlow defines user roles to represent different levels of access across the 
 
 Access control is based on roles and authorities. Detailed role-permission mapping will be documented in [`authentication-access-control.md`](./authentication-access-control.md).
 
+
+### Product Management
+
+Product Management is responsible for maintaining the product catalogue used across StockFlow. Merchants can manage product details, categories and pricing from the backend system.
+
+Key capabilities include:
+
+- Creating new products
+- Updating product details such as name, description, price and status
+- Deleting or disabling products
+- Creating and managing product categories
+- Searching and retrieving product information
+- Supporting product visibility across different ordering channels
+- Linking products with inventory records for stock tracking
+
