@@ -67,3 +67,17 @@ Key capabilities include:
 - Supporting product visibility across different ordering channels
 - Linking products with inventory records for stock tracking
 
+### Inventory Management
+
+Inventory Management is responsible for maintaining stock availability across all ordering channels. It provides a shared inventory source so that `POS`, `Retail Ordering`, and `Online Ordering` workflows can operate against consistent stock data.
+
+Key capabilities include:
+
+* Tracking product stock availability
+* Recording inventory refills and stock adjustments
+* Maintaining inventory movement history
+* Supporting inventory checks during order creation
+* Preventing orders from being completed when stock is insufficient
+* Updating inventory when orders are confirmed, modified, or cancelled
+* Maintaining inventory consistency across concurrent ordering workflows
+
