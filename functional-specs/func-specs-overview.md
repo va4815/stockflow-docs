@@ -81,3 +81,17 @@ Key capabilities include:
 * Updating inventory when orders are confirmed, modified, or cancelled
 * Maintaining inventory consistency across concurrent ordering workflows
 
+### Order Management
+
+Order Management is responsible for creating and managing orders across multiple sales channels. It provides a shared order foundation for `POS`, `Retail Ordering`, and `Online Ordering` workflows while allowing each channel to follow its own ordering process.
+
+Key capabilities include:
+
+* Creating orders from `POS`, `Retail Ordering`, and `Online Ordering` channels
+* Managing order items, quantities, and totals
+* Supporting order confirmation, modification, and cancellation
+* Tracking order status and order history
+* Checking product and inventory availability during order creation
+* Updating related inventory records when an order is confirmed or cancelled
+* Maintaining a consistent order record across different sales channels
+
