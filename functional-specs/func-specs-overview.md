@@ -109,3 +109,16 @@ Key capabilities include:
 * Protecting backend functions based on assigned roles and authorities
 * Supporting different access levels between platform-level users, merchant users, and customers
 
+### Gateway Workflows
+
+Gateway Workflows define how external clients access the StockFlow backend through separate channel-specific entry points. Each gateway represents a specific workflow and forwards validated requests to the backend application.
+
+Key capabilities include:
+
+* Providing separate entry points for `POS`, `Retail Ordering`, and `Online Ordering` workflows
+* Handling channel-specific request validation
+* Applying authentication and access control checks before forwarding requests
+* Routing requests to the appropriate backend functions
+* Hiding the internal backend structure from external clients
+* Supporting different API response formats or workflows for each channel
+* Isolating external traffic from the core backend application
