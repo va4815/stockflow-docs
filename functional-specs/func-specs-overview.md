@@ -95,3 +95,17 @@ Key capabilities include:
 * Updating related inventory records when an order is confirmed or cancelled
 * Maintaining a consistent order record across different sales channels
 
+### Authentication and Access Control
+
+Authentication and Access Control is responsible for managing user access to StockFlow. It ensures that users can only access functions that match their assigned roles and authorities.
+
+Key capabilities include:
+
+* Managing user accounts
+* Supporting user authentication
+* Managing roles such as `Platform Owner`, `Merchant`, `Merchant Manager`, and `Merchant Staff`
+* Assigning authorities such as `PRODUCT_READ_PERMISSION`, `PRODUCT_DELETE_PERMISSION`, `INVENTORY_UPDATE_PERMISSION`, and `ORDER_CREATE_PERMISSION`
+* Supporting user groups for organising users by business function or responsibility
+* Protecting backend functions based on assigned roles and authorities
+* Supporting different access levels between platform-level users, merchant users, and customers
+
