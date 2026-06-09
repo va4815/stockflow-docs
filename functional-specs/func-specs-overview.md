@@ -143,3 +143,20 @@ Expected result:
 * A new product category is created successfully.
 * Products can be assigned to the category for product management, search, and catalogue organisation.
 
+
+### Product Creation Workflow
+
+The Product Creation Workflow allows a merchant or authorised user to create a new product that can be used across different ordering channels.
+
+1. The merchant or authorised user logs in to the system.
+2. The user creates a new product with required details such as product name, description, category, price, and status.
+3. The user assigns the product to one or more catalogues or ordering channels if required.
+4. The system validates the product information.
+5. The system saves the product record.
+6. The product becomes available for product lookup, catalogue management, and inventory tracking.
+
+Expected result:
+
+* A new product is created successfully.
+* The product can be used by `POS`, `Retail Ordering`, or `Online Ordering` workflows based on its visibility settings.
+* The product can be linked with inventory records for stock management.
