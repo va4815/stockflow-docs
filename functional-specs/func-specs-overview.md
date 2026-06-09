@@ -122,3 +122,24 @@ Key capabilities include:
 * Hiding the internal backend structure from external clients
 * Supporting different API response formats or workflows for each channel
 * Isolating external traffic from the core backend application
+
+## Key Business Workflow
+
+This section describes the main business workflows supported by StockFlow. These workflows explain how merchants, staff, and customers interact with the system across product management, inventory management, and order processing.
+
+
+### Product Category Creation Workflow
+
+The Product Category Creation Workflow allows a merchant or authorised user to create a product category for organising products in the system.
+
+1. The merchant or authorised user logs in to the system.
+2. The user creates a new product category with required details such as category name, description, and status.
+3. The system validates the product category information.
+4. The system saves the product category record.
+5. The product category becomes available for product assignment.
+
+Expected result:
+
+* A new product category is created successfully.
+* Products can be assigned to the category for product management, search, and catalogue organisation.
+
