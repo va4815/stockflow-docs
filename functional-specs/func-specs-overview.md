@@ -160,3 +160,28 @@ Expected result:
 * A new product is created successfully.
 * The product can be used by `POS`, `Retail Ordering`, or `Online Ordering` workflows based on its visibility settings.
 * The product can be linked with inventory records for stock management.
+
+### Inventory Update Workflow
+
+The Inventory Update Workflow allows a merchant, manager, or authorised staff member to update stock levels when inventory is refilled, adjusted, or corrected.
+
+1. The authorised user selects a product from the product catalogue.
+2. The user enters the inventory update details, such as quantity, update type, and reason.
+3. The system validates the product and inventory update request.
+4. The system updates the inventory record.
+5. The system records an inventory movement for traceability.
+6. The updated stock availability becomes visible to all relevant ordering channels.
+
+Expected result:
+
+* Product stock levels are updated.
+* Inventory movement history is recorded.
+* `POS`, `Retail Ordering`, and `Online Ordering` workflows use the updated inventory data.
+
+Example inventory update types:
+
+* Stock refill
+* Manual stock adjustment
+* Damaged stock adjustment
+* Returned stock adjustment
+
