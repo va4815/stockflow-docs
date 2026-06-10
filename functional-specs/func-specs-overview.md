@@ -185,3 +185,22 @@ Example inventory update types:
 * Damaged stock adjustment
 * Returned stock adjustment
 
+### POS Order Workflow
+
+The POS Order Workflow allows merchant staff to create an in-store order through the POS channel.
+
+1. Merchant staff accesses the POS workflow.
+2. The staff member searches or selects products from the POS catalogue.
+3. The staff member adds products to the order.
+4. The system checks product availability and stock levels.
+5. The staff member confirms the order.
+6. The system creates the order record.
+7. The system updates or reserves inventory based on the confirmed order.
+8. The order is marked with the appropriate POS order status.
+
+Expected result:
+
+* A POS order is created successfully.
+* Inventory is updated based on the ordered items.
+* The order is recorded for future review and reporting.
+
