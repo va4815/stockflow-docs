@@ -222,3 +222,24 @@ Expected result:
 * A retail order is created or submitted for confirmation.
 * Inventory availability is checked before the order is confirmed.
 * The order status is tracked through the retail order lifecycle.
+
+### Online Order Workflow
+
+The Online Order Workflow allows a customer to browse products, add items to a cart, and place an order through the online ordering channel.
+
+1. The customer accesses the online ordering workflow.
+2. The customer browses or searches products from the online catalogue.
+3. The customer adds products to the cart.
+4. The system checks product visibility and basic stock availability.
+5. The customer reviews the cart and proceeds to checkout.
+6. The customer submits the order.
+7. The system validates the order request and checks inventory availability.
+8. The system creates the order record.
+9. The system updates or reserves inventory based on the order.
+10. The customer receives order confirmation or order status information.
+
+Expected result:
+
+* A customer order is created through the online channel.
+* Inventory is updated or reserved to prevent overselling.
+* The order can be reviewed and managed by the merchant.
