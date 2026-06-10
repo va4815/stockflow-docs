@@ -204,3 +204,21 @@ Expected result:
 * Inventory is updated based on the ordered items.
 * The order is recorded for future review and reporting.
 
+### Retail Order Workflow
+
+The Retail Order Workflow allows a merchant, staff member, or retail customer to create an order through the retail ordering channel.
+
+1. The user accesses the retail ordering workflow.
+2. The user searches or selects products from the retail catalogue.
+3. The user adds products to the order.
+4. The system checks product availability and inventory levels.
+5. The user submits the order request.
+6. The merchant or authorised user reviews the order if confirmation is required.
+7. The system creates or confirms the order.
+8. The system updates or reserves inventory based on the confirmed order.
+
+Expected result:
+
+* A retail order is created or submitted for confirmation.
+* Inventory availability is checked before the order is confirmed.
+* The order status is tracked through the retail order lifecycle.
