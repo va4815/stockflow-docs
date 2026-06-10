@@ -243,3 +243,23 @@ Expected result:
 * A customer order is created through the online channel.
 * Inventory is updated or reserved to prevent overselling.
 * The order can be reviewed and managed by the merchant.
+
+### Order Cancellation Workflow
+
+The Order Cancellation Workflow allows an authorised user to cancel an order and restore or release affected inventory where appropriate.
+
+1. The authorised user selects an existing order.
+2. The system checks whether the order can be cancelled based on its current status.
+3. The user submits the cancellation request.
+4. The system updates the order status to cancelled.
+5. The system restores or releases inventory affected by the cancelled order.
+6. The system records the cancellation action for history and traceability.
+
+Expected result:
+
+* The order is cancelled successfully.
+* Related inventory is restored or released where applicable.
+* The order history records the cancellation event.
+
+Cancellation rules may depend on the order status. For example, an order that has already been completed may require a return or refund workflow instead of a normal cancellation.
+
