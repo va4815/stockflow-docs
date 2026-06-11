@@ -279,3 +279,9 @@ Detailed business rules for each functional area will be documented in separate 
 * Product information should be shared consistently across `POS`, `Retail Ordering`, and `Online Ordering` workflows.
 * A product can be linked with inventory records for stock tracking.
 
+### Product Category Rules
+
+* A product category must belong to a merchant.
+* A product category should have a unique name within the same merchant account.
+* A product can be assigned to one or more product categories if required.
+* A product category should not be deleted if active products are still assigned to it, unless the products are reassigned or the category is disabled.
