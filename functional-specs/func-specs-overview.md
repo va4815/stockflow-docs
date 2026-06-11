@@ -263,3 +263,19 @@ Expected result:
 
 Cancellation rules may depend on the order status. For example, an order that has already been completed may require a return or refund workflow instead of a normal cancellation.
 
+## Business Rules
+
+This section defines the high-level business rules that guide the behaviour of StockFlow across product management, inventory management, order processing, authentication, and gateway workflows.
+
+Detailed business rules for each functional area will be documented in separate functional specification files.
+
+### Product Management Rules
+
+* A product must belong to a merchant.
+* A product must have required information such as name, category, price, and status before it can be used for ordering.
+* A product can be active, inactive, or disabled.
+* Disabled products should not be available for new orders.
+* Deleting a product should not remove historical order records.
+* Product information should be shared consistently across `POS`, `Retail Ordering`, and `Online Ordering` workflows.
+* A product can be linked with inventory records for stock tracking.
+
