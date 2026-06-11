@@ -285,3 +285,13 @@ Detailed business rules for each functional area will be documented in separate 
 * A product category should have a unique name within the same merchant account.
 * A product can be assigned to one or more product categories if required.
 * A product category should not be deleted if active products are still assigned to it, unless the products are reassigned or the category is disabled.
+
+### Inventory Management Rules
+
+* Inventory records must be linked to valid products.
+* Available stock should not become negative.
+* Inventory updates must be recorded with a reason, such as refill, adjustment, damage, return, or correction.
+* All stock changes should create an inventory movement record for traceability.
+* Inventory availability should be shared across all ordering channels.
+* When an order is confirmed, the related inventory should be reduced or reserved based on the order workflow.
+* When an order is cancelled, related inventory should be restored or released where applicable.
