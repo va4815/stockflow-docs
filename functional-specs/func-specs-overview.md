@@ -314,3 +314,11 @@ Detailed business rules for each functional area will be documented in separate 
 * Merchant users should only access data belonging to their own merchant account.
 * Customers should only access their own account, cart, and order information.
 * Sensitive operations, such as deleting products, updating inventory, or managing users, should require appropriate permissions.
+
+### Gateway Workflow Rules
+
+* External clients should access the system through the appropriate channel gateway.
+* `POS`, `Retail Ordering`, and `Online Ordering` workflows should use separate gateway entry points.
+* Gateways should validate incoming requests before forwarding them to the backend application.
+* Gateways should not contain core business logic such as inventory deduction, order state management, or product rules.
+* The internal backend application and database should not be exposed directly to external clients.
