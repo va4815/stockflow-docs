@@ -305,3 +305,12 @@ Detailed business rules for each functional area will be documented in separate 
 * Order modification should only be allowed when the order is in an editable status.
 * Order cancellation should only be allowed when the order has not reached a final or completed status.
 * Order history should be maintained for tracking and audit purposes.
+
+### Authentication and Access Control Rules
+
+* Users must be authenticated before accessing protected backend functions.
+* User access should be controlled by assigned roles and authorities.
+* Platform-level users should only access platform administration functions.
+* Merchant users should only access data belonging to their own merchant account.
+* Customers should only access their own account, cart, and order information.
+* Sensitive operations, such as deleting products, updating inventory, or managing users, should require appropriate permissions.
