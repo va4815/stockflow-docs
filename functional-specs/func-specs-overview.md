@@ -295,3 +295,13 @@ Detailed business rules for each functional area will be documented in separate 
 * Inventory availability should be shared across all ordering channels.
 * When an order is confirmed, the related inventory should be reduced or reserved based on the order workflow.
 * When an order is cancelled, related inventory should be restored or released where applicable.
+
+### Order Management Rules
+
+* An order must be created through a valid ordering channel: `POS`, `Retail Ordering`, or `Online Ordering`.
+* An order must contain at least one valid order item.
+* The system should check product availability and inventory availability before confirming an order.
+* Orders should have a clear status, such as `Pending`, `Confirmed`, `Cancelled`, or `Completed`.
+* Order modification should only be allowed when the order is in an editable status.
+* Order cancellation should only be allowed when the order has not reached a final or completed status.
+* Order history should be maintained for tracking and audit purposes.
