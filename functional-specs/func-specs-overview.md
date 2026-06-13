@@ -322,3 +322,10 @@ Detailed business rules for each functional area will be documented in separate 
 * Gateways should validate incoming requests before forwarding them to the backend application.
 * Gateways should not contain core business logic such as inventory deduction, order state management, or product rules.
 * The internal backend application and database should not be exposed directly to external clients.
+
+### Multi-Channel Consistency Rules
+
+* All ordering channels should use the same centralised product, order, and inventory data.
+* Inventory changes from one channel should be reflected across other channels.
+* Concurrent orders from different channels should not cause incorrect inventory levels.
+* The system should prioritise inventory consistency over accepting orders when stock availability is uncertain.
