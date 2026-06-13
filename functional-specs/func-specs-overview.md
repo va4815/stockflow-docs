@@ -329,3 +329,33 @@ Detailed business rules for each functional area will be documented in separate 
 * Inventory changes from one channel should be reflected across other channels.
 * Concurrent orders from different channels should not cause incorrect inventory levels.
 * The system should prioritise inventory consistency over accepting orders when stock availability is uncertain.
+
+## Assumptions and Constraints
+
+This section defines the assumptions and constraints for the initial functional scope of StockFlow. These points help clarify the expected system behaviour, project limitations, and design boundaries for the first version of the platform.
+
+### Assumptions
+
+* Merchants use StockFlow to manage products, inventory, and orders across multiple ordering channels.
+* Each merchant owns and manages their own products, categories, inventory records, users, and orders.
+* `POS`, `Retail Ordering`, and `Online Ordering` workflows share the same backend inventory source.
+* Product and inventory data should be managed centrally rather than separately for each ordering channel.
+* Users must be authenticated before accessing protected merchant or platform functions.
+* User permissions are controlled by roles and authorities.
+* Customers may browse products, add items to a cart, and place orders through supported customer-facing workflows.
+* Inventory availability should be checked before an order is confirmed.
+* Inventory changes should be reflected across all ordering channels.
+* The initial version focuses on core order and inventory workflows rather than advanced enterprise features.
+
+### Constraints
+
+* The initial implementation focuses on a modular monolith backend rather than distributed microservices.
+* Event-driven workflows are not part of the initial implementation and may be introduced in a future phase.
+* The system does not initially support marketplace integrations such as Amazon, Rakuten, or other third-party sales platforms.
+* The system does not initially support advanced payment gateway integration.
+* The system does not initially support multi-warehouse inventory management.
+* The system does not initially support complex promotion, coupon, or loyalty programme features.
+* The system does not initially support advanced reporting and analytics.
+* Inventory consistency is prioritised over accepting orders when stock availability cannot be confirmed.
+* Gateway services should not contain core business logic such as order state management or inventory deduction.
+* The backend application and database should not be exposed directly to external clients.
