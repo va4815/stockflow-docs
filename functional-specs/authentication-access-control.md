@@ -45,3 +45,23 @@ Key user capabilities include:
 - Updating user account information
 - Preventing users from accessing data outside their permitted scope
 
+
+### User Groups
+
+A user group represents a collection of users who share a common business function, team, department, location, or operational responsibility.
+
+User groups help merchants organise users and apply common access settings more efficiently.
+
+Examples of user groups include:
+
+- Store Managers
+- POS Staff
+- Customer Support
+
+Key user group capabilities include:
+
+- Creating and maintaining user groups
+- Adding users to a user group
+- Removing users from a user group
+- Associating a user group with a merchant
+
