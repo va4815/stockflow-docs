@@ -65,3 +65,23 @@ Key user group capabilities include:
 - Removing users from a user group
 - Associating a user group with a merchant
 
+### Roles
+
+Role management groups related authorities under a named business responsibility such as 'Store Manager'. Roles could be reused by assigning them to multiple users with similar responsibilities.
+
+Initial roles include:
+
+- `Platform Owner`
+- `Merchant`
+- `Merchant Manager`
+- `Merchant Staff`
+- `Customer`
+
+Key Role management capabilities include:
+
+- Creating and maintaining roles
+- Assigning roles to users
+- Removing roles from users
+- Assigning authorities to roles
+- Preventing users from assigning roles above their own permitted access level
+
