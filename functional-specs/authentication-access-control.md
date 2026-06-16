@@ -85,3 +85,32 @@ Key Role management capabilities include:
 - Assigning authorities to roles
 - Preventing users from assigning roles above their own permitted access level
 
+### Authorities
+
+Authorities represent specific actions that a user is permitted to perform within StockFlow. They can be grouped by business capability to make access control easier to organise and maintain.
+
+Authorities are normally assigned to roles, and users receive the relevant permissions through their assigned roles.
+
+Authority categories include:
+
+- Product management
+- Inventory management
+- Order management
+- User and role management
+- Merchant administration
+
+Initial authorities include:
+
+- `PRODUCT_CREATE`
+- `PRODUCT_READ`
+- `PRODUCT_UPDATE`
+- `PRODUCT_DISABLE`
+- `INVENTORY_READ`
+- `INVENTORY_UPDATE`
+- `ORDER_CREATE`
+- `ORDER_READ`
+- `ORDER_CANCEL`
+- `USER_CREATE`
+- `ROLE_ASSIGN`
+
+
