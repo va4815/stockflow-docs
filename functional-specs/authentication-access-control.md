@@ -24,3 +24,24 @@ Authentication and Access Control provides the following capabilities for StockF
 
 - User account activation and deactivation
 
+
+## Access Control
+
+StockFlow uses `Users`, `Roles`, `Authorities`, and `User Groups` to manage access across the platform and individual merchant organisations. These components define who can access the system, what actions they are permitted to perform, and which organisation or business data they are allowed to access.
+
+
+### Users
+
+A user represents an individual who can access StockFlow.
+
+Users may include platform operators, merchant owners, merchant employees, and customers. Each user has an account and may be assigned roles, authorities through roles, and user group memberships.
+
+Key user capabilities include:
+
+- Creating and managing user accounts
+- Assigning users to a merchant where applicable
+- Assigning one or more roles to a user
+- Adding users to one or more user groups
+- Updating user account information
+- Preventing users from accessing data outside their permitted scope
+
