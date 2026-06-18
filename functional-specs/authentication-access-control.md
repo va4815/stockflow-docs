@@ -130,3 +130,17 @@ Main responsibilities include:
 - Managing platform-level roles and authorities
 - Reviewing platform operations and merchant support requirements
 - Accessing platform administration functions
+
+### Merchant
+
+The `Merchant` represents the owner of their business using StockFlow.
+
+Main responsibilities include:
+
+- Managing the merchant business profile
+- Managing merchant users and staff access
+- Assigning roles to merchant users
+- Managing products, categories, and catalogues
+- Managing inventory and stock adjustments
+- Reviewing and managing orders across supported channels
+- Accessing operational information of their business
