@@ -144,3 +144,20 @@ Main responsibilities include:
 - Managing inventory and stock adjustments
 - Reviewing and managing orders across supported channels
 - Accessing operational information of their business
+
+### Merchant Manager
+
+The `Merchant Manager` is responsible for managing the day-to-day operations of a merchant business.
+
+Main responsibilities include:
+
+- Creating and updating products
+- Managing product categories and catalogue assignments
+- Reviewing inventory availability
+- Updating or adjusting inventory where permitted
+- Reviewing incoming orders
+- Confirming, modifying, or cancelling eligible orders
+- Monitoring operational order and stock information
+- Supporting merchant staff during daily operations
+
+
