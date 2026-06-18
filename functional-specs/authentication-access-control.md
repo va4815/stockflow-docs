@@ -114,3 +114,19 @@ Initial authorities include:
 - `ROLE_ASSIGN`
 
 
+## User Roles
+
+StockFlow defines user roles for both platform-level users and users within merchant organisations. Each role is associated with a set of authorities that determines which functions and data the user is permitted to access.
+
+### Platform Owner
+
+The `Platform Owner` is responsible for operating and administering the StockFlow platform.
+
+Main responsibilities include:
+
+- Creating and managing merchant accounts
+- Viewing platform-level merchant information
+- Managing merchant access to the platform
+- Managing platform-level roles and authorities
+- Reviewing platform operations and merchant support requirements
+- Accessing platform administration functions
