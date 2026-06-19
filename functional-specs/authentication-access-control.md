@@ -172,4 +172,18 @@ Main responsibilities include:
 - Viewing and updating eligible orders where permitted
 - Supporting customer checkout
 
+### Customer
+
+The `Customer` is an external user who purchases products from a merchant through customer-facing ordering workflows.
+
+Main responsibilities include:
+
+- Registering and managing a customer account
+- Browsing products available through supported catalogues
+- Adding, updating, and removing items from a shopping cart
+- Placing orders through online, retail, or restaurant ordering workflows
+- Viewing the status and details of their own orders
+- Managing their own account and delivery or collection information
+- Cancelling eligible orders where permitted by the merchant’s cancellation rules
+
 
