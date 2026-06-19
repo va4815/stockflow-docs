@@ -160,4 +160,16 @@ Main responsibilities include:
 - Monitoring operational order and stock information
 - Supporting merchant staff during daily operations
 
+### Merchant Staff
+
+The `Merchant Staff` role represents employees responsible for day-to-day operational tasks such as processing orders.
+
+Main responsibilities include:
+
+- Processing `POS` orders
+- Viewing product and catalogue information
+- Checking inventory availability
+- Viewing and updating eligible orders where permitted
+- Supporting customer checkout
+
 
