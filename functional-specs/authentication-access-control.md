@@ -187,3 +187,29 @@ Main responsibilities include:
 - Cancelling eligible orders where permitted by the merchant’s cancellation rules
 
 
+## Functional Capabilities
+
+The Authentication and Access Control module provides the following capabilities for managing user accounts, authentication, roles, authorities, and user groups within StockFlow.
+
+- User account management
+    * create user account
+    * view and update user account information
+- User authentication
+    * login and logout
+    * change password
+    * reset password
+- Role management
+    * create roles
+    * assign roles to users
+    * view roles assigned to users
+    * Disable roles
+- Authority management
+    * create authorities
+    * view authorities
+    * assign authorities to roles
+    * remove authorities to roles
+- User group management
+    * create user groups
+    * add user to user groups
+    * remove user from user groups
+    * associate user groups with merchant organisation
