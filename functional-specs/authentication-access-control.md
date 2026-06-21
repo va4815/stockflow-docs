@@ -213,3 +213,59 @@ The Authentication and Access Control module provides the following capabilities
     * add user to user groups
     * remove user from user groups
     * associate user groups with merchant organisation
+
+## Business Workflows
+
+The following workflows describe the main steps involved in user account management, authentication, role and authority management, user group management, and access control within StockFlow.
+
+### User Account Workflows
+
+#### User Account Creation Workflow
+
+- A new user account is created through one of the following methods:
+  - A `Customer` creates their own account without requiring an authorised user.
+  - An authorised user creates an account for a platform-level or merchant-level user.
+- StockFlow validates the submitted account information.
+- StockFlow creates the account:
+  - A customer account is created without a merchant association.
+  - A merchant-level account is associated with the relevant merchant organisation.
+  - A platform-level account is created without a merchant association.
+- Predefined roles or user groups may be assigned where applicable.
+
+#### User Account Viewing and Update Workflow
+
+- A user requests to view their own account information.
+- StockFlow returns the account information when the request is permitted.
+- The user may submit changes to editable account information.
+- StockFlow validates the submitted changes and the user’s permission to make them.
+- StockFlow saves the changes when validation succeeds.
+
+
+#### User Login Workflow
+
+- A user submits their account credentials.
+- StockFlow verifies the credentials and account status.
+- StockFlow identifies the user’s assigned roles, authorities, user groups, and merchant association.
+- Access is granted when authentication succeeds and the account is permitted to access StockFlow.
+- Access is denied when authentication fails or the account is not permitted to log in.
+
+#### User Logout Workflow
+
+- A user requests to end their current authenticated session.
+- StockFlow invalidates or removes the corresponding session.
+- The user must authenticate again before accessing protected functions.
+
+#### Password Change Workflow
+
+- An authenticated user submits their current password and a new password.
+- StockFlow verifies the current password and validates the new password.
+- StockFlow updates the user’s credentials when validation succeeds.
+
+#### Password Reset Workflow
+
+- A user requests a password reset.
+- StockFlow verifies the account and initiates the password-reset process.
+- The user completes the required verification.
+- The user submits a new password.
+- StockFlow validates and saves the new password.
+- Any expired or previously used reset request is rejected.
