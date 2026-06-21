@@ -269,3 +269,40 @@ The following workflows describe the main steps involved in user account managem
 - The user submits a new password.
 - StockFlow validates and saves the new password.
 - Any expired or previously used reset request is rejected.
+
+
+### Role Workflows
+
+#### Role Creation Workflow
+
+- An authorised user creates a role to represent a business responsibility.
+- The user provides a role name and description.
+- StockFlow validates the role information and the user’s permission.
+- StockFlow saves the role within the permitted platform or merchant scope.
+
+#### Role Assignment to User Workflow
+
+- An authorised user selects a user and a role.
+- StockFlow verifies that the requesting user is permitted to assign the selected role.
+- StockFlow verifies that the selected role and user belong to a compatible access scope.
+- StockFlow assigns the role to the user.
+
+#### Role Removal from User Workflow
+
+- An authorised user selects a role assigned to a user.
+- StockFlow verifies the requesting user’s permission.
+- StockFlow removes the role from the user.
+
+#### View User Roles Workflow
+
+- An authorised user requests to view the roles assigned to a selected user.
+- StockFlow verifies the requesting user’s permission and data scope.
+- StockFlow returns the assigned roles when access is permitted.
+
+#### Role Disablement Workflow
+
+- An authorised user requests to disable a role.
+- StockFlow verifies the requesting user’s permission.
+- StockFlow marks the role as disabled.
+- The disabled role cannot be assigned to additional users.
+- Existing role assignments are handled according to the applicable business rules.
