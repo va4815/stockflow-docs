@@ -306,3 +306,31 @@ The following workflows describe the main steps involved in user account managem
 - StockFlow marks the role as disabled.
 - The disabled role cannot be assigned to additional users.
 - Existing role assignments are handled according to the applicable business rules.
+
+
+### Authority Workflows
+
+#### Authority Creation Workflow
+
+- An authorised platform-level user creates an authority.
+- The user provides the authority name, description, and relevant capability category.
+- StockFlow validates the authority information.
+- StockFlow saves the authority.
+
+#### View Authorities Workflow
+
+- An authorised user requests to view available authorities.
+- StockFlow verifies the requesting user’s permission and access scope.
+- StockFlow returns the authorities that the user is permitted to view.
+
+#### Authority Assignment to Role Workflow
+
+- An authorised user selects a role and one or more authorities.
+- StockFlow verifies that the user is permitted to manage the selected role and authorities.
+- StockFlow assigns the authorities to the role.
+
+#### Authority Removal from Role Workflow
+
+- An authorised user selects one or more authorities assigned to a role.
+- StockFlow verifies the requesting user’s permission.
+- StockFlow removes the selected authorities from the role.
