@@ -223,52 +223,52 @@ The following workflows describe the main steps involved in user account managem
 #### User Account Creation Workflow
 
 - A new user account is created through one of the following methods:
-  - A `Customer` creates their own account without requiring an authorised user.
-  - An authorised user creates an account for a platform-level or merchant-level user.
-- StockFlow validates the submitted account information.
+  - A `Customer` creates their own account without requiring an authorised user
+  - An authorised user creates an account for a platform-level or merchant-level user
+- StockFlow validates the submitted account information
 - StockFlow creates the account:
-  - A customer account is created without a merchant association.
-  - A merchant-level account is associated with the relevant merchant organisation.
-  - A platform-level account is created without a merchant association.
-- Predefined roles or user groups may be assigned where applicable.
+  - A customer account is created without a merchant association
+  - A merchant-level account is associated with the relevant merchant organisation
+  - A platform-level account is created without a merchant association
+- Predefined roles or user groups may be assigned where applicable
 
 #### User Account Viewing and Update Workflow
 
-- A user requests to view their own account information.
-- StockFlow returns the account information when the request is permitted.
-- The user may submit changes to editable account information.
-- StockFlow validates the submitted changes and the user’s permission to make them.
-- StockFlow saves the changes when validation succeeds.
+- A user requests to view their own account information
+- StockFlow returns the account information when the request is permitted
+- The user may submit changes to editable account information
+- StockFlow validates the submitted changes and the user’s permission to make them
+- StockFlow saves the changes when validation succeeds
 
 
 #### User Login Workflow
 
-- A user submits their account credentials.
-- StockFlow verifies the credentials and account status.
-- StockFlow identifies the user’s assigned roles, authorities, user groups, and merchant association.
-- Access is granted when authentication succeeds and the account is permitted to access StockFlow.
-- Access is denied when authentication fails or the account is not permitted to log in.
+- A user submits their account credentials
+- StockFlow verifies the credentials and account status
+- StockFlow identifies the user’s assigned roles, authorities, user groups, and merchant association
+- Access is granted when authentication succeeds and the account is permitted to access StockFlow
+- Access is denied when authentication fails or the account is not permitted to log in
 
 #### User Logout Workflow
 
-- A user requests to end their current authenticated session.
-- StockFlow invalidates or removes the corresponding session.
-- The user must authenticate again before accessing protected functions.
+- A user requests to end their current authenticated session
+- StockFlow invalidates or removes the corresponding session
+- The user must authenticate again before accessing protected functions
 
 #### Password Change Workflow
 
-- An authenticated user submits their current password and a new password.
-- StockFlow verifies the current password and validates the new password.
-- StockFlow updates the user’s credentials when validation succeeds.
+- An authenticated user submits their current password and a new password
+- StockFlow verifies the current password and validates the new password
+- StockFlow updates the user’s credentials when validation succeeds
 
 #### Password Reset Workflow
 
-- A user requests a password reset.
-- StockFlow verifies the account and initiates the password-reset process.
-- The user completes the required verification.
-- The user submits a new password.
-- StockFlow validates and saves the new password.
-- Any expired or previously used reset request is rejected.
+- A user requests a password reset
+- StockFlow verifies the account and initiates the password-reset process
+- The user completes the required verification
+- The user submits a new password
+- StockFlow validates and saves the new password
+- Any expired or previously used reset request is rejected
 
 
 ### Role Workflows
@@ -276,36 +276,36 @@ The following workflows describe the main steps involved in user account managem
 #### Role Creation Workflow
 
 - An authorised user creates a role to represent a business responsibility.
-- The user provides a role name and description.
-- StockFlow validates the role information and the user’s permission.
-- StockFlow saves the role within the permitted platform or merchant scope.
+- The user provides a role name and description
+- StockFlow validates the role information and the user’s permission
+- StockFlow saves the role within the permitted platform or merchant scope
 
 #### Role Assignment to User Workflow
 
-- An authorised user selects a user and a role.
-- StockFlow verifies that the requesting user is permitted to assign the selected role.
-- StockFlow verifies that the selected role and user belong to a compatible access scope.
-- StockFlow assigns the role to the user.
+- An authorised user selects a user and a role
+- StockFlow verifies that the requesting user is permitted to assign the selected role
+- StockFlow verifies that the selected role and user belong to a compatible access scope
+- StockFlow assigns the role to the user
 
 #### Role Removal from User Workflow
 
-- An authorised user selects a role assigned to a user.
-- StockFlow verifies the requesting user’s permission.
-- StockFlow removes the role from the user.
+- An authorised user selects a role assigned to a user
+- StockFlow verifies the requesting user’s permission
+- StockFlow removes the role from the user
 
 #### View User Roles Workflow
 
-- An authorised user requests to view the roles assigned to a selected user.
-- StockFlow verifies the requesting user’s permission and data scope.
-- StockFlow returns the assigned roles when access is permitted.
+- An authorised user requests to view the roles assigned to a selected user
+- StockFlow verifies the requesting user’s permission and data scope
+- StockFlow returns the assigned roles when access is permitted
 
 #### Role Disablement Workflow
 
-- An authorised user requests to disable a role.
-- StockFlow verifies the requesting user’s permission.
-- StockFlow marks the role as disabled.
-- The disabled role cannot be assigned to additional users.
-- Existing role assignments are handled according to the applicable business rules.
+- An authorised user requests to disable a role
+- StockFlow verifies the requesting user’s permission
+- StockFlow marks the role as disabled
+- The disabled role cannot be assigned to additional users
+- Existing role assignments are handled according to the applicable business rules
 
 
 ### Authority Workflows
@@ -313,24 +313,54 @@ The following workflows describe the main steps involved in user account managem
 #### Authority Creation Workflow
 
 - An authorised platform-level user creates an authority.
-- The user provides the authority name, description, and relevant capability category.
-- StockFlow validates the authority information.
-- StockFlow saves the authority.
+- The user provides the authority name, description, and relevant capability category
+- StockFlow validates the authority information
+- StockFlow saves the authority
 
 #### View Authorities Workflow
 
-- An authorised user requests to view available authorities.
-- StockFlow verifies the requesting user’s permission and access scope.
-- StockFlow returns the authorities that the user is permitted to view.
+- An authorised user requests to view available authorities
+- StockFlow verifies the requesting user’s permission and access scope
+- StockFlow returns the authorities that the user is permitted to view
 
 #### Authority Assignment to Role Workflow
 
-- An authorised user selects a role and one or more authorities.
-- StockFlow verifies that the user is permitted to manage the selected role and authorities.
-- StockFlow assigns the authorities to the role.
+- An authorised user selects a role and one or more authorities
+- StockFlow verifies that the user is permitted to manage the selected role and authorities
+- StockFlow assigns the authorities to the role
 
 #### Authority Removal from Role Workflow
 
-- An authorised user selects one or more authorities assigned to a role.
-- StockFlow verifies the requesting user’s permission.
-- StockFlow removes the selected authorities from the role.
+- An authorised user selects one or more authorities assigned to a role
+- StockFlow verifies the requesting user’s permission
+- StockFlow removes the selected authorities from the role
+
+
+### User Group Workflows
+
+#### User Group Creation Workflow
+
+- An authorised merchant user creates a user group for a team, department, location, or operational responsibility
+- StockFlow verifies the requesting user’s permission
+- StockFlow associates the user group with the relevant merchant organisation
+- StockFlow saves the user group
+
+#### Add User to User Group Workflow
+
+- An authorised user selects a user and a user group
+- StockFlow verifies the requesting user’s permission
+- StockFlow verifies that the user and user group belong to the same merchant organisation
+- StockFlow adds the user to the group
+
+#### Remove User from User Group Workflow
+
+- An authorised user selects a member of a user group
+- StockFlow verifies the requesting user’s permission
+- StockFlow removes the user from the group
+
+#### Associate User Group with Merchant Workflow
+
+- An authorised user associates a user group with a merchant organisation
+- StockFlow verifies the requesting user’s permission
+- StockFlow ensures that the group and its members remain within the permitted merchant scope
+- StockFlow prevents the group from containing users associated with another merchant
