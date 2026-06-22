@@ -364,3 +364,38 @@ The following workflows describe the main steps involved in user account managem
 - StockFlow verifies the requesting user’s permission
 - StockFlow ensures that the group and its members remain within the permitted merchant scope
 - StockFlow prevents the group from containing users associated with another merchant
+
+
+### Shared Access Control Workflows
+
+#### Protected Function Access Workflow
+
+- An authenticated user requests access to a protected function
+- StockFlow verifies the user’s authentication status
+- StockFlow checks the user’s assigned roles and associated authorities
+- StockFlow verifies the user’s merchant association and permitted data scope where applicable
+- StockFlow allows the request only when all required access conditions are satisfied
+- StockFlow denies the request when any required condition is not satisfied
+
+#### Merchant Data Isolation Workflow
+
+- A merchant-level user requests access to merchant-owned data.
+- StockFlow identifies the merchant organisation associated with the authenticated user
+- StockFlow verifies that the requested data belongs to the same merchant organisation
+- StockFlow restricts the request to data belonging to the user’s merchant
+- StockFlow denies access to data belonging to another merchant
+
+#### Restricted Role Assignment Workflow
+
+- A user attempts to assign a role to another user.
+- StockFlow checks the requesting user’s roles, authorities, and access scope
+- StockFlow checks whether the requesting user is permitted to assign the selected role
+- StockFlow rejects the assignment when the selected role exceeds the requesting user’s permitted level
+- StockFlow also rejects the assignment when the users or role belong to incompatible merchant scopes
+
+#### Unauthorised Access Handling Workflow
+
+- A user attempts to access a function or data without the required authority or permitted data scope
+- StockFlow denies the request
+- StockFlow returns an appropriate access-denied response without exposing restricted information
+- StockFlow records the unauthorised access attempt when required for security and audit purposes
