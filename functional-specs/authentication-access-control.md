@@ -399,3 +399,20 @@ The following workflows describe the main steps involved in user account managem
 - StockFlow denies the request
 - StockFlow returns an appropriate access-denied response without exposing restricted information
 - StockFlow records the unauthorised access attempt when required for security and audit purposes
+
+
+## Role and Authority Matrix
+
+The following matrix defines the default authorities assigned to each predefined StockFlow role.
+
+An assigned authority permits a user to perform the corresponding action or operation. Merchant-level roles can only manage their authorities within their own merchant organisation.
+
+### Platform User Management Authorities
+
+| Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
+|---|---:|---:|---:|---:|---:|
+| `PLATFORM_USER_CREATE` | ✓ | - | - | - | - |
+| `PLATFORM_USER_READ` | ✓ | - | - | - | - |
+| `PLATFORM_USER_UPDATE` | ✓ | - | - | - | - |
+| `PLATFORM_USER_DISABLE` | ✓ | - | - | - | - |
+| `PLATFORM_USER_DELETE` | ✓ | - | - | - | - |
