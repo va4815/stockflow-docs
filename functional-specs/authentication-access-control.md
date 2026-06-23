@@ -442,3 +442,22 @@ An assigned authority permits a user to perform the corresponding action or oper
 
 - `Customer` can create and manage only their own accounts
 - `Customer` account belongs to the platform, they could use different merchant's service in a single account
+
+### Role Management Authorities
+
+| Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
+|---|---:|---:|---:|---:|---:|
+| `PLATFORM_ROLE_CREATE` | ✓ | - | - | - | - |
+| `PLATFORM_ROLE_READ` | ✓ | - | - | - | - |
+| `PLATFORM_ROLE_UPDATE` | ✓ | - | - | - | - |
+| `PLATFORM_ROLE_ASSIGN` | ✓ | - | - | - | - |
+| `PLATFORM_ROLE_DELETE` | ✓ | - | - | - | - |
+| `PLATFORM_ROLE_DISABLE` | ✓ | - | - | - | - |
+| `MERCHANT_ROLE_CREATE` | ✓ | ✓ | - | - | - |
+| `MERCHANT_ROLE_READ` | ✓ | ✓ | ✓ | - | - |
+| `MERCHANT_ROLE_UPDATE` | ✓ | ✓ | - | - | - |
+| `MERCHANT_ROLE_ASSIGN` | ✓ | ✓ | - | - | - |
+| `MERCHANT_ROLE_DELETE` | ✓ | ✓ | - | - | - |
+| `MERCHANT_ROLE_DISABLE` | ✓ | ✓ | - | - | - |
+
+The `Platform Owner` can manage platform-level roles. `Merchant` can the merchant-level roles belonging to their own organisation.
