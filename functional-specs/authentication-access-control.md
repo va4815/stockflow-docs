@@ -428,3 +428,17 @@ An assigned authority permits a user to perform the corresponding action or oper
 | `MERCHANT_USER_DELETE` | ✓ | - | - | - | - |
 
 - Merchant managers may view or update merchant staff account information only when the required authority has been assigned
+
+### Customer Account Management Authorities
+
+| Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
+|---|---:|---:|---:|---:|---:|
+| `CUSTOMER_ACCOUNT_READ` | ✓ | - | - | - | - |
+| `CUSTOMER_ACCOUNT_UPDATE` | ✓ | - | - | - | - |
+| `CUSTOMER_ACCOUNT_READ_SELF` | ✓ | - | - | - | ✓ |
+| `CUSTOMER_ACCOUNT_UPDATE_SELF` | ✓ | - | - | - | ✓ |
+| `CUSTOMER_ACCOUNT_DISABLE` | ✓ | - | - | - | - |
+| `CUSTOMER_ACCOUNT_DELETE` | ✓ | - | - | - | - |
+
+- `Customer` can create and manage only their own accounts
+- `Customer` account belongs to the platform, they could use different merchant's service in a single account
