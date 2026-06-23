@@ -416,3 +416,15 @@ An assigned authority permits a user to perform the corresponding action or oper
 | `PLATFORM_USER_UPDATE` | ✓ | - | - | - | - |
 | `PLATFORM_USER_DISABLE` | ✓ | - | - | - | - |
 | `PLATFORM_USER_DELETE` | ✓ | - | - | - | - |
+
+### Merchant User Management Authorities
+
+| Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
+|---|---:|---:|---:|---:|---:|
+| `MERCHANT_USER_CREATE` | ✓ | - | - | - | - |
+| `MERCHANT_USER_READ` | ✓ | ✓ | ✓ | ✓ | - |
+| `MERCHANT_USER_UPDATE` | ✓ | ✓ | ✓ | - | - |
+| `MERCHANT_USER_DISABLE` | ✓ | ✓ | - | - | - |
+| `MERCHANT_USER_DELETE` | ✓ | - | - | - | - |
+
+- Merchant managers may view or update merchant staff account information only when the required authority has been assigned
