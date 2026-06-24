@@ -474,3 +474,14 @@ The `Platform Owner` can manage platform-level roles. `Merchant` can the merchan
 | `MERCHANT_ROLE_AUTHORITY_ASSIGN` | ✓ | ✓ | - | - | - |
 | `MERCHANT_ROLE_AUTHORITY_DELETE` | ✓ | ✓ | - | - | - |
 
+### User Group Management Authorities
+
+| Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
+|---|---:|---:|---:|---:|---:|
+| `MERCHANT_USER_GROUP_CREATE` | - | ✓ | ✓ | - | - |
+| `MERCHANT_USER_GROUP_READ` | - | ✓ | ✓ | ✓ | - |
+| `MERCHANT_USER_GROUP_UPDATE` | - | ✓ | ✓ | - | - |
+| `MERCHANT_USER_GROUP_ADD_USER` | - | ✓ | ✓ | - | - |
+| `MERCHANT_USER_GROUP_REMOVE_USER` | - | ✓ | ✓ | - | - |
+| `MERCHANT_USER_GROUP_DISABLE` | - | ✓ | - | - | - |
+| `MERCHANT_USER_GROUP_DELETE` | - | ✓ | - | - | - |
