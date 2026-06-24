@@ -495,3 +495,9 @@ The `Platform Owner` can manage platform-level roles. `Merchant` can the merchan
 | `PRODUCT_UPDATE` | - | ✓ | ✓ | - | - |
 | `PRODUCT_DISABLE` | - | ✓ | ✓ | - | - |
 
+### Inventory Management Authorities
+
+| Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
+|---|---:|---:|---:|---:|---:|
+| `INVENTORY_READ` | - | ✓ | ✓ | ✓ | - |
+| `INVENTORY_UPDATE` | - | ✓ | ✓ | - | - |
