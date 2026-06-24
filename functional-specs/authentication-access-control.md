@@ -501,3 +501,15 @@ The `Platform Owner` can manage platform-level roles. `Merchant` can the merchan
 |---|---:|---:|---:|---:|---:|
 | `INVENTORY_READ` | - | ✓ | ✓ | ✓ | - |
 | `INVENTORY_UPDATE` | - | ✓ | ✓ | - | - |
+
+### Order Management Authorities
+
+| Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
+|---|-------------:|---:|---:|---:|---:|
+| `MERCHANT_ORDER_CREATE`      | - | ✓ | ✓ | ✓ | - |
+| `MERCHANT_ORDER_READ`        | - | ✓ | ✓ | ✓ | - |
+| `MERCHANT_ORDER_UPDATE`      | - | ✓ | ✓ | - | - |
+| `MERCHANT_ORDER_CANCEL`      | - | ✓ | ✓ | - | - |
+| `CUSTOMER_ORDER_CREATE_SELF` | - | - | - | - | ✓ |
+| `CUSTOMER_ORDER_READ_SELF`   | - | - | - | - | ✓ |
+
