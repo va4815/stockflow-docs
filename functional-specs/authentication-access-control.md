@@ -485,3 +485,13 @@ The `Platform Owner` can manage platform-level roles. `Merchant` can the merchan
 | `MERCHANT_USER_GROUP_REMOVE_USER` | - | ✓ | ✓ | - | - |
 | `MERCHANT_USER_GROUP_DISABLE` | - | ✓ | - | - | - |
 | `MERCHANT_USER_GROUP_DELETE` | - | ✓ | - | - | - |
+
+### Product Management Authorities
+
+| Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
+|---|---:|---:|---:|---:|---:|
+| `PRODUCT_CREATE` | - | ✓ | ✓ | - | - |
+| `PRODUCT_READ` | - | ✓ | ✓ | ✓ | ✓ |
+| `PRODUCT_UPDATE` | - | ✓ | ✓ | - | - |
+| `PRODUCT_DISABLE` | - | ✓ | ✓ | - | - |
+
