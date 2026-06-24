@@ -103,15 +103,12 @@ Initial authorities include:
 
 - `PRODUCT_CREATE`
 - `PRODUCT_READ`
-- `PRODUCT_UPDATE`
-- `PRODUCT_DISABLE`
 - `INVENTORY_READ`
-- `INVENTORY_UPDATE`
-- `ORDER_CREATE`
-- `ORDER_READ`
-- `ORDER_CANCEL`
-- `USER_CREATE`
-- `ROLE_ASSIGN`
+- `MERCHANT_ORDER_CREATE`
+- `CUSTOMER_ORDER_READ_SELF`
+- `PLATFORM_USER_CREATE`
+- `MERCHANT_USER_UPDATE`
+- `MERCHANT_ROLE_ASSIGN`
 
 
 ## User Roles
@@ -202,12 +199,13 @@ The Authentication and Access Control module provides the following capabilities
     * create roles
     * assign roles to users
     * view roles assigned to users
-    * Disable roles
+    * roles disable
+    * remove roles from users
 - Authority management
     * create authorities
     * view authorities
     * assign authorities to roles
-    * remove authorities to roles
+    * remove authorities from roles
 - User group management
     * create user groups
     * add user to user groups
@@ -421,8 +419,8 @@ An assigned authority permits a user to perform the corresponding action or oper
 
 | Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
 |---|---:|---:|---:|---:|---:|
-| `MERCHANT_USER_CREATE` | ✓ | - | - | - | - |
-| `MERCHANT_USER_READ` | ✓ | ✓ | ✓ | ✓ | - |
+| `MERCHANT_USER_CREATE` | ✓ | ✓ | - | - | - |
+| `MERCHANT_USER_READ` | ✓ | ✓ | ✓ | - | - |
 | `MERCHANT_USER_UPDATE` | ✓ | ✓ | ✓ | - | - |
 | `MERCHANT_USER_DISABLE` | ✓ | ✓ | - | - | - |
 | `MERCHANT_USER_DELETE` | ✓ | - | - | - | - |
@@ -451,13 +449,13 @@ An assigned authority permits a user to perform the corresponding action or oper
 | `PLATFORM_ROLE_READ` | ✓ | - | - | - | - |
 | `PLATFORM_ROLE_UPDATE` | ✓ | - | - | - | - |
 | `PLATFORM_ROLE_ASSIGN` | ✓ | - | - | - | - |
-| `PLATFORM_ROLE_DELETE` | ✓ | - | - | - | - |
+| `PLATFORM_ROLE_REMOVE` | ✓ | - | - | - | - |
 | `PLATFORM_ROLE_DISABLE` | ✓ | - | - | - | - |
 | `MERCHANT_ROLE_CREATE` | ✓ | ✓ | - | - | - |
 | `MERCHANT_ROLE_READ` | ✓ | ✓ | ✓ | - | - |
 | `MERCHANT_ROLE_UPDATE` | ✓ | ✓ | - | - | - |
 | `MERCHANT_ROLE_ASSIGN` | ✓ | ✓ | - | - | - |
-| `MERCHANT_ROLE_DELETE` | ✓ | ✓ | - | - | - |
+| `MERCHANT_ROLE_REMOVE` | ✓ | ✓ | - | - | - |
 | `MERCHANT_ROLE_DISABLE` | ✓ | ✓ | - | - | - |
 
 The `Platform Owner` can manage platform-level roles. `Merchant` can the merchant-level roles belonging to their own organisation.
@@ -469,10 +467,10 @@ The `Platform Owner` can manage platform-level roles. `Merchant` can the merchan
 | `PLATFORM_AUTHORITY_CREATE` | ✓ | - | - | - | - |
 | `PLATFORM_AUTHORITY_READ` | ✓ | - | - | - | - |
 | `PLATFORM_ROLE_AUTHORITY_ASSIGN` | ✓ | - | - | - | - |
-| `PLATFORM_ROLE_AUTHORITY_DELETE` | ✓ | - | - | - | - |
+| `PLATFORM_ROLE_AUTHORITY_REMOVE` | ✓ | - | - | - | - |
 | `MERCHANT_AUTHORITY_READ` | ✓ | ✓ | ✓ | - | - |
 | `MERCHANT_ROLE_AUTHORITY_ASSIGN` | ✓ | ✓ | - | - | - |
-| `MERCHANT_ROLE_AUTHORITY_DELETE` | ✓ | ✓ | - | - | - |
+| `MERCHANT_ROLE_AUTHORITY_REMOVE` | ✓ | ✓ | - | - | - |
 
 ### User Group Management Authorities
 
@@ -491,7 +489,8 @@ The `Platform Owner` can manage platform-level roles. `Merchant` can the merchan
 | Authority | Platform Owner | Merchant | Merchant Manager | Merchant Staff | Customer |
 |---|---:|---:|---:|---:|---:|
 | `PRODUCT_CREATE` | - | ✓ | ✓ | - | - |
-| `PRODUCT_READ` | - | ✓ | ✓ | ✓ | ✓ |
+| `PRODUCT_READ` | - | ✓ | ✓ | ✓ | - |
+| `PRODUCT_READ_PUBLIC` | - | - | - | - | ✓ |
 | `PRODUCT_UPDATE` | - | ✓ | ✓ | - | - |
 | `PRODUCT_DISABLE` | - | ✓ | ✓ | - | - |
 
