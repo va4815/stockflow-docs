@@ -95,3 +95,16 @@ Examples:
 - Stock deduction
 - Manual adjustment
 - Stock restoration
+
+### Inventory Adjustments
+
+Inventory adjustment is to correct or update the stock quantity record
+
+The stock needs to be changed due to the following reason:
+- Physical stock counts
+- Damaged item
+- Lost stock
+- Data-entry errors
+- Unrecorded stock changes
+- Other operational corrections
+
