@@ -34,3 +34,35 @@ Inventory Management provides the following capabilities for StockFlow.
 - Transfer stock to another locations
 - Damaged, lost, returned stock handling
 
+## Inventory Concepts
+
+Inventory Management uses the following concepts to track stock ownership, location, quantity, and changes within StockFlow.
+
+### Inventory Items
+
+Inventory item represents the stock record for a merchant product.
+
+Examples:
+
+Restaurants - 
+
+* Coffee (Regular size)
+* Spaghetti Bolognese
+* Cheese Cake (1 Slice)
+
+Retail -
+
+* Logo T Shirt Mens
+* Superstar Slip On Trainers
+* Light Wash Slim Fit Jeans
+
+### Stock Locations
+
+Stock location represents the physical location where the inventory is stored.
+
+Examples:
+
+* The Noodle Fridge (Restaurant)
+* The Captain Sport Store (Retail)
+* The Captain Sport Store Warehouse (Warehouse)
+
