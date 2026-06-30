@@ -138,3 +138,17 @@ Main responsibilities:
 - Manage merchant users's inventory access
 - Review and resolve inventory difference
 
+### Merchant Manager
+
+The `Merchant Manager` is responsible for day-to-day inventory operations within the merchant organisation.
+
+Main responsibilities:
+
+- View inventory record and stock availability
+- Add stocks if need
+- Adjust inventory
+- Review reserved and available stock
+- View inventory movement history
+- Investigate stock difference
+- Support order processing when inventory issues occurred
+
