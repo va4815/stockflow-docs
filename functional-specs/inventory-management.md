@@ -66,3 +66,7 @@ Examples:
 * The Captain Sport Store (Retail)
 * The Captain Sport Store Warehouse (Warehouse)
 
+### Stock Quantities
+
+Stock quantities represent the number of units recorded for an inventory item.
+
