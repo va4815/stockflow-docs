@@ -82,3 +82,16 @@ Available stock is calculated:
 ```
 Available stock = On-hand stock - Reserved stock
 ```
+
+### Inventory Movements
+
+Inventory movement is a inventory item’s movement history, it provides a reason of quantity change
+
+Examples:
+
+- Stock addition
+- Stock reservation
+- Stock release
+- Stock deduction
+- Manual adjustment
+- Stock restoration
