@@ -123,3 +123,18 @@ Main responsibilities:
 - Manage platform-level inventory configuration
 - Investigate technical or operational issues affecting inventory processing
 
+### Merchant
+
+The `Merchant` has the highest level of inventory access within their own merchant organisation.
+
+Main responsibilities:
+
+- Create and maintain inventory records
+- Manage stock locations
+- View on-hand, reserved, and available stock quantities
+- Add stock to inventory
+- Adjust stock
+- View inventory movement history
+- Manage merchant users's inventory access
+- Review and resolve inventory difference
+
