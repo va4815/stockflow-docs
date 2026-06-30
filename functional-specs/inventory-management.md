@@ -152,3 +152,14 @@ Main responsibilities:
 - Investigate stock difference
 - Support order processing when inventory issues occurred
 
+### Merchant Staff
+
+The `Merchant Staff` role supports daily operations and order-processing activities.
+
+Main responsibilities:
+
+- View product stock availability
+- Check stock availability
+- Reserve and release stock through order-processing workflows
+- Report to `Merchant` or `Merchant Manager` to refill stocks
+
