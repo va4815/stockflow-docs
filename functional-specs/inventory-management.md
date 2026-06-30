@@ -108,3 +108,18 @@ The stock needs to be changed due to the following reason:
 - Unrecorded stock changes
 - Other operational corrections
 
+## User Roles and Responsibilities
+
+The following roles define how users can access and manage the inventory.
+
+
+### Platform Owner
+
+The `Platform Owner` is responsible for supporting merchants to solve platform issues when merchants have troubles.
+
+Main responsibilities:
+- Support `Merchants` to solve inventory-related platform issues
+- View inventory information if required
+- Manage platform-level inventory configuration
+- Investigate technical or operational issues affecting inventory processing
+
