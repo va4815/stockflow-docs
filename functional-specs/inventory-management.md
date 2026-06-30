@@ -70,3 +70,15 @@ Examples:
 
 Stock quantities represent the number of units recorded for an inventory item.
 
+### Available, Reserved, and On-Hand Stock
+
+* **On-hand** - The total physical quantity currently recorded at stock location
+* **Reserved** - Allocated stock to orders but not yet deducted from the physical stock quantity
+* **Available stock** - The quantity remains available for new orders
+
+
+Available stock is calculated:
+
+```
+Available stock = On-hand stock - Reserved stock
+```
