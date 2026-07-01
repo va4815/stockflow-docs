@@ -163,3 +163,23 @@ Main responsibilities:
 - Reserve and release stock through order-processing workflows
 - Report to `Merchant` or `Merchant Manager` to refill stocks
 
+## Functional Capabilities
+
+The Inventory management module provides the following capabilities for managing the quantities of stocks
+
+- Stock Availability
+    * View the available stock by product
+    * Check if sufficient stock for an order
+- Stock Reservation
+    * Reserve stock for orders
+- Stock Release
+    * Release the stock when the order is cancelled
+    * Release the stock when the order cannot be completed
+- Stock Deduction
+    * Deduct the stock when the order is completed
+- Stock Adjustment
+    * Increase or decrease the on-hand quantity
+- Inventory Movement History
+    * View the inventory item movement
+    * Record reason of movement, date and user to process
+
