@@ -233,3 +233,10 @@ The following workflows describe the main steps of quantities change at the stoc
 - System re-calculates available stocks
 - System makes an inventory movement record
 
+### Order Cancellation Workflow
+
+- Merchant staff or customer request to cancel the items
+- System verifies the permission from the request
+- System updates reserved stocks (decrease) which not deducted yet
+- System udpates available stocks (increase)
+- System makes an inventory movement record
