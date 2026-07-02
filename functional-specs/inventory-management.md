@@ -205,3 +205,12 @@ The following workflows describe the main steps of quantities change at the stoc
 - System udpates available stocks (decrease)
 - System makes an inventory movement record
 
+### Stock Deduction Workflow
+
+- User selects an inventory item
+- Enter the quantity to be deducted to the item
+- System checks the user permission and merchant scope
+- System validates the quantity if it is greater than zero
+- System updates on-hand quantity
+- System makes an inventory movement record on the item
+
