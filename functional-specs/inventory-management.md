@@ -21,7 +21,7 @@ Inventory Management provides the following capabilities for StockFlow.
 - Reserve stock during order processing
 - Release reserved stock when an order is cancelled or cannot be completed
 - Reduce stock when the order is completed
-- Restore stock when the order is canncelled
+- Restore stock when the order is cancelled
 - Manual stock adjustments
 - Record inventory movements for stock changes
 - View inventory movement history
@@ -31,7 +31,7 @@ Inventory Management provides the following capabilities for StockFlow.
 
 ### Future Scope
 
-- Transfer stock to another locations
+- Transfer stock to other locations
 - Damaged, lost, returned stock handling
 
 ## Inventory Concepts
@@ -85,7 +85,7 @@ Available stock = On-hand stock - Reserved stock
 
 ### Inventory Movements
 
-Inventory movement is a inventory item’s movement history, it provides a reason of quantity change
+Inventory movement is an inventory item’s movement history, it provides a reason of quantity change
 
 Examples:
 
@@ -135,7 +135,7 @@ Main responsibilities:
 - Add stock to inventory
 - Adjust stock
 - View inventory movement history
-- Manage merchant users's inventory access
+- Manage merchant users' inventory access
 - Review and resolve inventory difference
 
 ### Merchant Manager
@@ -145,7 +145,7 @@ The `Merchant Manager` is responsible for day-to-day inventory operations within
 Main responsibilities:
 
 - View inventory record and stock availability
-- Add stocks if need
+- Add stocks where required
 - Adjust inventory
 - Review reserved and available stock
 - View inventory movement history
@@ -181,7 +181,7 @@ The Inventory management module provides the following capabilities for managing
     * Increase or decrease the on-hand quantity
 - Inventory Movement History
     * View the inventory item movement
-    * Record reason of movement, date and user to process
+    * Record the movement reason, date and user to process
 
 ## Business Workflows
 
@@ -191,7 +191,7 @@ The following workflows describe the main steps of quantities change at the stoc
 
 - User selects an inventory item
 - Enter the quantity to be added to the item
-- System checks the user permission and merchant scope
+- System checks the user's permission and merchant scope
 - System validates the quantity if it is greater than zero
 - System updates on-hand quantity
 - System makes an inventory movement record on the item
@@ -209,7 +209,7 @@ The following workflows describe the main steps of quantities change at the stoc
 
 - User selects an inventory item
 - Enter the quantity to be deducted to the item
-- System checks the user permission and merchant scope
+- System checks the user's permission and merchant scope
 - System validates the quantity if it is greater than zero
 - System updates on-hand quantity
 - System makes an inventory movement record on the item
@@ -227,7 +227,7 @@ The following workflows describe the main steps of quantities change at the stoc
 
 - User selects an inventory item
 - Enter the quantity to be adjusted to the item
-- System checks the user permission and merchant scope
+- System checks the user's permission and merchant scope
 - System validates the requested quantity
 - System increases or decreases on-hand quantity
 - System re-calculates available stocks
@@ -247,7 +247,7 @@ The following workflows describe the main steps of quantities change at the stoc
 - System verifies the permission from the request
 - System retrieves the current on-hand and reserved quantities
 - System calculates the available quantity (compare the requested quantity if provided)
-- System returns the sufficient stock is available
+- System returns whether sufficient stock is available
 
 ### Inventory Movement Viewing Workflow
 
