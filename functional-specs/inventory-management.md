@@ -223,3 +223,13 @@ The following workflows describe the main steps of quantities change at the stoc
 - System udpates available stocks (increase)
 - System makes an inventory movement record
 
+### Stock Adjustment Workflow
+
+- User selects an inventory item
+- Enter the quantity to be adjusted to the item
+- System checks the user permission and merchant scope
+- System validates the requested quantity
+- System increases or decreases on-hand quantity
+- System re-calculates available stocks
+- System makes an inventory movement record
+
