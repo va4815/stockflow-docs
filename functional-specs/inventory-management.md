@@ -256,3 +256,11 @@ The following workflows describe the main steps of quantities change at the stoc
 - System retrieves the inventory movement belonging to the selected inventory item
 - System returns the permitted movement records
 
+## Inventory Movement Types
+
+- Stock Addition
+- Stock Reservation
+- Stock Release
+- Stock Deduction
+- Manual Adjustment
+- Stock Restoration
