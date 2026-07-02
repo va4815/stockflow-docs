@@ -214,3 +214,12 @@ The following workflows describe the main steps of quantities change at the stoc
 - System updates on-hand quantity
 - System makes an inventory movement record on the item
 
+### Stock Release Workflow
+
+- Merchant staff requests to release the stock from the order
+- System verifies the permission from the request
+- System checks the quantity would be exceed the reserved quantity
+- System updates reserved stocks (decrease)
+- System udpates available stocks (increase)
+- System makes an inventory movement record
+
