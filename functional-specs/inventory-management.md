@@ -183,3 +183,16 @@ The Inventory management module provides the following capabilities for managing
     * View the inventory item movement
     * Record reason of movement, date and user to process
 
+## Business Workflows
+
+The following workflows describe the main steps of quantities change at the stock management operations.
+
+### Stock Addition Workflow
+
+- User selects an inventory item
+- Enter the quantity to be added to the item
+- System checks the user permission and merchant scope
+- System validates the quantity if it is greater than zero
+- System updates on-hand quantity
+- System makes an inventory movement record on the item
+
