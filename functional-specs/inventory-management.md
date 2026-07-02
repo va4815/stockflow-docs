@@ -196,3 +196,12 @@ The following workflows describe the main steps of quantities change at the stoc
 - System updates on-hand quantity
 - System makes an inventory movement record on the item
 
+### Stock Reservation Workflow
+
+- Customer or merchant staff creates an order
+- System verifies the items belong to the merchant
+- System checks available stock on the inventory item
+- System updates reserved stocks (increase)
+- System udpates available stocks (decrease)
+- System makes an inventory movement record
+
