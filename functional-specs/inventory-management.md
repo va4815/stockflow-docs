@@ -240,3 +240,11 @@ The following workflows describe the main steps of quantities change at the stoc
 - System updates reserved stocks (decrease) which not deducted yet
 - System udpates available stocks (increase)
 - System makes an inventory movement record
+
+### Inventory Availability Check Workflow
+
+- User requests the product availability check
+- System verifies the permission from the request
+- System retrieves the current on-hand and reserved quantities
+- System calculates the available quantity (compare the requested quantity if provided)
+- System returns the sufficient stock is available
