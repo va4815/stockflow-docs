@@ -31,3 +31,21 @@ Order Management uses the following concepts to describe how orders are created,
 
 Order represents customer purchases the product(s) from the merchant via the supported channel. The order contains the purchase information, including merchant, customer or staff user, order status, order itmes and price.
 
+### Order Items
+
+Order item represents a product included in an order, it includes quantity, unit price when the order created.
+
+Examples:
+
+Restaurants - 
+
+* Coffee (Regular size) x 2
+* Spaghetti Bolognese x 1
+* Cheese Cake (1 Slice) x 1
+
+Retail -
+
+* Logo T Shirt Mens x 3
+* Superstar Slip On Trainers x 1
+* Light Wash Slim Fit Jeans x 2
+
