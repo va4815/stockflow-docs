@@ -23,3 +23,11 @@ Order Management provides the following capabilities for StockFlow.
 - Split payment
 - Amend order after confirmation
 
+## Order Concepts
+
+Order Management uses the following concepts to describe how orders are created, processed, tracked, and owned within StockFlow.
+
+### Orders
+
+Order represents customer purchases the product(s) from the merchant via the supported channel. The order contains the purchase information, including merchant, customer or staff user, order status, order itmes and price.
+
