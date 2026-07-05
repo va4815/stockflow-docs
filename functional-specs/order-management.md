@@ -49,3 +49,14 @@ Retail -
 * Superstar Slip On Trainers x 1
 * Light Wash Slim Fit Jeans x 2
 
+### Order Statuses
+
+Order Statuses represents the stage of the order lifecycle
+
+- `Pending` - Order submitted and is waiting for confirmation or processing
+- `Confirmed` - Order has been accepted and inventory reserved
+- `Processing` - Order is being prepared, picked or packed or fulfilled
+- `Completed` - Order has been fulfilled and the stock has been deducted
+- `Cancelled` - Order has been cancelled and the stock has been released
+
+
