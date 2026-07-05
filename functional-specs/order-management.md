@@ -59,4 +59,7 @@ Order Statuses represents the stage of the order lifecycle
 - `Completed` - Order has been fulfilled and the stock has been deducted
 - `Cancelled` - Order has been cancelled and the stock has been released
 
+### Order price
+
+Order price represents the purchase values marked for the order and its order items. The price should be included in the order record so that it keeps the record accurate even if the product price changes later.
 
