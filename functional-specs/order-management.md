@@ -72,3 +72,6 @@ Order channel includes:
 - Retail
 - Online
 
+### Order Ownership
+
+Order ownership defines which merchant, customer, or user is allowed to access and manage the order. Each order belongs to one merchant organisation, and merchant users can only access orders associated with their own merchant.
