@@ -63,3 +63,12 @@ Order Statuses represents the stage of the order lifecycle
 
 Order price represents the purchase values marked for the order and its order items. The price should be included in the order record so that it keeps the record accurate even if the product price changes later.
 
+### Order channels
+
+Order channel represents the source or workflow where the order is created. It would be marked in the order record so that merchant could trace the order by channel.
+
+Order channel includes:
+- POS
+- Retail
+- Online
+
