@@ -4,7 +4,7 @@
 
 Many merchants operate across multiple sales channels, such as an online store, a retail shop, or a restaurant. As the business grows, they often need to manage products, inventory, and orders across separate systems.
 
-StockFlow provides a centralised backend platform for merchants who want to manage products, inventory, and orders in one place. The system supports multiple ordering channels, including `Point of Sale (POS)`, `Retail`, and `Online`, allowing merchants to manage different sales workflows through a shared backend system.
+StockFlow provides a centralised backend platform for merchants who want to manage products, inventory, and orders in one place. The system supports multiple ordering channels, including `Point of Sale (POS)`, `Self Checkout` and `Online Ordering`, allowing merchants to manage different sales workflows through a shared backend system.
 
 The purpose of StockFlow is to reduce the complexity of managing separate platforms and provide a consistent foundation for multi-channel order and inventory management.
 
@@ -12,7 +12,7 @@ The purpose of StockFlow is to reduce the complexity of managing separate platfo
 
 The initial scope of StockFlow includes:
 
-- Order creation through `POS`, `Retail`, and `Online` channels
+- Order creation through `POS`, `Customer`, and `Manual` channels
 - Merchant order confirmation, modification, and cancellation
 - Product creation, modification, and deletion
 - Product category creation, modification, and deletion
@@ -69,7 +69,7 @@ Key capabilities include:
 
 ### Inventory Management
 
-Inventory Management is responsible for maintaining stock availability across all ordering channels. It provides a shared inventory source so that `POS`, `Retail Ordering`, and `Online Ordering` workflows can operate against consistent stock data.
+Inventory Management is responsible for maintaining stock availability across all ordering channels. It provides a shared inventory source so that `POS`, `Self Checkout`, and `Online Ordering` workflows can operate against consistent stock data.
 
 Key capabilities include:
 
@@ -83,11 +83,11 @@ Key capabilities include:
 
 ### Order Management
 
-Order Management is responsible for creating and managing orders across multiple sales channels. It provides a shared order foundation for `POS`, `Retail Ordering`, and `Online Ordering` workflows while allowing each channel to follow its own ordering process.
+Order Management is responsible for creating and managing orders across multiple sales channels. It provides a shared order foundation for `POS`, `Self Checkout`, and `Online Ordering` workflows while allowing each channel to follow its own ordering process.
 
 Key capabilities include:
 
-* Creating orders from `POS`, `Retail Ordering`, and `Online Ordering` channels
+* Creating orders from `POS`, `Customer` and `Admin` channels
 * Managing order items, quantities, and totals
 * Supporting order confirmation, modification, and cancellation
 * Tracking order status and order history
@@ -115,7 +115,7 @@ Gateway Workflows define how external clients access the StockFlow backend throu
 
 Key capabilities include:
 
-* Providing separate entry points for `POS`, `Retail Ordering`, and `Online Ordering` workflows
+* Providing separate entry points for `POS`, `Customer`, and `Admin` gateways
 * Handling channel-specific request validation
 * Applying authentication and access control checks before forwarding requests
 * Routing requests to the appropriate backend functions
@@ -158,7 +158,7 @@ The Product Creation Workflow allows a merchant or authorised user to create a n
 Expected result:
 
 * A new product is created successfully.
-* The product can be used by `POS`, `Retail Ordering`, or `Online Ordering` workflows based on its visibility settings.
+* The product can be used by `POS`, `Self Checkout`, or `Online Ordering` workflows based on its visibility settings.
 * The product can be linked with inventory records for stock management.
 
 ### Inventory Update Workflow
@@ -176,7 +176,7 @@ Expected result:
 
 * Product stock levels are updated.
 * Inventory movement history is recorded.
-* `POS`, `Retail Ordering`, and `Online Ordering` workflows use the updated inventory data.
+* `POS`, `Self Checkout`, and `Online Ordering` workflows use the updated inventory data.
 
 Example inventory update types:
 
@@ -276,7 +276,7 @@ Detailed business rules for each functional area will be documented in separate 
 * A product can be active, inactive, or disabled.
 * Disabled products should not be available for new orders.
 * Deleting a product should not remove historical order records.
-* Product information should be shared consistently across `POS`, `Retail Ordering`, and `Online Ordering` workflows.
+* Product information should be shared consistently across `POS`, `Self Checkout`, and `Online Ordering` workflows.
 * A product can be linked with inventory records for stock tracking.
 
 ### Product Category Rules
@@ -298,7 +298,7 @@ Detailed business rules for each functional area will be documented in separate 
 
 ### Order Management Rules
 
-* An order must be created through a valid ordering channel: `POS`, `Retail Ordering`, or `Online Ordering`.
+* An order must be created through a valid ordering channel: `POS`, `Self Checkout`, or `Online Ordering`.
 * An order must contain at least one valid order item.
 * The system should check product availability and inventory availability before confirming an order.
 * Orders should have a clear status, such as `Pending`, `Confirmed`, `Cancelled`, or `Completed`.
@@ -318,7 +318,7 @@ Detailed business rules for each functional area will be documented in separate 
 ### Gateway Workflow Rules
 
 * External clients should access the system through the appropriate channel gateway.
-* `POS`, `Retail Ordering`, and `Online Ordering` workflows should use separate gateway entry points.
+* `POS`, `Self Checkout`, `Online Ordering`, and `Manual` workflows should use separate gateway entry points.
 * Gateways should validate incoming requests before forwarding them to the backend application.
 * Gateways should not contain core business logic such as inventory deduction, order state management, or product rules.
 * The internal backend application and database should not be exposed directly to external clients.
@@ -338,7 +338,7 @@ This section defines the assumptions and constraints for the initial functional 
 
 * Merchants use StockFlow to manage products, inventory, and orders across multiple ordering channels.
 * Each merchant owns and manages their own products, categories, inventory records, users, and orders.
-* `POS`, `Retail Ordering`, and `Online Ordering` workflows share the same backend inventory source.
+* `POS`, `Self Checkout`, and `Online Ordering` workflows share the same backend inventory source.
 * Product and inventory data should be managed centrally rather than separately for each ordering channel.
 * Users must be authenticated before accessing protected merchant or platform functions.
 * User permissions are controlled by roles and authorities.

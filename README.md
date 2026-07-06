@@ -2,12 +2,12 @@
 
 ## Overview
 
-StockFlow is a multi-channel order and inventory management platform built with a modular monolith architecture. The system supports `Point of Sale (POS)`, `Retail Ordering`, and `Online Ordering` workflows through a shared backend domain model. Centralised inventory and order management enable multiple channels to process transactions simultaneously while maintaining inventory consistency across the platform.
+StockFlow is a multi-channel order and inventory management platform built with a modular monolith architecture. The system supports `Point of Sale (POS)`, `Self Checkout`, `Online Ordering`, and `Manual` workflows through a shared backend domain model. Centralised inventory and order management enable multiple channels to process transactions simultaneously while maintaining inventory consistency across the platform.
 
 ## Project Goals
 
 - Build a centralised backend platform that supports multiple ordering channels
-- Share inventory across `POS`, `Retail`, and `Online` workflows
+- Share inventory across `POS`, `Self Checkout`, `Online Ordering`, and `Manual` workflows
 - Process orders concurrently across different channels while maintaining inventory consistency
 - Design clear module boundaries to support future migration towards microservices
 - Explore event-driven architecture patterns as a future extension
@@ -15,25 +15,33 @@ StockFlow is a multi-channel order and inventory management platform built with 
 
 ## Architecture Overview
 
-StockFlow is designed as a multi-channel backend platform using modular monolith architecture. The system exposes separate channel gateways for `Point of Sale (POS)`, `Retail Ordering`, and `Online Ordering` workflows.
+StockFlow is designed as a multi-channel backend platform using modular monolith architecture. The system exposes separate channel gateways for `Point of Sale (POS)`, `Self Checkout`, `Online Ordering`, and `Manual` workflows.
 
 Each gateway acts as an entry point to the system and is responsible for functions such as authentication, request validation and API response handling. The `StockFlow Backend` owns the core business logic, including inventory management, order management and product management.
 
 ```mermaid
   flowchart TD;
-    POS_Client --> POS_Gateway;
-    Retail_Client --> Retail_Gateway;
-    Online_Store --> Online_Gateway;
+    Restaurant_Staff --> Point_of_Sale;
+    Retail_Staff --> Point_of_Sale;
+    Customer --> Online_Ordering;
+    Customer --> Self_Checkout;
+    Merchant_Staff --> Manual_Workflow;
+    Back_Office_Staff --> Manual_Workflow;
+
+    Point_of_Sale --> POS_Gateway;
+    Online_Ordering --> Customer_Gateway;
+    Self_Checkout --> Customer_Gateway;
+    Manual_Workflow --> Admin_Gateway;
 
     POS_Gateway --> StockFlow_Backend;
-    Retail_Gateway --> StockFlow_Backend;
-    Online_Gateway --> StockFlow_Backend;
+    Customer_Gateway --> StockFlow_Backend;
+    Admin_Gateway --> StockFlow_Backend;
     StockFlow_Backend --> Database;
 ```
 
 ## Core Features
 
-- Supports `POS`, `Retail`, and `Online` ordering workflows through separate channel gateways.
+- Supports `POS`, `Self Checkout`, `Online Ordering`, and `Manual` ordering workflows through separate channel gateways.
 - Maintains a centralised inventory source across all sales channels.
 - Creates, tracks, and manages orders from multiple channels.
 - Manages products, categories, pricing, and shared product data.
@@ -50,7 +58,7 @@ Each gateway acts as an entry point to the system and is responsible for functio
   - The backend application is separated into modules such as inventory, order, product, and authentication. This keeps module responsibilities clear and provides flexibility to extract individual modules into independent microservices in the future if specific services require independent scaling.
 
 - **Multiple Gateways**
-  - The system uses separate gateways for `POS`, `Retail`, and `Online` workflows to isolate traffic, apply channel-specific request handling, and avoid exposing the internal backend structure publicly.
+  - The system uses separate gateways for `POS`, `Customer`, and `Manual` gateway to isolate traffic, apply channel-specific request handling, and avoid exposing the internal backend structure publicly.
 
 - **PostgreSQL as the Primary Database**
   - PostgreSQL supports multiple schemas within a single database, allowing tables to be logically separated by module, such as `inventory`, `product`, `order`, and `authentication`.

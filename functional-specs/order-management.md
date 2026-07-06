@@ -10,7 +10,7 @@ Order Management provides the following capabilities for StockFlow.
 
 ### Initial Scope
 
-- Create order through `POS`, `Retail` or `Online` workflows
+- Create order through `POS`, `Self Checkout` or `Online Ordering` workflows
 - Orders could be created by authorised merchant users or authenticated customers
 - View order details and order history
 - Cancel order
