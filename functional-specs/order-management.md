@@ -91,3 +91,21 @@ Main responsibilities:
 - View order information if required
 - Investigate technical or operational issues when the order process is affected
 - Manage order configuration if needed
+
+### Merchant
+
+The `Merchant` has the highest level of order access within their own merchant organisation.
+
+Main responsibilities:
+
+- View orders
+- Create `Manual` order if needed
+- Review orders
+- Confirm orders
+- Update orders
+- Cancel orders
+- Complete orders
+- Review order history
+- Manage merchant users access
+- Resolve order issues
+
