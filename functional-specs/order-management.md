@@ -109,3 +109,20 @@ Main responsibilities:
 - Manage merchant users access
 - Resolve order issues
 
+### Merchant Manager
+
+The `Merchant Manager` is responsible for day-to-day order operations within the merchant organisation.
+
+Main responsibilities:
+- View orders
+- Review incoming orders from `Online Ordering` and `Self Checkout` channels
+- Create order from `POS` channel
+- Create `Manual` order if needed
+- Confirm orders
+- Update orders
+- Cancel orders
+- Complete orders
+- Review order history
+- Handle order operational issues
+- Support `Merchant Staff` during order processing
+
