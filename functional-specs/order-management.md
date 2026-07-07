@@ -75,3 +75,19 @@ Order channel includes:
 ### Order Ownership
 
 Order ownership defines which merchant, customer, or user is allowed to access and manage the order. Each order belongs to one merchant organisation, and merchant users can only access orders associated with their own merchant.
+
+
+## User Roles and Responsibilities
+
+The following roles define how users can access and manage the order.
+
+
+### Platform Owner
+
+The `Platform Owner` is responsible for operating and supporting the StockFlow platform.
+
+Main responsibilities:
+- Support `Merchants` to solve order-related platform issues
+- View order information if required
+- Investigate technical or operational issues when the order process is affected
+- Manage order configuration if needed
