@@ -139,3 +139,14 @@ Main responsibilities:
 - Complete orders
 - Report order issues to `Merchant` or `Merchant Manager`
 
+### Customer
+
+The `Customer` is an external user who creates and manages their own orders through customer-facing workflows.
+
+Main responsibilities:
+- Create orders through `Online Ordering` channel
+- Create orders through `Self Checkout` channel
+- View their own order details
+- View their own order status
+- Review their own order history
+
