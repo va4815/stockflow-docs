@@ -21,19 +21,19 @@ Each gateway acts as an entry point to the system and is responsible for functio
 
 ```mermaid
   flowchart TD;
-    Restaurant_Staff --> Point_of_Sale;
-    Retail_Staff --> Point_of_Sale;
-    Customer --> Online_Ordering;
-    Customer --> Self_Checkout;
-    Merchant_Staff --> Manual_Workflow;
-    Back_Office_Staff --> Manual_Workflow;
+    Restaurant_Staff[Restaurant Staff] --> Point_of_Sale["Point of Sale (POS)"];
+    Retail_Staff[Retail Staff] --> Point_of_Sale;
+    Customer[Customer] --> Online_Ordering[Online Ordering];
+    Customer --> Self_Checkout[Self Checkout];
+    Merchant_Staff[Merchant Staff] --> Manual_Workflow[Manual Workflow];
+    Back_Office_Staff[Back Office Staff] --> Manual_Workflow;
 
-    Point_of_Sale --> POS_Gateway;
-    Online_Ordering --> Customer_Gateway;
+    Point_of_Sale --> POS_Gateway[POS Gateway];
+    Online_Ordering --> Customer_Gateway[Customer Gateway];
     Self_Checkout --> Customer_Gateway;
-    Manual_Workflow --> Admin_Gateway;
+    Manual_Workflow --> Admin_Gateway[Admin Gateway];
 
-    POS_Gateway --> StockFlow_Backend;
+    POS_Gateway --> StockFlow_Backend[StockFlow Backend];
     Customer_Gateway --> StockFlow_Backend;
     Admin_Gateway --> StockFlow_Backend;
     StockFlow_Backend --> Database;
