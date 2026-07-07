@@ -126,3 +126,16 @@ Main responsibilities:
 - Handle order operational issues
 - Support `Merchant Staff` during order processing
 
+### Merchant Staff
+
+The `Merchant Staff` supports daily order-processing activities.
+
+Main responsibilities:
+- Create order from `POS` channel
+- View orders
+- Check order details
+- Update orders
+- Support customer checkout
+- Complete orders
+- Report order issues to `Merchant` or `Merchant Manager`
+
