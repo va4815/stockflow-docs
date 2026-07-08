@@ -262,3 +262,13 @@ The following workflows describe the main workflows for order management.
 - System records the order update action to order history
 - System returns the updated order details
 
+### Order Cancellation Workflow
+
+- Merchant user or customer requests to cancel the order
+- System checks the user's permission
+- System checks the order whether it is cancellable
+- System releases the reversed stocks for the order
+- System change the order status to `Cancelled`
+- System records the order confirmation action to order history
+- System returns the updated order details
+
