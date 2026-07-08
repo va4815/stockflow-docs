@@ -289,3 +289,10 @@ The following workflows describe the main workflows for order management.
 - System retrieves the order information
 - System returns the order information
 
+### Order History Viewing Workflow
+
+- User opens the order history to view
+- System checks the user's permission and roles
+- System retrieves the order history records
+- System returns the order history records
+
