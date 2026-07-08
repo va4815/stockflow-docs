@@ -161,3 +161,17 @@ The Order Management module provides the following capabilities for order workfl
         * `Online Ordering`: order created by customers
         * `Self Checkout`: order created by customers at merchant shop
         * `Manual`: order created by merchant or back office staff
+- Order Viewing
+    * View the order information
+    * When `Merchant` views the order, it includes:
+        * Order summary
+        * Order details
+        * Order items
+        * Order channel
+        * Order status
+        * Customer information
+        * Price information
+    * When `Customer` views the order, it includes:
+        * Order details
+        * Order items
+        * Order status
