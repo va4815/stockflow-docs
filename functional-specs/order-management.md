@@ -250,3 +250,15 @@ The following workflows describe the main workflows for order management.
 - System records the order confirmation action to order history
 - System returns the updated order details
 
+### Order Update Workflow
+
+- Merchant user opens the order
+- System checks the user's permission and merchant scope
+- System validates the product availability and price
+- System re-calculates the total amount of the order
+- System checks the inventory stocks before updating the order
+- System updates the order information including items, prices, merchant and staff user
+- System reserves the udpated inventory to the order
+- System records the order update action to order history
+- System returns the updated order details
+
