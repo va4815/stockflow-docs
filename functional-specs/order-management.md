@@ -189,3 +189,7 @@ The Order Management module provides the following capabilities for order workfl
     * Cancel the order from customers or merchant users
     * Update order status
     * Release the reserved inventory from the order
+- Order Completion
+    * Complete the order when the merchant finish the order fulfillment
+    * Update the order status when the order completed
+    
