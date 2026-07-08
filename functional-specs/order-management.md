@@ -272,3 +272,13 @@ The following workflows describe the main workflows for order management.
 - System records the order confirmation action to order history
 - System returns the updated order details
 
+### Order Completion Workflow
+
+- Merchant user opens the order
+- System checks the user's permission
+- System checks the order whether it is completable
+- System deducts the stocks from reserved inventory
+- System change the order status to `Completed`
+- System records the order confirmation action to order history
+- System returns the updated order details
+
