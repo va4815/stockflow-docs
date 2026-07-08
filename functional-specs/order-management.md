@@ -225,3 +225,18 @@ The following workflows describe the main workflows for order management.
 - System records the order information including items, prices, merchant and staff user
 - System reserves the inventory to the order
 - System returns the order information to the user
+
+### Customer Order Creation Workflow
+
+- Customer starts a new order through `Online Ordering` or `Self Checkout` channel
+- System verifies the customer account's permission
+- Customer submits the products and quantities to the system
+- System validates the selected products whether belong to the merchant
+- System checks the product availability and price
+- System calculates the total amount of the order
+- System checks the inventory stocks before creating the order
+- System creates the order at coresponding channel
+- System records the order information including items, prices, merchant and staff user
+- System reserves the inventory to the order
+- System returns the order information to the user
+
