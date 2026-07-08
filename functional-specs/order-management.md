@@ -240,3 +240,13 @@ The following workflows describe the main workflows for order management.
 - System reserves the inventory to the order
 - System returns the order information to the user
 
+### Order Confirmation Workflow
+
+- Merchant user opens the `Pending` order
+- System checks the user's permission and merchant scope
+- System re-validates the order items and inventory before processing
+- System reserves the order inventory
+- System change the order status to `Confirmed`
+- System records the order confirmation action to order history
+- System returns the updated order details
+
