@@ -182,4 +182,7 @@ The Order Management module provides the following capabilities for order workfl
         * item quantities
         * customer information
         * order remark
+- Order Confirmation
+    * Confirm the order from merchant users and move to next process
+    * Update order status after confirmation
 
