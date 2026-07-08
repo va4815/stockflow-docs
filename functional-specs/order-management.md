@@ -192,4 +192,18 @@ The Order Management module provides the following capabilities for order workfl
 - Order Completion
     * Complete the order when the merchant finish the order fulfillment
     * Update the order status when the order completed
-    
+- Order History
+    * Review the order records from merchant users or customers
+    * When `Merchant` views order history, it includes:
+        * Order creation date
+        * order status
+        * order items
+        * Item prices
+        * Cancellation details and reaons
+        * Completion details
+        * User action related to the order
+    * When `Customer` views order history, it includes:
+        * Order creation date
+        * Order status
+        * Order items
+        * Item prices
