@@ -282,3 +282,10 @@ The following workflows describe the main workflows for order management.
 - System records the order confirmation action to order history
 - System returns the updated order details
 
+### Order Viewing Workflow
+
+- User requests to view the order(s)
+- System checks the user's permission and roles
+- System retrieves the order information
+- System returns the order information
+
