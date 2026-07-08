@@ -175,3 +175,11 @@ The Order Management module provides the following capabilities for order workfl
         * Order details
         * Order items
         * Order status
+- Order Update
+    * Update order information from authorised users
+    * Order updates may includes:
+        * Order items
+        * item quantities
+        * customer information
+        * order remark
+
