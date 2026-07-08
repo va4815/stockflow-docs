@@ -150,3 +150,14 @@ Main responsibilities:
 - View their own order status
 - Review their own order history
 
+## Functional Capabilities
+
+The Order Management module provides the following capabilities for order workflows.
+
+- Order Creation
+    * Create a new order through supported channels
+    * Supported channels
+        * `POS`: order created by merchant staff
+        * `Online Ordering`: order created by customers
+        * `Self Checkout`: order created by customers at merchant shop
+        * `Manual`: order created by merchant or back office staff
