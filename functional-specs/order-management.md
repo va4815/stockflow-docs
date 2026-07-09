@@ -10,7 +10,7 @@ Order Management provides the following capabilities for StockFlow.
 
 ### Initial Scope
 
-- Create order through `POS`, `Self Checkout` or `Online Ordering` workflows
+- Create order through `POS`, `Self Checkout`, `Online Ordering` and `Manual` workflows
 - Orders could be created by authorised merchant users or authenticated customers
 - View order details and order history
 - Cancel order
@@ -29,11 +29,12 @@ Order Management uses the following concepts to describe how orders are created,
 
 ### Orders
 
-Order represents customer purchases the product(s) from the merchant via the supported channel. The order contains the purchase information, including merchant, customer or staff user, order status, order itmes and price.
+An order represents a customer purchase of one or more products from a merchant through a supported workflow. The order contains purchase information, including merchant, customer or staff user, order status, order items, order channel, and pricing information.
+
 
 ### Order Items
 
-Order item represents a product included in an order, it includes quantity, unit price when the order created.
+An order item represents a product included in an order, it includes quantity, unit price when the order is created.
 
 Examples:
 
@@ -51,7 +52,7 @@ Retail -
 
 ### Order Statuses
 
-Order Statuses represents the stage of the order lifecycle
+Order Statuses represent the stage of the order lifecycle
 
 - `Pending` - Order submitted and is waiting for confirmation or processing
 - `Confirmed` - Order has been accepted and inventory reserved
@@ -59,18 +60,19 @@ Order Statuses represents the stage of the order lifecycle
 - `Completed` - Order has been fulfilled and the stock has been deducted
 - `Cancelled` - Order has been cancelled and the stock has been released
 
-### Order price
+### Order Pricing
 
-Order price represents the purchase values marked for the order and its order items. The price should be included in the order record so that it keeps the record accurate even if the product price changes later.
+Order pricing represents the purchase values marked for the order and its order items. The price should be included in the order record so that it keeps the record accurate even if the product price changes later.
 
-### Order channels
+### Order Channels
 
-Order channel represents the source or workflow where the order is created. It would be marked in the order record so that merchant could trace the order by channel.
+Order channel represents the source or workflow where the order is created. It is recorded on the order so that merchants can trace how the order entered the system.
 
-Order channel includes:
-- POS
-- Retail
-- Online
+Order channels include:
+- `POS` - orders created by restaurant or retail staff through the POS workflow
+- `Online Ordering` - orders created by customers through a remote online ordering workflow
+- `Self Checkout` - orders created by customers at a merchant location using a kiosk, web application or mobile application
+- `Manual` - orders created manually by merchant or back office users for non-standard cases
 
 ### Order Ownership
 
@@ -177,11 +179,11 @@ The Order Management module provides the following capabilities for order workfl
         * Order status
 - Order Update
     * Update order information from authorised users
-    * Order updates may includes:
+    * Order updates may include:
         * Order items
         * item quantities
         * customer information
-        * order remark
+        * order remarks
 - Order Confirmation
     * Confirm the order from merchant users and move to next process
     * Update order status after confirmation
@@ -190,8 +192,8 @@ The Order Management module provides the following capabilities for order workfl
     * Update order status
     * Release the reserved inventory from the order
 - Order Completion
-    * Complete the order when the merchant finish the order fulfillment
-    * Update the order status when the order completed
+    * Complete the order when the merchant finishes the order fulfilment
+    * Update the order status when the order is completed
 - Order History
     * Review the order records from merchant users or customers
     * When `Merchant` views order history, it includes:
@@ -199,7 +201,7 @@ The Order Management module provides the following capabilities for order workfl
         * order status
         * order items
         * Item prices
-        * Cancellation details and reaons
+        * Cancellation details and reasons
         * Completion details
         * User action related to the order
     * When `Customer` views order history, it includes:
@@ -217,13 +219,13 @@ The following workflows describe the main workflows for order management.
 - Merchant user starts a new order
 - System checks the user's permission and merchant scope
 - Merchant user submits the products and quantities to the system
-- System validates the selected products whether belong to the merchant
+- System validates the selected products whether they belong to the merchant
 - System checks the product availability and price
 - System calculates the total amount of the order
 - System checks the inventory stocks before creating the order
-- System creates the order at coresponding channel
-- System records the order information including items, prices, merchant and staff user
-- System reserves the inventory to the order
+- System creates the order at corresponding channel
+- System records the order information including items, prices, merchant, staff user and order channel
+- System reserves inventory for the order
 - System returns the order information to the user
 
 ### Customer Order Creation Workflow
@@ -231,13 +233,13 @@ The following workflows describe the main workflows for order management.
 - Customer starts a new order through `Online Ordering` or `Self Checkout` channel
 - System verifies the customer account's permission
 - Customer submits the products and quantities to the system
-- System validates the selected products whether belong to the merchant
+- System validates the selected products whether they belong to the merchant
 - System checks the product availability and price
 - System calculates the total amount of the order
 - System checks the inventory stocks before creating the order
-- System creates the order at coresponding channel
-- System records the order information including items, prices, merchant and staff user
-- System reserves the inventory to the order
+- System creates the order at corresponding channel
+- System records the order information including items, prices, merchant, customer and order channel
+- System reserves inventory for the order
 - System returns the order information to the user
 
 ### Order Confirmation Workflow
@@ -245,8 +247,7 @@ The following workflows describe the main workflows for order management.
 - Merchant user opens the `Pending` order
 - System checks the user's permission and merchant scope
 - System re-validates the order items and inventory before processing
-- System reserves the order inventory
-- System change the order status to `Confirmed`
+- System changes the order status to `Confirmed`
 - System records the order confirmation action to order history
 - System returns the updated order details
 
@@ -258,7 +259,7 @@ The following workflows describe the main workflows for order management.
 - System re-calculates the total amount of the order
 - System checks the inventory stocks before updating the order
 - System updates the order information including items, prices, merchant and staff user
-- System reserves the udpated inventory to the order
+- System reserves the updated inventory if order items or quantities have changed
 - System records the order update action to order history
 - System returns the updated order details
 
@@ -267,9 +268,9 @@ The following workflows describe the main workflows for order management.
 - Merchant user or customer requests to cancel the order
 - System checks the user's permission
 - System checks the order whether it is cancellable
-- System releases the reversed stocks for the order
-- System change the order status to `Cancelled`
-- System records the order confirmation action to order history
+- System releases the reserved stock for the order
+- System changes the order status to `Cancelled`
+- System records the order cancellation action to order history
 - System returns the updated order details
 
 ### Order Completion Workflow
@@ -278,8 +279,8 @@ The following workflows describe the main workflows for order management.
 - System checks the user's permission
 - System checks the order whether it is completable
 - System deducts the stocks from reserved inventory
-- System change the order status to `Completed`
-- System records the order confirmation action to order history
+- System changes the order status to `Completed`
+- System records the order completion action to order history
 - System returns the updated order details
 
 ### Order Viewing Workflow
@@ -295,12 +296,3 @@ The following workflows describe the main workflows for order management.
 - System checks the user's permission and roles
 - System retrieves the order history records
 - System returns the order history records
-
-## Order Statuses
-
-- Draft
-- Pending
-- Confirmed
-- Processing
-- Completed
-- Cancelled
