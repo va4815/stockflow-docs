@@ -296,3 +296,11 @@ The following workflows describe the main workflows for order management.
 - System retrieves the order history records
 - System returns the order history records
 
+## Order Statuses
+
+- Draft
+- Pending
+- Confirmed
+- Processing
+- Completed
+- Cancelled
