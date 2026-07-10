@@ -28,3 +28,27 @@ Product Management provides the following capabilities for StockFlow.
 - Import and export product
 - Product bundles
 - Channel-specific pricing
+
+## Product Concepts
+
+Product Management uses the following concepts to describe how products are created, organised, priced, displayed, and controlled within StockFlow.
+
+### Products
+
+A product represents an item that a merchant can sell through StockFlow.
+
+Examples:
+
+Restaurants - 
+
+- Coffee
+- Spaghetti Bolognese
+- Cheese Cake
+- Chicken Burger
+
+Retail -
+
+- Logo T Shirt Mens
+- Superstar Slip On Trainers
+- Light Wash Slim Fit Jeans
+
