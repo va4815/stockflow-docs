@@ -52,3 +52,23 @@ Retail -
 - Superstar Slip On Trainers
 - Light Wash Slim Fit Jeans
 
+
+### Product Categories
+
+A product category is used to organise products into different groups.
+
+Examples:
+
+Restaurants -
+
+- Drinks
+- Main Course
+- Desserts
+- Snacks
+
+Retail -
+
+- T Shirts
+- Shoes
+- Jeans
+- Accessories
