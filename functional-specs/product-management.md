@@ -106,3 +106,16 @@ Product ownership represents which merchant organisation owns and manages a prod
 
 Each product belongs to one merchant organisation. Merchant users can use to create, view, update, or disable products belonging to their own merchant.
 
+## User Roles and Responsibilities
+
+The following roles define how users can manage the product.
+
+### Platform Owner
+
+The `Platform Owner` is responsible for supporting merchants to solve platform issues when merchants have troubles.
+
+Main responsibilities:
+- Support `Merchant` to solve product-related platform issues
+- View product information if required
+- Manage platform-level product configuration
+- Investigate technical or operational issues affecting product processing
