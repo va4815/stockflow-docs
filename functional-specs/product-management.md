@@ -79,3 +79,14 @@ Product pricing represents the unit price of the product.
 
 The product price is used by Order Management when creating orders. When an order is created, the product price should be copied into the order item so that the order history keeps the price accurates even if the product price changes later.
 
+### Product Channel Visibility
+
+Product channel visibility represents which workflows can display or sell a product.
+
+Supported workflows include:
+
+- `POS`
+- `Online Ordering`
+- `Self Checkout`
+- `Manual`
+
