@@ -137,3 +137,18 @@ Main responsibilities:
 - Review product status
 - Manage product-related access for merchant users
 
+### Merchant Manager
+
+The `Merchant Manager` is responsible for day-to-day product management within the merchant organisation.
+
+Main responsibilities:
+
+- Create products if authorised
+- View product details
+- Update product information
+- Disable products if authorised
+- Manage product categories
+- Update product pricing if authorised
+- Configure product visibility for different workflows
+- Review product availability
+- Support merchant staff with product-related issues
