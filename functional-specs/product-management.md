@@ -90,3 +90,13 @@ Supported workflows include:
 - `Self Checkout`
 - `Manual`
 
+### Product Status
+
+Product status represents different situations to be used in the system.
+
+Product statuses include:
+
+- `Active` - the product can be viewed and sold
+- `Inactive` - the product is unavailable but remains in the system
+- `Disabled` - the product is no longer used for normal selling workflows
+
