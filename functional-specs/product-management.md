@@ -100,3 +100,9 @@ Product statuses include:
 - `Inactive` - the product is unavailable but remains in the system
 - `Disabled` - the product is no longer used for normal selling workflows
 
+### Product Ownership
+
+Product ownership represents which merchant organisation owns and manages a product.
+
+Each product belongs to one merchant organisation. Merchant users can use to create, view, update, or disable products belonging to their own merchant.
+
