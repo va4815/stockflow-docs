@@ -119,3 +119,21 @@ Main responsibilities:
 - View product information if required
 - Manage platform-level product configuration
 - Investigate technical or operational issues affecting product processing
+
+### Merchant
+
+The `Merchant` has the highest level of product access within their own merchant organisation.
+
+Main responsibilities:
+
+- Create products
+- View product details
+- Update product information
+- Disable products if no longer be sold
+- Create and manage product categories
+- Assign products to categories
+- Manage product pricing
+- Manage product channel visibility
+- Review product status
+- Manage product-related access for merchant users
+
