@@ -164,3 +164,11 @@ Main responsibilities:
 - Create POS orders using the products
 - Report incorrect product information to a `Merchant` or `Merchant Manager`
 
+### Customer
+
+The `Customer` is an external user who views and selects products through customer-facing workflows.
+
+Main responsibilities:
+
+- Purchase products through `Online Ordering` or `Self Checkout`
+- View product information
