@@ -152,3 +152,15 @@ Main responsibilities:
 - Configure product visibility for different workflows
 - Review product availability
 - Support merchant staff with product-related issues
+
+### Merchant Staff
+
+The `Merchant Staff` is responsible for daily restaurant or retail operations.
+
+Main responsibilities:
+
+- View product information
+- Search and filter products
+- Create POS orders using the products
+- Report incorrect product information to a `Merchant` or `Merchant Manager`
+
