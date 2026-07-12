@@ -227,4 +227,17 @@ The Product Management module provides the following capabilities for managing p
             * Description
             * Assign products to category
         * Disable category
+- Search and Filter Product
+    * When `Merchant` searchs the product, the keyword includes:
+        * Product name
+        * Description
+        * Category
+        * Price range
+        * Product status
+        * Channel visibility
+    * When `Customer` searchs the product, the keyword includes:
+        * Product name
+        * Description
+        * Category
+        * Price range
 
