@@ -212,4 +212,19 @@ The Product Management module provides the following capabilities for managing p
 - Product Disablement
     * Disable the product from authorised users when the product is no longer be sold
     * Disabled product should not be available for new orders
+- Product Category
+    * Use product category to group products
+    * Product category may include
+        * Category name
+        * Description
+        * List of products
+        * Category visibility
+    * Product category includes the following features
+        * Create product category
+        * View product category
+        * Update product category, including
+            * Category name
+            * Description
+            * Assign products to category
+        * Disable category
 
