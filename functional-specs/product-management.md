@@ -200,3 +200,13 @@ The Product Management module provides the following capabilities for managing p
         * Description
         * Category
         * Unit price
+- Product Update
+    * Update the product information from authorised users
+    * Product updates may include:
+        * Product name
+        * Description
+        * Category
+        * Unit price
+        * Product status
+        * Channel visibility
+
