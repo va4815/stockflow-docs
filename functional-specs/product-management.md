@@ -209,4 +209,7 @@ The Product Management module provides the following capabilities for managing p
         * Unit price
         * Product status
         * Channel visibility
+- Product Disablement
+    * Disable the product from authorised users when the product is no longer be sold
+    * Disabled product should not be available for new orders
 
