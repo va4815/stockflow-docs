@@ -172,3 +172,18 @@ Main responsibilities:
 
 - Purchase products through `Online Ordering` or `Self Checkout`
 - View product information
+
+## Functional Capabilities
+
+The Product Management module provides the following capabilities for managing products, categories, pricing and visibility
+
+- Product Creation
+    * Create a product record within the merchant organisation
+    * Product information may include
+        * Product name
+        * Description
+        * Category
+        * Unit price
+        * Product status
+        * Channel visibility
+
