@@ -186,4 +186,17 @@ The Product Management module provides the following capabilities for managing p
         * Unit price
         * Product status
         * Channel visibility
-
+- Product Viewing
+    * View the product information
+    * When `Merchant` views the product, it includes:
+        * Product name
+        * Description
+        * Category
+        * Unit price
+        * Product status
+        * Channel visibility
+    * When `Customer` views the product, it includes:
+        * Product name
+        * Description
+        * Category
+        * Unit price
