@@ -265,6 +265,13 @@ The following workflows describe the main business processes for creating, maint
 - System saves the updated product information
 - System returns the updated product information
 
+### Product Viewing Workflow
+
+- User requests to view the product(s)
+- System checks the user's permission and access scope
+- System retrieves the product information by merchant ownership, product status, and channel visibility
+- System returns the permitted product information
+
 ### Product Disablement Workflow
 
 - Merchant user requests to disable a product
