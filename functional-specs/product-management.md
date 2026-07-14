@@ -272,3 +272,12 @@ The following workflows describe the main business processes for creating, maint
 - System verifies that the product belongs to the merchant organisation
 - System changes the product status to `Disabled`
 - System returns the updated product information
+
+### Category Creation Workflow
+
+- Merchant user enters the category information
+- Merchant user submits the category
+- System checks the user's permission and merchant scope
+- System validates the submitted category information
+- System creates the category
+- System returns the created category information
