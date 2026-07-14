@@ -241,3 +241,17 @@ The Product Management module provides the following capabilities for managing p
         * Category
         * Price range
 
+## Business Workflows
+
+The following workflows describe the main business processes for creating, maintaining, displaying, and managing products within StockFlow.
+
+### Product Creation Workflow
+
+- Merchant user enters the product information, including product name, category, price, status, and channel visibility
+- Merchant user submits product information to the system
+- System checks the user's permission and merchant scope
+- System validates the submitted product information
+- System verifies that the selected category belongs to the merchant organisation
+- System creates the product record
+- System returns the created product information
+
