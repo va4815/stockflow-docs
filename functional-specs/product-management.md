@@ -315,3 +315,11 @@ The following workflows describe the main business processes for creating, maint
 - System validates the selected channel visibility
 - System updates the product channel visibility
 - System returns the updated product information
+
+### Product Search Workflow
+
+- User enters search criteria(s)
+- System checks the user's permission and access scope
+- System searches products using the specified criteria
+- System applies merchant ownership, product status, and channel visibility rules
+- System returns the matching products
