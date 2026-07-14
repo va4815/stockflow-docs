@@ -255,3 +255,12 @@ The following workflows describe the main business processes for creating, maint
 - System creates the product record
 - System returns the created product information
 
+### Product Update Workflow
+
+- Merchant user selects an existing product
+- System checks the user's permission and merchant scope
+- Merchant user submits the updated product information
+- System validates the updated information
+- System verifies that the product belongs to the merchant organisation
+- System saves the updated product information
+- System returns the updated product information
