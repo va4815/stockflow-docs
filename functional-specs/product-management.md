@@ -306,3 +306,12 @@ The following workflows describe the main business processes for creating, maint
 - System verifies that both the product and category belong to the same merchant organisation
 - System associates the product with the selected category
 - System returns the updated product information
+
+### Channel Visibility Update Workflow
+
+- Merchant user selects an existing product
+- Merchant user selects an available workflows for that product
+- System checks the user's permission and merchant scope
+- System validates the selected channel visibility
+- System updates the product channel visibility
+- System returns the updated product information
