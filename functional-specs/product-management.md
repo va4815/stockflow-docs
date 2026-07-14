@@ -288,3 +288,12 @@ The following workflows describe the main business processes for creating, maint
 - System validates the submitted category information
 - System creates the category
 - System returns the created category information
+
+### Category Update Workflow
+
+- Merchant user selects an existing category
+- System checks the user's permission and merchant scope
+- Merchant user submits the updated category information
+- System validates the updated information
+- System saves the updated category
+- System returns the updated category information
