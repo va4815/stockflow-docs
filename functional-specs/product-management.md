@@ -297,3 +297,12 @@ The following workflows describe the main business processes for creating, maint
 - System validates the updated information
 - System saves the updated category
 - System returns the updated category information
+
+### Product Assignment to Category Workflow
+
+- Merchant user selects a category
+- Merchant user selects a product
+- System checks the user's permission and merchant scope
+- System verifies that both the product and category belong to the same merchant organisation
+- System associates the product with the selected category
+- System returns the updated product information
