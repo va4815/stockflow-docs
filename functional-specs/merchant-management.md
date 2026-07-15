@@ -67,3 +67,11 @@ Examples:
 - Contact number
 - Email address
 - Business address
+
+### Merchant Status
+
+Merchant status represents the operational state of a merchant organisation.
+
+- `Active` - the merchant can access and use StockFlow normally
+- `Suspended` - the merchant is temporarily prevented from using StockFlow
+- `Disabled` - the merchant is permanently disabled and can no longer use StockFlow
