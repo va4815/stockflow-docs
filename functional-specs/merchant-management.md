@@ -35,3 +35,22 @@ Merchant Management provides the following capabilities for managing merchant or
 - Merchant onboarding workflow
 - Merchant audit history
 
+## Merchant Concepts
+
+Merchant Management uses the following concepts to describe how merchant organisations are created, managed, and isolated within StockFlow.
+
+### Merchant Organisation
+
+A merchant organisation represents a business that uses StockFlow to manage its products, inventory, and orders. Each merchant organisation operates independently within the platform. Business data belonging to one merchant must not be visible or accessible to another merchant.
+
+Examples:
+
+Restaurants -
+
+- The Noodle House
+- Coffee Corner
+
+Retail -
+
+- Captain Sport
+- Fashion Outlet
