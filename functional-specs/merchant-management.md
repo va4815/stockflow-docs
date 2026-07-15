@@ -88,3 +88,13 @@ Examples of Merchant owned resources:
 - Orders
 - Merchant users
 - User groups
+
+### Merchant Configuration
+
+Merchant configuration represents the business settings that control how a merchant organisation operates.
+
+Examples:
+
+- Supported order workflows
+- Business information
+- Operational preferences
