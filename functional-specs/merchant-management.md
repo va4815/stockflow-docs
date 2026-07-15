@@ -98,3 +98,20 @@ Examples:
 - Supported order workflows
 - Business information
 - Operational preferences
+
+## User Roles and Responsibilities
+
+The following roles define how users can create, view, update, and manage merchant organisations.
+
+### Platform Owner
+
+The `Platform Owner` is responsible for operating the StockFlow platform and managing merchant organisations.
+
+Main responsibilities:
+
+- Register merchant organisations
+- View merchant information
+- Update merchant profile information
+- Suspend or disable merchant organisations where required
+- Manage merchant configuration
+- Support merchants with platform-related issues
