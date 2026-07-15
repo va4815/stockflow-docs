@@ -115,3 +115,14 @@ Main responsibilities:
 - Suspend or disable merchant organisations where required
 - Manage merchant configuration
 - Support merchants with platform-related issues
+
+### Merchant
+
+The `Merchant` is the owner of a merchant organisation and has the highest level of administrative access within that organisation.
+
+Main responsibilities:
+
+- View merchant profile information
+- Update merchant profile information
+- Review merchant operational status
+- Manage merchant users
