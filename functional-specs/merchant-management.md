@@ -126,3 +126,12 @@ Main responsibilities:
 - Update merchant profile information
 - Review merchant operational status
 - Manage merchant users
+
+### Merchant Manager
+
+The `Merchant Manager` is responsible for supporting the day-to-day administration within the merchant organisation.
+
+Main responsibilities:
+
+- Support operational administration within the merchant organisation
+- Report merchant profile or configuration issues to the `Merchant`
