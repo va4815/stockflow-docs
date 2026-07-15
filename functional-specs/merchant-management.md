@@ -54,3 +54,16 @@ Retail -
 
 - Captain Sport
 - Fashion Outlet
+
+### Merchant Profile
+
+A merchant profile stores the basic information of a merchant organisation.
+
+Examples:
+
+- Business name
+- Business registration number
+- Contact person
+- Contact number
+- Email address
+- Business address
