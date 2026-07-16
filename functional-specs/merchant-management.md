@@ -169,4 +169,12 @@ The Merchant Management module provides the following capabilities for managing 
     * Allow authorised platform users to suspend a merchant organisation
     * Suspended merchants cannot access StockFlow until the suspension is removed
     * Merchant data remains available for future re-activation
-    
+- Merchant Configuration Management
+    * Configure merchant-specific settings
+    * Merchant configuration may include:
+        * Supported order workflows
+        * Default currency
+        * Time zone
+        * Default order confirmation behaviour
+    * Allow authorised users to update merchant configuration
+
