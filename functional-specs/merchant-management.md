@@ -4,7 +4,7 @@
 
 The purpose of Merchant Management is to create, maintain, and manage merchant organisations within StockFlow.
 
-Merchant Management stores merchant information such as business profile, status, and configuration. It establishes the merchant organisation as the ownership boundary for business data, ensuring that products, inventory, orders, users, and other merchant resources are associated with the correct merchant.
+Merchant Management stores merchant information, including the business profile, status, and configuration. It establishes the merchant organisation as the ownership boundary for business data, ensuring that products, inventory, orders, users, and other merchant-owned resources are associated with the correct merchant.
 
 The module also ensures that merchant users can only access and manage resources belonging to their own merchant organisation, providing data isolation between merchants operating on the platform.
 
@@ -20,7 +20,7 @@ Merchant Management provides the following capabilities for managing merchant or
 - Manage merchant status
 - Manage merchant configuration
 - Associate merchant users with a merchant organisation
-- Restrict merchant access to their own organisation
+- Restrict merchant access to accessing their own merchant organisation
 - Isolate merchant data from other merchant organisations
 
 ### Future Scope
@@ -80,7 +80,7 @@ Merchant status represents the operational state of a merchant organisation.
 
 Merchant ownership represents which merchant organisation owns and manages the business resources.
 
-Examples of Merchant owned resources:
+Examples of Merchant-owned resources:
 
 - Products
 - Product categories
@@ -91,7 +91,7 @@ Examples of Merchant owned resources:
 
 ### Merchant Configuration
 
-Merchant configuration represents the business settings that control how a merchant organisation operates.
+Merchant configuration represents the operational settings that control how a merchant organisation uses StockFlow.
 
 Examples:
 
@@ -125,7 +125,7 @@ Main responsibilities:
 - View merchant profile information
 - Update merchant profile information
 - Review merchant operational status
-- Manage merchant users
+- Manage merchant users through Authentication and Access Control
 
 ### Merchant Manager
 
@@ -133,7 +133,7 @@ The `Merchant Manager` is responsible for supporting the day-to-day administrati
 
 Main responsibilities:
 
-- Support operational administration within the merchant organisation
+- Support the day-to-day administration of the merchant organisation
 - Report merchant profile or configuration issues to the `Merchant`
 
 ## Functional Capabilities
@@ -168,14 +168,14 @@ The Merchant Management module provides the following capabilities for managing 
 - Merchant Suspension
     * Allow authorised platform users to suspend a merchant organisation
     * Suspended merchants cannot access StockFlow until the suspension is removed
-    * Merchant data remains available for future re-activation
+    * Merchant data remains available for future reactivation
 - Merchant Configuration Management
     * Configure merchant-specific settings
     * Merchant configuration may include:
         * Supported order workflows
+        * Default order confirmation behaviour
         * Default currency
         * Time zone
-        * Default order confirmation behaviour
     * Allow authorised users to update merchant configuration
 
 ## Business Workflows
@@ -189,22 +189,23 @@ The following workflows describe the main business processes for merchant manage
 - System validates the submitted merchant information
 - System checks that the merchant does not already exist
 - System creates the merchant organisation
-- System initialises the default merchant status and configuration
+- System initialises the default merchant status and merchant configuration
 - System returns the created merchant information
 
 ### Merchant Viewing Workflow
 
 - User requests to view merchant information
-- System checks the user's permission and scope
+- System checks the user's permission and access scope
 - System verifies that the user is authorised to access the requested merchant organisation
 - System retrieves the merchant information
 - System returns the permitted merchant information
 
 ### Merchant Update Workflow
 
-- Select an exising merchant organisation if this is `Platform Owner`
+- `Platform Owner` selects the merchant organisation to update
+- `Merchant` updates their own merchant organisation
 - Authorised user submits the updated merchant information
-- System checks the user's permission and scope
+- System checks the user's permission and access scope
 - System validates the submitted information
 - System saves the updated merchant information
 - System returns the updated merchant information
@@ -212,17 +213,17 @@ The following workflows describe the main business processes for merchant manage
 ### Merchant Suspension Workflow
 
 - `Platform Owner` requests to suspend a merchant organisation
-- System verifies the Platform Owner's permission
+- System verifies the user's permission
 - System verifies that the merchant organisation exists
 - System changes the merchant status to `Suspended`
 - Suspended merchant users can no longer access StockFlow
-- Merchant data remains available for future re-activation
+- Merchant data remains available for future reactivation
 - System returns the updated merchant information
 
 ### Merchant Configuration Update Workflow
 
 - Authorised user selects the merchant configuration
-- System checks the user's permission and scope
+- System checks the user's permission and access scope
 - Authorised user updates the configuration settings
 - System validates the submitted configuration
 - System saves and applies the updated merchant configuration
