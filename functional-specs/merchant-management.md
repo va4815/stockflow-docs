@@ -199,3 +199,12 @@ The following workflows describe the main business processes for merchant manage
 - System verifies that the user is authorised to access the requested merchant organisation
 - System retrieves the merchant information
 - System returns the permitted merchant information
+
+### Merchant Update Workflow
+
+- Select an exising merchant organisation if this is `Platform Owner`
+- Authorised user submits the updated merchant information
+- System checks the user's permission and scope
+- System validates the submitted information
+- System saves the updated merchant information
+- System returns the updated merchant information
