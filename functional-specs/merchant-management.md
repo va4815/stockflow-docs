@@ -151,3 +151,11 @@ The Merchant Management module provides the following capabilities for managing 
         * Business address
         * Merchant status
         * Merchant configuration
+- Merchant Viewing
+    * View merchant information
+    * Merchant information may include:
+        * Business profile
+        * Contact information
+        * Merchant status
+        * Merchant configuration
+        
