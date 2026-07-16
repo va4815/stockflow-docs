@@ -218,3 +218,12 @@ The following workflows describe the main business processes for merchant manage
 - Suspended merchant users can no longer access StockFlow
 - Merchant data remains available for future re-activation
 - System returns the updated merchant information
+
+### Merchant Configuration Update Workflow
+
+- Authorised user selects the merchant configuration
+- System checks the user's permission and scope
+- Authorised user updates the configuration settings
+- System validates the submitted configuration
+- System saves and applies the updated merchant configuration
+- System returns the updated merchant configuration
