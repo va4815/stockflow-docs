@@ -165,4 +165,8 @@ The Merchant Management module provides the following capabilities for managing 
         * Contact information
         * Business address
         * Merchant configuration
-        
+- Merchant Suspension
+    * Allow authorised platform users to suspend a merchant organisation
+    * Suspended merchants cannot access StockFlow until the suspension is removed
+    * Merchant data remains available for future re-activation
+    
