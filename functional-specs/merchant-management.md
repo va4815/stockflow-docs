@@ -135,3 +135,19 @@ Main responsibilities:
 
 - Support operational administration within the merchant organisation
 - Report merchant profile or configuration issues to the `Merchant`
+
+## Functional Capabilities
+
+The Merchant Management module provides the following capabilities for managing merchant organisations, merchant information, and merchant configuration.
+
+- Merchant Registration
+    * Register a new merchant organisation
+    * Merchant information may include:
+        * Business name
+        * Business registration number
+        * Contact person
+        * Contact number
+        * Email address
+        * Business address
+        * Merchant status
+        * Merchant configuration
