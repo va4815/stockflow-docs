@@ -178,3 +178,16 @@ The Merchant Management module provides the following capabilities for managing 
         * Default order confirmation behaviour
     * Allow authorised users to update merchant configuration
 
+## Business Workflows
+
+The following workflows describe the main business processes for merchant management
+
+### Merchant Registration Workflow
+
+- Platform Owner enters the merchant information
+- Platform Owner submits the merchant registration request
+- System validates the submitted merchant information
+- System checks that the merchant does not already exist
+- System creates the merchant organisation
+- System initialises the default merchant status and configuration
+- System returns the created merchant information
