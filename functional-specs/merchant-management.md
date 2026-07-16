@@ -208,3 +208,13 @@ The following workflows describe the main business processes for merchant manage
 - System validates the submitted information
 - System saves the updated merchant information
 - System returns the updated merchant information
+
+### Merchant Suspension Workflow
+
+- `Platform Owner` requests to suspend a merchant organisation
+- System verifies the Platform Owner's permission
+- System verifies that the merchant organisation exists
+- System changes the merchant status to `Suspended`
+- Suspended merchant users can no longer access StockFlow
+- Merchant data remains available for future re-activation
+- System returns the updated merchant information
