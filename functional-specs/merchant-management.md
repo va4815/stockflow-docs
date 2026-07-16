@@ -191,3 +191,11 @@ The following workflows describe the main business processes for merchant manage
 - System creates the merchant organisation
 - System initialises the default merchant status and configuration
 - System returns the created merchant information
+
+### Merchant Viewing Workflow
+
+- User requests to view merchant information
+- System checks the user's permission and scope
+- System verifies that the user is authorised to access the requested merchant organisation
+- System retrieves the merchant information
+- System returns the permitted merchant information
