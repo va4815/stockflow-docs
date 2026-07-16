@@ -158,4 +158,11 @@ The Merchant Management module provides the following capabilities for managing 
         * Contact information
         * Merchant status
         * Merchant configuration
+- Merchant Update
+    * Allow authorised users to update merchant information
+    * Merchant updates may include:
+        * Business name
+        * Contact information
+        * Business address
+        * Merchant configuration
         
