@@ -83,8 +83,8 @@ The following statuses are used to indicate the current state of documentation s
 | Section | Description | Status |
 |---|---|---|
 | `README.md` | Project overview, goals, architecture summary, technical decisions, and documentation navigation | Active |
-| `architecture/` | High-level architecture design, gateway design, modular monolith design, and system diagrams | Planned |
-| `functional-specs/` | Functional requirements, business workflows and behaviour | In Progress |
+| `architecture/` | High-level architecture design, gateway design, modular monolith design, and system diagrams | In Progress |
+| `functional-specs/` | Functional requirements, business workflows and behaviour | Active |
 | `technical-specs/` | Technical design details, API design, transaction handling, and concurrency strategy | Planned |
 | `database/` | Database schema design, ERD, table relationships, and PostgreSQL schema strategy | Planned |
 | `modules/` | Module responsibilities, service boundaries, and ownership of business capabilities | Planned |
