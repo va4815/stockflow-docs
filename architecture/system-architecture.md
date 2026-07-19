@@ -24,3 +24,12 @@ StockFlow uses a shared PostgreSQL database for data storage. Merchant-owned rec
 
 The modular monolith architecture is designed to evolve as the platform grows. Individual modules can be extracted into independent services when scaling, deployment, or operational requirements justify separate ownership, allowing the system to evolve towards a microservices architecture without significant redesign.
 
+
+## Architecture Diagram
+
+This section provides an overview of the StockFlow system from different architectural perspectives. Each diagram focuses on a specific aspect of the platform, including the overall system structure, the logical organisation of the backend components, and the deployment infrastructure.
+
+- High-Level System Diagram - Illustrates the major components of the platform and how client applications communicate with the backend.
+- Logical Architecture - Describes the internal organisation of the StockFlow backend and the relationships between core modules.
+- Infrastructure Architecture - Shows how the platform is deployed and the supporting infrastructure used to run the application.
+
