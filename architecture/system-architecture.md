@@ -33,3 +33,34 @@ This section provides an overview of the StockFlow system from different archite
 - Logical Architecture - Describes the internal organisation of the StockFlow backend and the relationships between core modules.
 - Infrastructure Architecture - Shows how the platform is deployed and the supporting infrastructure used to run the application.
 
+### High-Level System Diagram
+
+The StockFlow platform uses a containerised architecture for its initial deployment. Client applications communicate with the backend through the internet. The `Nginx` acts as the reverse proxy and entry point to the system.
+
+The `StockFlow backend` and `PostgreSQL` database run as Docker containers in the same Docker environment using `docker-compose`. The backend processes business requests and stores application data in `PostgreSQL`.
+
+```mermaid
+flowchart TD
+    subgraph Clients["Client Applications"]
+        Customer["Customer Application"]
+        POS["POS Application"]
+        Admin["Administration Web Portal"]
+    end
+
+    Internet["Internet"]
+    Nginx["Nginx Reverse Proxy"]
+
+    subgraph DockerHost["Docker Environment"]
+        StockFlow["StockFlow Backend Container"]
+        Database[("PostgreSQL Container")]
+    end
+
+    Customer --> Internet
+    POS --> Internet
+    Admin --> Internet
+
+    Internet --> Nginx
+    Nginx --> StockFlow
+    StockFlow --> Database
+```
+
