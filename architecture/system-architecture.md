@@ -48,7 +48,7 @@ flowchart TD
     end
 
     Internet["Internet"]
-    Nginx["Nginx Reverse Proxy"]
+    Nginx["Nginx"]
 
     subgraph DockerHost["Docker Environment"]
         StockFlow["StockFlow Backend Container"]
@@ -62,5 +62,64 @@ flowchart TD
     Internet --> Nginx
     Nginx --> StockFlow
     StockFlow --> Database
+```
+
+### Logical Architecture
+
+The StockFlow backend uses a modular monolith architecture, organising the application into independent modules with clear responsibilities. Client requests are routed through dedicated gateway layers based on the order channel before being processed by the appropriate backend modules.
+
+Each module manages its own business logic and stores its data within a dedicated PostgreSQL schema. This provides clear data isolation, improves maintainability, and supports future scalability.
+
+```mermaid
+flowchart TD
+    subgraph OrderChannels["Order Channels"]
+        OnlineOrder["Online Ordering"]
+        
+        subgraph InStoreOrdering["In-Store Ordering"]
+            SelfCheckout["Customer Self-Checkout"]
+            POS["POS Order"]
+            MerchantStaff["Merchant Staff Manual Order"]
+        end
+       
+        BackOfficeStaff["Back-Office Staff Manual Order"]
+    end
+
+    subgraph Gateway["Gateway Layer"]
+        CustomerGateway["Customer Gateway"]
+        POSGateway["POS Gateway"]
+        AdminGateway["Admin Gateway"]
+    end
+
+    subgraph StockFlowBackend["StockFlow Backend (Modular Monolith)"]
+        AuthenticationModule["Authentication and Access Control Module"]
+        MerchantModule["Merchant Module"]
+        ProductModule["Product Module"]
+        InventoryModule["Inventory Module"]
+        OrderModule["Order Module"]
+    end
+
+    subgraph Database["PostgreSQL Database"]
+        AuthenticationSchema[("Authentication Schema")]
+        MerchantSchema[("Merchant Schema")]
+        ProductSchema[("Product Schema")]
+        InventorySchema[("Inventory Schema")]
+        OrderSchema[("Order Schema")]
+    end
+
+    OnlineOrder --> CustomerGateway
+    SelfCheckout --> POSGateway
+    POS --> POSGateway
+    MerchantStaff --> POSGateway
+    BackOfficeStaff --> AdminGateway
+
+    CustomerGateway --> StockFlowBackend
+    POSGateway --> StockFlowBackend
+    AdminGateway --> StockFlowBackend
+
+    ProductModule --> ProductSchema
+    InventoryModule --> InventorySchema
+    OrderModule --> OrderSchema
+    AuthenticationModule --> AuthenticationSchema
+    MerchantModule --> MerchantSchema
 ```
 
