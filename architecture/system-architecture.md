@@ -123,3 +123,64 @@ flowchart TD
     MerchantModule --> MerchantSchema
 ```
 
+### Infrastructure Architecture
+
+The StockFlow infrastructure is designed to run on either a local mini PC or an AWS EC2 instance using the same containerised deployment model.
+
+Incoming requests pass through the host firewall or security rules, which allow HTTP and HTTPS traffic on ports 80 and 443. Nginx acts as the reverse proxy and forwards requests to the API Gateway, which then routes them to the StockFlow backend. The backend processes the business logic and communicates with the PostgreSQL database through a private Docker network.
+
+Persistent data is stored outside the containers on the host storage, using a local SSD for the mini PC deployment or an EBS volume for AWS. This includes PostgreSQL data, database backups, application files, and logs. A scheduled backup job creates SQL dumps of the database and stores them in the backup directory.
+
+Amazon S3 is optional external storage for database backups, application files, and archived logs. This provides additional durability while keeping the core infrastructure portable between local and AWS environments.
+
+```mermaid
+flowchart TD
+    Users["Users"]
+    Internet["Internet / Local Network"]
+
+    subgraph HostEnv["Deployment Host\n(Mini PC or AWS EC2 Instance)"]
+
+        Firewall["Firewall / Security Rules\n(Allow ports 80 & 443)"]
+
+        subgraph DockerEnv["Docker Environment"]
+            subgraph DockerNetwork["Private Docker Network"]
+                Nginx["Nginx (Container)"]
+                APIGateway["API Gateway (Container)"]
+                StockFlowBackend["StockFlow Backend (Container)"]
+                Database[("PostgreSQL (Container)")]
+                DatabaseBackupJob["Database Backup Cron Job"]
+            end
+        end
+
+        subgraph PersistentStorage["Persistent Storage (Local SSD / AWS EBS)"]
+            PostgreSQLData["PostgreSQL Data"]
+            DatabaseBackup["Database Backups\n(SQL dump files)"]
+            AppData["Application Data\n(Image, csv, etc)"]
+            AppLog["Application Logs"]
+        end
+        
+    end
+
+    subgraph ExternalStorage["Optional External Storage"]
+        S3[("AWS S3")]
+    end
+
+    Users --> Internet
+    Internet --> Firewall
+    Firewall --> Nginx
+    Nginx --> APIGateway
+    APIGateway --> StockFlowBackend
+    StockFlowBackend --> Database
+
+    Database -. mount .-> PostgreSQLData
+    DatabaseBackupJob -->|run dump| Database
+    DatabaseBackupJob -. write backup .-> DatabaseBackup
+    
+    StockFlowBackend -. mount .-> AppData
+    StockFlowBackend -. write logs .-> AppLog
+    Nginx -. write access and error logs .-> AppLog
+
+    DatabaseBackupJob -. upload backup .-> S3
+    StockFlowBackend -. upload application files .-> S3
+    AppLog -. archive logs .-> S3
+```
