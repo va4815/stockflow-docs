@@ -152,7 +152,7 @@ flowchart TD
             end
         end
 
-        subgraph PersistentStorage["Persistent Storage (Local SSD / AWS EBS)"]
+        subgraph PersistentStorage["Persistent Storage (Local SSD / AWS EBS & RDS)"]
             PostgreSQLData["PostgreSQL Data"]
             DatabaseBackup["Database Backups\n(SQL dump files)"]
             AppData["Application Data\n(Image, csv, etc)"]
@@ -184,3 +184,19 @@ flowchart TD
     StockFlowBackend -. upload application files .-> S3
     AppLog -. archive logs .-> S3
 ```
+
+## Architectural Layers
+
+The StockFlow platform is organised into three primary architectural layers: the `Gateway Layer`, `Backend Modules`, and `Data Layer`. Each layer has a distinct responsibility, promoting clear separation of concerns, maintainability, and future scalability.
+
+### Gateway Layer
+
+The Gateway Layer serves as the entry point for all client requests. It receives requests from different order channels, performs request validation and authentication, and routes requests to the appropriate backend modules based on the client type and business operation.
+
+### Backend Modules
+
+The Backend Modules implement the core business capabilities of the StockFlow platform. Each module is responsible for a specific business domain, encapsulating its own business logic while collaborating with other modules through well-defined interfaces.
+
+### Data Layer
+
+The Data Layer is responsible for persisting application data in PostgreSQL. Each backend module owns its corresponding database schema, providing clear data ownership and isolation while supporting maintainability and future evolution of the system.
