@@ -200,3 +200,42 @@ The Backend Modules implement the core business capabilities of the StockFlow pl
 ### Data Layer
 
 The Data Layer is responsible for persisting application data in PostgreSQL. Each backend module owns its corresponding database schema, providing clear data ownership and isolation while supporting maintainability and future evolution of the system.
+
+## Request Flow
+
+The request flow illustrates how client requests are processed within the StockFlow platform. Requests from different order channels enter the system through the appropriate gateway, where they are authenticated and routed to the relevant backend modules. The backend modules execute the required business logic, interact with the data layer when necessary, and return the response to the client.
+
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Gateway
+    participant Backend as StockFlow Backend
+    participant Database as PostgreSQL
+
+    User->>Gateway: Request
+    Gateway->>Backend: Authenticate & Route
+    Backend->>Database: Read / Write Data
+    Database-->>Backend: Data
+    Backend-->>Gateway: Response
+    Gateway-->>User: Response
+
+```
+
+
+```mermaid
+flowchart LR
+    User["User"]
+    Gateway["Gateway"]
+    Backend["Backend Modules"]
+    Database[("PostgreSQL")]
+
+    User -->|Request| Gateway
+    Gateway -->|Authenticate & Route| Backend
+    Backend -->|Read / Write| Database
+    Database --> Backend
+    Backend -->|Response| Gateway
+    Gateway -->|Response| User
+
+```
+
