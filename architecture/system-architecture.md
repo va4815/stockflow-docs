@@ -239,3 +239,31 @@ flowchart LR
 
 ```
 
+## Module Communication
+
+The Gateway Layer routes authenticated requests to the appropriate backend module based on the requested operation. Each module manages its own business responsibilities and communicates with other modules through well-defined interfaces only when required.
+
+For example, the Order Module may retrieve product information, validate the merchant context, and reserve or update inventory as part of an order workflow. These controlled interactions maintain clear module boundaries and support cross-domain business operations.
+
+```mermaid
+flowchart LR
+    User["User"]
+    Gateway["Gateway Layer"]
+    Authentication["Authentication and Access Control Module"]
+    Merchant["Merchant Module"]
+    Product["Product Module"]
+    Inventory["Inventory Module"]
+    Order["Order Module"]
+
+    User -->|"Request"| Gateway
+    Gateway -->|"Validate identity and access"| Authentication
+    Gateway -->|"Retrieve or update merchant information"| Merchant
+    Gateway -->|"Retrieve or update product information"| Product
+    Gateway -->|"Retrieve or update inventory information"| Inventory
+    Gateway -->|"Create or manage orders"| Order
+
+    Order -. "Validate merchant context" .-> Merchant
+    Order -. "Retrieve product information" .-> Product
+    Order -. "Reserve or update stock" .-> Inventory
+```
+
