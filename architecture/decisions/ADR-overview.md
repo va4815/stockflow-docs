@@ -20,5 +20,5 @@ The ADRs are intended to document significant architectural decisions rather tha
 
 | ADR | Title | Status | Created | Updated |
 |-----|-------|--------|---------|---------|
-
+| ADR-001 | Modular Monolith Architecture | Accepted | 22 Jul 2026 | 22 Jul 2026 |
 
