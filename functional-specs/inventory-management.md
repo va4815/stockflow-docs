@@ -4,7 +4,7 @@
 
 Inventory Management is to maintain accurate and consistent stock information across StockFlow’s supported channels.
 
-Inventory Management tracks stock quantities for merchant products, including on-hand, reserved, and available stock. It supports stock additions, reservations, releases, deductions, adjustments, and movement history while ensuring that inventory changes remain associated with the correct merchant and stock location.
+Inventory Management tracks stock quantities for products owned by an organisation, including on-hand, reserved, and available stock. It supports stock additions, reservations, releases, deductions, adjustments, and movement history while ensuring that inventory changes remain associated with the correct organisation and stock location.
 
 The module also prevents overselling by validating stock availability and handling concurrent inventory updates during order processing.
 
@@ -14,9 +14,9 @@ Inventory Management provides the following capabilities for StockFlow.
 
 ### Initial Scope
 
-- Create and maintain inventory records for merchant products
+- Create and maintain inventory records for organisation products
 - Check on-hand, reserved, and available stock quantities
-- Add stock to inventory record
+- Add stock to an inventory record
 - Check stock availability
 - Reserve stock during order processing
 - Release reserved stock when an order is cancelled or cannot be completed
@@ -27,7 +27,7 @@ Inventory Management provides the following capabilities for StockFlow.
 - View inventory movement history
 - Prevent stock quantities from becoming negative
 - Handle concurrent stock updates to reduce the risk of overselling
-- Restrict inventory access to the relevant merchant organisation
+- Restrict inventory access to the relevant organisation
 
 ### Future Scope
 
@@ -40,7 +40,7 @@ Inventory Management uses the following concepts to track stock ownership, locat
 
 ### Inventory Items
 
-Inventory item represents the stock record for a merchant product.
+Inventory item represents the stock record for an organisation-owned product at a specific stock locaiton.
 
 Examples:
 
@@ -72,9 +72,9 @@ Stock quantities represent the number of units recorded for an inventory item.
 
 ### Available, Reserved, and On-Hand Stock
 
-* **On-hand** - The total physical quantity currently recorded at stock location
-* **Reserved** - Allocated stock to orders but not yet deducted from the physical stock quantity
-* **Available stock** - The quantity remains available for new orders
+- **On-hand stock** - The total physical quantity currently recorded at stock location
+- **Reserved stock** - Allocated stock to orders but not yet deducted from the physical stock quantity
+- **Available stock** - The quantity remains available for new orders
 
 
 Available stock is calculated:
@@ -115,17 +115,17 @@ The following roles define how users can access and manage the inventory.
 
 ### Platform Owner
 
-The `Platform Owner` is responsible for supporting merchants to solve platform issues when merchants have troubles.
+The `Platform Owner` is responsible for supporting organisations to solve platform issues when they have troubles.
 
 Main responsibilities:
-- Support `Merchants` to solve inventory-related platform issues
+- Support `Organisation Owner` to solve inventory-related platform issues
 - View inventory information if required
 - Manage platform-level inventory configuration
 - Investigate technical or operational issues affecting inventory processing
 
-### Merchant
+### Organisation Owner
 
-The `Merchant` has the highest level of inventory access within their own merchant organisation.
+The `Organisation Owner` has the highest level of inventory access within their own organisation.
 
 Main responsibilities:
 
@@ -135,12 +135,12 @@ Main responsibilities:
 - Add stock to inventory
 - Adjust stock
 - View inventory movement history
-- Manage merchant users' inventory access
+- Manage organisation users' inventory access
 - Review and resolve inventory difference
 
-### Merchant Manager
+### Shop Manager
 
-The `Merchant Manager` is responsible for day-to-day inventory operations within the merchant organisation.
+The `Shop Manager` is responsible for day-to-day inventory operations within their permitted shops and stock locations.
 
 Main responsibilities:
 
@@ -152,16 +152,16 @@ Main responsibilities:
 - Investigate stock difference
 - Support order processing when inventory issues occurred
 
-### Merchant Staff
+### Shop Staff
 
-The `Merchant Staff` role supports daily operations and order-processing activities.
+The `Shop Staff` role supports daily operations and order-processing activities.
 
 Main responsibilities:
 
 - View product stock availability
 - Check stock availability
 - Reserve and release stock through order-processing workflows
-- Report to `Merchant` or `Merchant Manager` to refill stocks
+- Report to `Organisation Owner` or `Shop Manager` to refill stocks
 
 ## Functional Capabilities
 
@@ -191,15 +191,15 @@ The following workflows describe the main steps of quantities change at the stoc
 
 - User selects an inventory item
 - Enter the quantity to be added to the item
-- System checks the user's permission and merchant scope
+- System checks the user's permission and organisation scope
 - System validates the quantity if it is greater than zero
 - System updates on-hand quantity
 - System makes an inventory movement record on the item
 
 ### Stock Reservation Workflow
 
-- Customer or merchant staff creates an order
-- System verifies the items belong to the merchant
+- Customer or authorised organisation user creates an order
+- System verifies the items belong to the organisation
 - System checks available stock on the inventory item
 - System updates reserved stocks (increase)
 - System udpates available stocks (decrease)
@@ -209,14 +209,14 @@ The following workflows describe the main steps of quantities change at the stoc
 
 - User selects an inventory item
 - Enter the quantity to be deducted to the item
-- System checks the user's permission and merchant scope
+- System checks the user's permission and organisation scope
 - System validates the quantity if it is greater than zero
 - System updates on-hand quantity
 - System makes an inventory movement record on the item
 
 ### Stock Release Workflow
 
-- Merchant staff requests to release the stock from the order
+- Shop staff requests to release the stock from the order
 - System verifies the permission from the request
 - System checks the quantity would be exceed the reserved quantity
 - System updates reserved stocks (decrease)
@@ -227,7 +227,7 @@ The following workflows describe the main steps of quantities change at the stoc
 
 - User selects an inventory item
 - Enter the quantity to be adjusted to the item
-- System checks the user's permission and merchant scope
+- System checks the user's permission and organisation scope
 - System validates the requested quantity
 - System increases or decreases on-hand quantity
 - System re-calculates available stocks
@@ -235,7 +235,7 @@ The following workflows describe the main steps of quantities change at the stoc
 
 ### Order Cancellation Workflow
 
-- Merchant staff or customer request to cancel the items
+- Shop staff or customer request to cancel the items
 - System verifies the permission from the request
 - System updates reserved stocks (decrease) which not deducted yet
 - System udpates available stocks (increase)
