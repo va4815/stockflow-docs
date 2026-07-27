@@ -8,7 +8,7 @@ StockFlow adopts a modular monolith architecture, where the backend is organised
 
 The core business modules are:
 
-- Merchant Management
+- Organisation Management
 - Authentication and Access Control
 - Product Management
 - Inventory Management
@@ -20,7 +20,7 @@ All client applications access the platform through dedicated gateways:
 - `Customer Gateway` - Handles customer requests from `Online Ordering` and `Self Checkout`.
 - `Admin Gateway` - Handles requests from back-office and merchant staff for administrative and manual operations that are not performed through the POS or customer-facing workflows.
 
-StockFlow uses a shared PostgreSQL database for data storage. Merchant-owned records are associated with a `merchant_id` to ensure that users can only access data belonging to their own merchant organisation. PostgreSQL schemas are used to separate business modules, providing logical boundaries between modules while maintaining a single shared database.
+StockFlow uses a shared PostgreSQL database for data storage. Organisation-owned records are associated with a `organisation_id` to ensure that users can only access data belonging to their own organisation. PostgreSQL schemas are used to separate business modules, providing logical boundaries between modules while maintaining a single shared database.
 
 The modular monolith architecture is designed to evolve as the platform grows. Individual modules can be extracted into independent services when scaling, deployment, or operational requirements justify separate ownership, allowing the system to evolve towards a microservices architecture without significant redesign.
 
@@ -78,7 +78,7 @@ flowchart TD
         subgraph InStoreOrdering["In-Store Ordering"]
             SelfCheckout["Customer Self-Checkout"]
             POS["POS Order"]
-            MerchantStaff["Merchant Staff Manual Order"]
+            MerchantStaff["Shop Staff Manual Order"]
         end
        
         BackOfficeStaff["Back-Office Staff Manual Order"]
@@ -92,7 +92,7 @@ flowchart TD
 
     subgraph StockFlowBackend["StockFlow Backend (Modular Monolith)"]
         AuthenticationModule["Authentication and Access Control Module"]
-        MerchantModule["Merchant Module"]
+        OrganisationModule["Organisation Module"]
         ProductModule["Product Module"]
         InventoryModule["Inventory Module"]
         OrderModule["Order Module"]
@@ -100,7 +100,7 @@ flowchart TD
 
     subgraph Database["PostgreSQL Database"]
         AuthenticationSchema[("Authentication Schema")]
-        MerchantSchema[("Merchant Schema")]
+        OrganisationSchema[("Organisation Schema")]
         ProductSchema[("Product Schema")]
         InventorySchema[("Inventory Schema")]
         OrderSchema[("Order Schema")]
@@ -120,7 +120,7 @@ flowchart TD
     InventoryModule --> InventorySchema
     OrderModule --> OrderSchema
     AuthenticationModule --> AuthenticationSchema
-    MerchantModule --> MerchantSchema
+    OrganisationModule --> OrganisationSchema
 ```
 
 ### Infrastructure Architecture
@@ -243,27 +243,26 @@ flowchart LR
 
 The Gateway Layer routes authenticated requests to the appropriate backend module based on the requested operation. Each module manages its own business responsibilities and communicates with other modules through well-defined interfaces only when required.
 
-For example, the Order Module may retrieve product information, validate the merchant context, and reserve or update inventory as part of an order workflow. These controlled interactions maintain clear module boundaries and support cross-domain business operations.
+For example, the Order Module may retrieve product information, validate the organisation context, and reserve or update inventory as part of an order workflow. These controlled interactions maintain clear module boundaries and support cross-domain business operations.
 
 ```mermaid
 flowchart LR
     User["User"]
     Gateway["Gateway Layer"]
     Authentication["Authentication and Access Control Module"]
-    Merchant["Merchant Module"]
+    Organisation["Organisation Module"]
     Product["Product Module"]
     Inventory["Inventory Module"]
     Order["Order Module"]
 
     User -->|"Request"| Gateway
     Gateway -->|"Validate identity and access"| Authentication
-    Gateway -->|"Retrieve or update merchant information"| Merchant
+    Gateway -->|"Retrieve or update organisation information"| Organisation
     Gateway -->|"Retrieve or update product information"| Product
     Gateway -->|"Retrieve or update inventory information"| Inventory
     Gateway -->|"Create or manage orders"| Order
 
-    Order -. "Validate merchant context" .-> Merchant
+    Order -. "Validate organisation context" .-> Organisation
     Order -. "Retrieve product information" .-> Product
     Order -. "Reserve or update stock" .-> Inventory
 ```
-
