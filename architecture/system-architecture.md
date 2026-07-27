@@ -321,3 +321,21 @@ flowchart TD
     OrderSchema --> OrderTable
     
 ```
+
+## Data Architecture
+
+StockFlow uses a single PostgreSQL database to store all application data. The database is organised into separate schemas that align with the backend modules, providing clear ownership and separation of responsibilities while simplifying deployment and operations.
+
+Each backend module owns its corresponding database schema and is responsible for managing its own tables and business data. Modules access their own schema directly and communicate with other modules through the application layer rather than querying another module's tables.
+
+```mermaid
+flowchart TD
+    Database[("PostgreSQL Database")]
+
+    Database --> Authentication["Authentication Schema"]
+    Database --> Organisation["Organisation Schema"]
+    Database --> Product["Product Schema"]
+    Database --> Inventory["Inventory Schema"]
+    Database --> Order["Order Schema"]
+```
+
