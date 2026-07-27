@@ -266,3 +266,58 @@ flowchart LR
     Order -. "Retrieve product information" .-> Product
     Order -. "Reserve or update stock" .-> Inventory
 ```
+
+## Multi-Tenant Architecture
+
+StockFlow uses a shared multi-tenant architecture. All organisations use the same backend application and PostgreSQL database.
+
+Each organisation represents a tenant. Organisation-owned records include an `organisation_id` that identifies the owning organisation and serves as the tenant isolation boundary.
+
+```mermaid
+flowchart TD
+    Database[("PostgreSQL Database")]
+    
+    AuthenticationSchema["Authentication Schema"]
+    OrganisationSchema["Organisation Schema"]
+    InventorySchema["Inventory Schema"]
+    ProductSchema["Product Schema"]
+    OrderSchema["Order Schema"]
+
+    Database --> AuthenticationSchema
+    Database --> OrganisationSchema
+    Database --> InventorySchema
+    Database --> ProductSchema
+    Database --> OrderSchema
+
+    subgraph AuthTable["Authentication Tables"]
+        AuthA["Organisation A Records"]
+        AuthB["Organisation B Records"]
+    end
+
+    subgraph OrgTable["Organisation Tables"]
+        OrgA["Organisation A Records"]
+        OrgB["Organisation B Records"]
+    end
+
+    subgraph InventoryTable["Inventory Tables"]
+        InventoryA["Organisation A Records"]
+        InventoryB["Organisation B Records"]
+    end
+
+    subgraph ProductTable["Product Tables"]
+        ProdA["Organisation A Records"]
+        ProdB["Organisation B Records"]
+    end
+
+    subgraph OrderTable["Order Tables"]
+        OrderA["Organisation A Records"]
+        OrderB["Organisation B Records"]
+    end
+
+    AuthenticationSchema --> AuthTable
+    OrganisationSchema --> OrgTable
+    InventorySchema --> InventoryTable
+    ProductSchema --> ProductTable
+    OrderSchema --> OrderTable
+    
+```
