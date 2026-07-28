@@ -339,3 +339,22 @@ flowchart TD
     Database --> Order["Order Schema"]
 ```
 
+## Security Architecture
+
+StockFlow architecture uses different layers to protect system resources and enforce tenant isolation. Every request must be authenticated and authorised before accessing backend modules.
+
+The Gateway Layer is the entry point for all client requests. After successful authentication, the Authentication and Access Control module establishes the user's security context, including the authenticated user, organisation, roles, and authorities. Backend modules use this context to authorise operations and restrict access to organisation-owned resources.
+
+```mermaid
+flowchart LR
+    User[User]
+    Gateway[Gateways]
+    Auth[Authentication & Access Control]
+    BackendModule[Backend Module]
+    Database[("PostgreSQL Database")]
+
+    User --> Gateway
+    Gateway --> Auth
+    Auth --> BackendModule
+    BackendModule --> Database
+```
