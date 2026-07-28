@@ -20,7 +20,7 @@ All client applications access the platform through dedicated gateways:
 - `Customer Gateway` - Handles customer requests from `Online Ordering` and `Self Checkout`.
 - `Admin Gateway` - Handles requests from back-office and merchant staff for administrative and manual operations that are not performed through the POS or customer-facing workflows.
 
-StockFlow uses a shared PostgreSQL database for data storage. Organisation-owned records are associated with a `organisation_id` to ensure that users can only access data belonging to their own organisation. PostgreSQL schemas are used to separate business modules, providing logical boundaries between modules while maintaining a single shared database.
+StockFlow uses a shared PostgreSQL database for data storage. Organisation-owned records are associated with an `organisation_id` to ensure that users can only access data belonging to their own organisation. PostgreSQL schemas are used to separate business modules, providing logical boundaries between modules while maintaining a single shared database.
 
 The modular monolith architecture is designed to evolve as the platform grows. Individual modules can be extracted into independent services when scaling, deployment, or operational requirements justify separate ownership, allowing the system to evolve towards a microservices architecture without significant redesign.
 
@@ -152,7 +152,7 @@ flowchart TD
             end
         end
 
-        subgraph PersistentStorage["Persistent Storage (Local SSD / AWS EBS & RDS)"]
+        subgraph PersistentStorage["Persistent Storage (Local SSD / AWS EBS)"]
             PostgreSQLData["PostgreSQL Data"]
             DatabaseBackup["Database Backups\n(SQL dump files)"]
             AppData["Application Data\n(Image, csv, etc)"]
@@ -193,9 +193,9 @@ The StockFlow platform is organised into three primary architectural layers: the
 
 The Gateway Layer serves as the entry point for all client requests. It receives requests from different order channels, performs request validation and authentication, and routes requests to the appropriate backend modules based on the client type and business operation.
 
-### Backend Modules
+### Business Modules
 
-The Backend Modules implement the core business capabilities of the StockFlow platform. Each module is responsible for a specific business domain, encapsulating its own business logic while collaborating with other modules through well-defined interfaces.
+The Business Modules implement the core business capabilities of the StockFlow platform. Each module is responsible for a specific business domain, encapsulating its own business logic while collaborating with other modules through well-defined interfaces.
 
 ### Data Layer
 
@@ -219,23 +219,6 @@ sequenceDiagram
     Database-->>Backend: Data
     Backend-->>Gateway: Response
     Gateway-->>User: Response
-
-```
-
-
-```mermaid
-flowchart LR
-    User["User"]
-    Gateway["Gateway"]
-    Backend["Backend Modules"]
-    Database[("PostgreSQL")]
-
-    User -->|Request| Gateway
-    Gateway -->|Authenticate & Route| Backend
-    Backend -->|Read / Write| Database
-    Database --> Backend
-    Backend -->|Response| Gateway
-    Gateway -->|Response| User
 
 ```
 
