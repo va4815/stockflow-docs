@@ -8,8 +8,8 @@ title: Authentication and Access Control Schema
 erDiagram
     t_user_account {
         uuid id PK
-        varchar(100) username UNIQUE
-        varchar(255) email UNIQUE
+        varchar(100) username UK
+        varchar(255) email UK
         
         varchar(255) display_name
         varchar(255) hashed_pwd
@@ -41,7 +41,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
     }
-    t_user_account ||..o| t_user_profile : user_account_id
+    t_user_account ||..|| t_user_profile : user_account_id
 
     t_user_address {
         uuid id PK
