@@ -17,6 +17,7 @@ flowchart LR
     subgraph AuthenticationSchema["Authentication Schema"]
         Role["role"]
         UserAccount["user_account"]
+        UserAccountGroup["user_account_group"]
         Permission["permission"]
         RolePermission["role_permission"]
     end
@@ -57,4 +58,10 @@ flowchart LR
     PostgreSQL --> OrderSchema
 
 ```
+
+## Module Database Designs
+
+### Authentication
+- Owns `user account`, `profile`, `user group`, `role`, and `permission` tables for authentication.
+- Link to [`modules/authentication-erd.md`](./modules/authentication-erd.md)
 
