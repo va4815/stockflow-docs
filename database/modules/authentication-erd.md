@@ -64,8 +64,16 @@ erDiagram
 
     t_user_account_group {
         uuid id PK
-        varchar(255) name
-        enum status
+
+        varchar(100) name
+        varchar(255) description
+        
+        varchar(20) status
+
+        timestamp created_at
+        timestamp updated_at
+        uuid created_by
+        uuid updated_by
     }
 
     t_user_account_group_mapping {
