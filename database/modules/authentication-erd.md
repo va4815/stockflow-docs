@@ -17,12 +17,15 @@ erDiagram
         
         varchar(20) status
         timestamp last_login_at
+
+        int role_id FK "Not Null"
         
         timestamp created_at
         timestamp updated_at
         uuid created_by
         uuid updated_by
     }
+    t_user_account }o..|| t_role : role_id
 
     t_user_profile {
         uuid id PK
@@ -85,4 +88,38 @@ erDiagram
     t_user_account_group ||..o{ t_user_account_group_mapping : user_account_group_id
 
 
+    t_role {
+        int id PK
+        varchar(100) code UK
+        varchar(100) name
+        varchar(255) description
+    }
+
+    t_permission {
+        int id PK
+        varchar(100) code UK
+    }
+
+    t_user_account_permission_mapping {
+        uuid user_account_id PK, FK
+        int permission_id PK, FK
+    }
+    t_user_account ||..o{ t_user_account_permission_mapping : user_account_id
+    t_permission ||..o{ t_user_account_permission_mapping : permission_id
+
+    t_role_permission_mapping {
+        int role_id PK, FK
+        int permission_id PK, FK
+    }
+    t_role ||..o{ t_role_permission_mapping : role_id
+    t_permission ||..o{ t_role_permission_mapping : permission_id
+
+    t_user_account_group_permission_mapping {
+        uuid user_account_group_id PK, FK
+        int permission_id PK, FK
+    }
+    t_user_account_group ||..o{ t_user_account_group_permission_mapping : user_account_group_id
+    t_permission ||..o{ t_user_account_group_permission_mapping : permission_id
+
+    
 ```
