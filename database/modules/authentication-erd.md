@@ -65,6 +65,21 @@ erDiagram
     }
     t_user_account ||..o{ t_user_address : user_account_id
 
+    t_user_setting {
+        uuid id PK
+        uuid user_account_id FK, UK
+        varchar(10) locale_code FK
+    }
+    t_user_account ||..|| t_user_setting : user_account_id
+    t_user_setting ||..o{ t_locale : locale_code
+
+    t_locale {
+        int id PK
+        varchar(10) code
+        varchar(100) name
+        boolean enabled
+    }
+
     t_user_account_group {
         uuid id PK
 
