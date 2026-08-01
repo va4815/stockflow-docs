@@ -65,6 +65,8 @@ title: Authentication and Access Control Schema
 erDiagram
     t_user_account {
         uuid id PK
+        uuid organisation_id "Not Null"
+
         varchar(100) username UK
         varchar(255) email UK
         
@@ -108,9 +110,8 @@ erDiagram
         uuid user_account_id FK
 
         varchar(100) country
-        varchar(100) state
         varchar(100) city
-        varchar(100) postcode
+        varchar(20) postcode
 
         varchar(255) address_line_1
         varchar(255) address_line_2
@@ -128,7 +129,7 @@ erDiagram
         varchar(10) locale_code FK
     }
     t_user_account ||..|| t_user_setting : user_account_id
-    t_user_setting ||..o{ t_locale : locale_code
+    t_locale ||..o{ t_user_setting : locale_code
 
     t_locale {
         int id PK
@@ -139,6 +140,7 @@ erDiagram
 
     t_user_account_group {
         uuid id PK
+        uuid organisation_id "Not Null"
 
         varchar(100) name
         varchar(255) description
@@ -162,6 +164,8 @@ erDiagram
 
     t_role {
         int id PK
+        uuid organisation_id "Not Null"
+
         varchar(100) code UK
         varchar(100) name
         varchar(255) description
