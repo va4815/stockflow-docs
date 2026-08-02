@@ -3,7 +3,7 @@
 
 ```mermaid
 ---
-title: Organisaton Schema
+title: Organisation Schema
 ---
 erDiagram
 
@@ -24,9 +24,9 @@ erDiagram
         uuid updated_by
     }
 
-    t_organisaton_profile {
+    t_organisation_profile {
         uuid id PK
-        uuid organisaton_id FK "Not Null"
+        uuid organisation_id FK, UK "Not Null"
 
         varchar(100) business_registration_number
         varchar(50) tax_registration_number
@@ -43,5 +43,45 @@ erDiagram
 
 
     }
-    t_organisation ||..|| t_organisaton_profile : organisaton_id
+    t_organisation ||..|| t_organisation_profile : organisation_id
+
+    t_shop {
+        uuid id PK
+        uuid organisation_id FK "Not Null"
+
+        varchar(100) code
+        varchar(255) name
+        varchar(20) status
+
+        timestamp created_at
+        timestamp updated_at
+        uuid created_by
+        uuid updated_by
+    }
+    t_organisation ||--o{ t_shop : organisation_id
+
+    t_shop_profile {
+        int id PK
+        uuid shop_id FK, UK "Not Null"
+
+        varchar(10) phone_country_code
+        varchar(30) phone_number
+
+        varchar(100) country
+        varchar(100) city
+        varchar(20) postcode
+
+    }
+    t_shop ||--|| t_shop_profile : shop_id
+
+    t_shop_setting {
+        int id PK
+        uuid shop_id FK, UK "Not Null"
+
+        varchar(10) language_code "Not Null"
+        varchar(100) order_prefix "Not Null"
+
+    }
+    t_shop ||--|| t_shop_setting : shop_id
+
 ```
