@@ -126,10 +126,10 @@ erDiagram
     t_user_setting {
         uuid id PK
         uuid user_account_id FK, UK
-        varchar(10) locale_code FK
+        varchar(10) language_code FK
     }
     t_user_account ||..|| t_user_setting : user_account_id
-    t_locale ||..o{ t_user_setting : locale_code
+    t_locale ||..o{ t_user_setting : language_code
 
     t_locale {
         int id PK
