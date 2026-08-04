@@ -40,8 +40,6 @@ erDiagram
 
         varchar(255) address_line_1
         varchar(255) address_line_2
-
-
     }
     t_organisation ||..|| t_organisation_profile : organisation_id
 
@@ -49,9 +47,9 @@ erDiagram
         uuid id PK
         uuid organisation_id FK "Not Null"
 
-        varchar(100) code
-        varchar(255) name
-        varchar(20) status
+        varchar(100) code "Not Null"
+        varchar(255) name "Not Null"
+        varchar(20) status "Not Null"
 
         timestamp created_at
         timestamp updated_at
@@ -71,6 +69,13 @@ erDiagram
         varchar(100) city
         varchar(20) postcode
 
+        varchar(255) address_line_1
+        varchar(255) address_line_2
+
+        timestamp created_at
+        timestamp updated_at
+        uuid created_by
+        uuid updated_by
     }
     t_shop ||--|| t_shop_profile : shop_id
 
@@ -79,9 +84,12 @@ erDiagram
         uuid shop_id FK, UK "Not Null"
 
         varchar(10) language_code "Not Null"
-        varchar(100) order_prefix "Not Null"
+        varchar(20) order_prefix "Not Null"
 
+        timestamp created_at
+        timestamp updated_at
+        uuid created_by
+        uuid updated_by
     }
     t_shop ||--|| t_shop_setting : shop_id
-
 ```
