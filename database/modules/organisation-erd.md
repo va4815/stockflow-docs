@@ -69,6 +69,21 @@ erDiagram
     }
     t_organisation ||..|| t_organisation_profile : organisation_id
 
+    t_currency {
+        varchar(3) code PK
+
+        varchar(100) name "Not Null"
+        varchar(10) symbol
+        smallint decimal_places "Not Null"
+        boolean active "Not Null"
+
+        timestamp created_at
+        timestamp updated_at
+        uuid created_by
+        uuid updated_by
+    }
+    t_currency ||..o{ t_shop : currency_code
+
     t_shop {
         uuid id PK
         uuid organisation_id FK "Not Null"
@@ -76,6 +91,8 @@ erDiagram
         varchar(100) code "Not Null"
         varchar(255) name "Not Null"
         varchar(20) status "Not Null"
+
+        varchar(3) currency_code FK "Not Null"
 
         timestamp created_at
         timestamp updated_at
