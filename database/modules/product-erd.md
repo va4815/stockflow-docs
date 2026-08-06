@@ -1,4 +1,37 @@
+# Product ER Diagram
 
+## Table Explanation
+
+This section describes the purpose and relationships of each table in the Product schema.
+
+### t_category
+
+- Each `Category` can have multiple `Product`
+
+
+### t_product
+
+- A `Product` can be assigned to multiple `Category`
+- A `Product` can be assigned to multiple `Shop`
+- Each `Product` can have multiple `Product Price`
+
+### t_product_price
+
+- Each `Product Price` belongs to one `Product`
+- Each `Product Price` belongs to one `Sales Channel`
+
+### t_sales_channel
+
+- Each `Sales Channel` can have multiple `Product Price`
+
+
+### t_material
+
+- Each `Material` can have multiple `Material Stock`
+
+### t_material_stock
+
+- Each `Material Stock` belongs to one `Material`
 
 
 ```mermaid
