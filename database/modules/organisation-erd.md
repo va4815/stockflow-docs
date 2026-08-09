@@ -8,16 +8,24 @@ This section describes the purpose and relationships of each table in the Organi
 
 - Each `Organisation` has one `Organisation Profile`
 - Each `Organisation` can have multiple `Shop`
+- Each `Organisation` can have multiple `Organisation Translation`
+- Each `Organisation` belongs to one `Language`
 
 ### t_organisation_profile
 
 - Each `Organisation Profile` belongs to one `Organisation`
+
+### t_organisation_translation
+
+- Each `Organisation Translation` belongs to one `Organisation`
 
 ### t_shop
 
 - Each `Shop` belongs to one `Organisation`
 - Each `Shop` has one `Shop Profile`
 - Each `Shop` has one `Shop Setting`
+- Each `Shop` can have multiple `Shop Translation`
+- Each `Shop` belongs to one `Currency`
 
 ### t_shop_profile
 
@@ -26,6 +34,20 @@ This section describes the purpose and relationships of each table in the Organi
 ### t_shop_setting
 
 - Each `Shop Setting` belongs to one `Shop`
+
+### t_shop_translation
+
+- Each `Shop Translation` belongs to one `Shop`
+- Each `Shop Translation` belongs to one `Language`
+
+### t_currency
+
+- Each `Currency` can have multiple `Shop`
+
+### t_language
+
+- Each `Language` can have multiple `Organisation`
+- Each `Language` can have multiple `Shop Translation`
 
 ```mermaid
 ---
