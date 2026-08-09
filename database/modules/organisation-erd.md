@@ -126,7 +126,7 @@ erDiagram
         int id PK
         uuid shop_id FK, UK "Not Null"
 
-        varchar(10) language_code "Not Null"
+        varchar(10) default_language_code "Not Null"
         varchar(20) order_prefix "Not Null"
 
         timestamp created_at

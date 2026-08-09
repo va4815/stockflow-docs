@@ -45,23 +45,36 @@ erDiagram
         uuid organisation_id "Not Null"
 
         varchar(100) code "Not Null"
-        varchar(255) name "Not Null"
-        varchar(255) description
         varchar(20) status "Not Null"
 
         timestamp created_at
         timestamp updated_at
         uuid created_by
-        uuid updated_by        
+        uuid updated_by
     }
+
+    t_category_translation {
+        uuid id PK
+        uuid category_id FK "Not Null"
+
+        uuid organisation_id "Not Null"
+
+        varchar(10) language_code "Not Null"
+        varchar(255) name "Not Null"
+        varchar(255) description
+
+        timestamp created_at
+        timestamp updated_at
+        uuid created_by
+        uuid updated_by
+    }
+    t_category ||..o{ t_category_translation : category_id
 
     t_product {
         uuid id PK
         uuid organisation_id "Not Null"
 
-        varchar(100) code "Not Null"
-        varchar(255) name "Not Null"
-        varchar(255) description
+        varchar(100) code "Not Null"        
         varchar(20) status "Not Null"
 
         decimal default_price
@@ -71,6 +84,23 @@ erDiagram
         uuid created_by
         uuid updated_by
     }
+
+    t_product_translation {
+        uuid id PK
+        uuid product_id FK "Not Null"
+
+        uuid organisation_id "Not Null"
+
+        varchar(10) language_code "Not Null"
+        varchar(255) name "Not Null"
+        varchar(255) description
+
+        timestamp created_at
+        timestamp updated_at
+        uuid created_by
+        uuid updated_by
+    }
+    t_product ||..o{ t_product_translation : product_id
 
     t_product_category_mapping {
         int id PK
@@ -132,8 +162,6 @@ erDiagram
         uuid organisation_id "Not Null"
 
         varchar(100) code "Not Null"
-        varchar(255) name "Not Null"
-        varchar(500) description
 
         varchar(30) stock_unit "Not Null"
         varchar(20) status "Not Null"
@@ -141,8 +169,25 @@ erDiagram
         timestamp created_at
         timestamp updated_at
         uuid created_by
-        uuid updated_by        
+        uuid updated_by
     }
+
+    t_material_translation {
+        uuid id PK
+        uuid material_id FK "Not Null"
+
+        uuid organisation_id "Not Null"
+
+        varchar(10) language_code "Not Null"
+        varchar(255) name "Not Null"
+        varchar(255) description
+
+        timestamp created_at
+        timestamp updated_at
+        uuid created_by
+        uuid updated_by
+    }
+    t_material ||..o{ t_material_translation : material_id
 
     t_material_stock {
         uuid id PK
@@ -158,7 +203,7 @@ erDiagram
         timestamp created_at
         timestamp updated_at
         uuid created_by
-        uuid updated_by        
+        uuid updated_by
     }
     t_material ||..o{ t_material_stock : material_id
 ```
