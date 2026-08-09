@@ -7,18 +7,27 @@ This section describes the purpose and relationships of each table in the Produc
 ### t_category
 
 - Each `Category` can have multiple `Product`
+- Each `Category` can have multiple `Category Translation`
 
+### t_category_translation
+
+- Each `Category Translation` belongs to one `Category`
 
 ### t_product
 
 - A `Product` can be assigned to multiple `Category`
 - A `Product` can be assigned to multiple `Shop`
 - Each `Product` can have multiple `Product Price`
+- Each `Product` can have multiple `Product Translation`
 
 ### t_product_price
 
 - Each `Product Price` belongs to one `Product`
 - Each `Product Price` belongs to one `Sales Channel`
+
+### t_product_translation
+
+- Each `Product Translation` belongs to one `Product`
 
 ### t_sales_channel
 
@@ -28,11 +37,15 @@ This section describes the purpose and relationships of each table in the Produc
 ### t_material
 
 - Each `Material` can have multiple `Material Stock`
+- Each `Material` can have multiple `Material Translation`
 
 ### t_material_stock
 
 - Each `Material Stock` belongs to one `Material`
 
+### t_material_translation
+
+- Each `Material Translation` belongs to one `Material`
 
 ```mermaid
 ---
