@@ -20,6 +20,6 @@ The ADRs are intended to document significant architectural decisions rather tha
 
 | ADR | Title | Status | Created Date | Decision Date | Updated Date |
 |-----|-------|--------|---------|---------|---------|
-| ADR-001 | Modular Monolith Architecture | Accepted | 22 Jul 2026 | 22 Jul 2026 | 22 Jul 2026 |
-
+| ADR-001 | Modular Monolith Architecture | Accepted | 22 Jul 2026 | 22 Jul 2026 | 10 Aug 2026 |
+| ADR-002 | PostgreSQL Schema per Module | Accepted | 10 Aug 2026 | Jun 2026 | 11 Aug 2026 |
 
