@@ -24,7 +24,7 @@ The ADRs are intended to document significant architectural decisions rather tha
 | ADR-002 | PostgreSQL Schema per Module | Accepted | 10 Aug 2026 | Jun 2026 | 11 Aug 2026 |
 | ADR-003 | UUID or BIGINT | Accepted | 12 Aug 2026 | 13 Aug 2026 | 12 Aug 2026 |
 | ADR-004 | Server Side Session or Token Based Authentication | Proposed | 13 Aug 2026 |  | 13 Aug 2026 |
-| ADR-005 | Container Deployment | Proposed | 13 Aug 2026 |  | 13 Aug 2026 |
+| ADR-005 | Container Deployment | Proposed | 13 Aug 2026 |  | 14 Aug 2026 |
 
 
 
