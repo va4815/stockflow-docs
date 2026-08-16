@@ -13,10 +13,10 @@ title: Order Schema
 erDiagram
 
     t_order {
-        uuid id PK
+        SERIAL id PK
         
-        uuid organisation_id "Not Null"
-        uuid shop_id "Not Null"
+        SERIAL organisation_id "Not Null"
+        SERIAL shop_id "Not Null"
         varchar(3) currency_code "Not Null"
 
         varchar(255) customer_name "Not Null"
@@ -32,16 +32,16 @@ erDiagram
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by        
+        SERIAL created_by
+        SERIAL updated_by        
     }
 
     t_order_item {
-        uuid id PK
-        uuid order_id FK "Not Null"
+        SERIAL id PK
+        SERIAL order_id FK "Not Null"
 
-        uuid organisation_id "Not Null"
-        uuid product_id "Not Null"
+        SERIAL organisation_id "Not Null"
+        SERIAL product_id "Not Null"
 
         varchar(255) product_name "Not Null"
         decimal qty "Not Null"
@@ -52,25 +52,23 @@ erDiagram
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by  
+        SERIAL created_by
+        SERIAL updated_by  
     }
     t_order ||..o{ t_order_item : order_id
 
     t_order_history {
-        uuid id PK
-        uuid order_id FK "Not Null"
+        SERIAL id PK
+        SERIAL order_id FK "Not Null"
 
-        uuid organisation_id "Not Null"
+        SERIAL organisation_id "Not Null"
         
         varchar(30) event_type "Not Null"
         varchar(20) previous_status "Not Null"
         varchar(20) current_status "Not Null"
 
         timestamp created_at
-        uuid created_by 
+        SERIAL created_by 
     }
     t_order ||..o{ t_order_history : order_id
-
-
 ```

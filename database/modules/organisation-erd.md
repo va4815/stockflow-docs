@@ -56,7 +56,7 @@ title: Organisation Schema
 erDiagram
 
     t_organisation {
-        uuid id PK
+        SERIAL id PK
 
         varchar(100) code UK "Not Null"        
         varchar(255) legal_name
@@ -67,28 +67,28 @@ erDiagram
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by
+        SERIAL created_by
+        SERIAL updated_by
     }
 
     t_organisation_translation {
-        uuid id PK
-        uuid organisation_id FK "Not Null"
+        SERIAL id PK
+        SERIAL organisation_id FK "Not Null"
         varchar(10) language_code FK "Not Null"
 
         varchar(255) name "Not Null"
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by        
+        SERIAL created_by
+        SERIAL updated_by        
     }
     t_organisation ||--o{ t_organisation_translation : organisation_id
     t_language ||--o{ t_organisation_translation : language_code
 
     t_organisation_profile {
-        uuid id PK
-        uuid organisation_id FK, UK "Not Null"
+        SERIAL id PK
+        SERIAL organisation_id FK, UK "Not Null"
 
         varchar(100) business_registration_number
         varchar(50) tax_registration_number
@@ -115,8 +115,8 @@ erDiagram
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by
+        SERIAL created_by
+        SERIAL updated_by
     }
     t_currency ||..o{ t_shop : currency_code
 
@@ -128,13 +128,13 @@ erDiagram
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by
+        SERIAL created_by
+        SERIAL updated_by
     }
 
     t_shop {
-        uuid id PK
-        uuid organisation_id FK "Not Null"
+        SERIAL id PK
+        SERIAL organisation_id FK "Not Null"
 
         varchar(100) code "Not Null"
         varchar(20) status "Not Null"
@@ -143,16 +143,16 @@ erDiagram
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by
+        SERIAL created_by
+        SERIAL updated_by
     }
     t_organisation ||--o{ t_shop : organisation_id
 
     t_shop_translation {
-        uuid id PK
-        uuid shop_id FK "Not Null"
+        SERIAL id PK
+        SERIAL shop_id FK "Not Null"
 
-        uuid organisation_id FK "Not Null"
+        SERIAL organisation_id FK "Not Null"
 
         varchar(10) language_code "Not Null"
 
@@ -160,15 +160,15 @@ erDiagram
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by
+        SERIAL created_by
+        SERIAL updated_by
     }
     t_shop ||--o{ t_shop_translation : shop_id
     t_language ||--o{ t_shop_translation : language_code
 
     t_shop_profile {
         int id PK
-        uuid shop_id FK, UK "Not Null"
+        SERIAL shop_id FK, UK "Not Null"
 
         varchar(10) phone_country_code
         varchar(30) phone_number
@@ -182,22 +182,22 @@ erDiagram
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by
+        SERIAL created_by
+        SERIAL updated_by
     }
     t_shop ||--|| t_shop_profile : shop_id
 
     t_shop_setting {
         int id PK
-        uuid shop_id FK, UK "Not Null"
+        SERIAL shop_id FK, UK "Not Null"
 
         varchar(10) default_language_code FK "Not Null"
         varchar(20) order_prefix "Not Null"
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by
+        SERIAL created_by
+        SERIAL updated_by
     }
     t_shop ||--|| t_shop_setting : shop_id
     t_language ||..o{ t_shop_setting : language_code

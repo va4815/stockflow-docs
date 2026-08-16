@@ -64,8 +64,8 @@ title: Authentication and Access Control Schema
 ---
 erDiagram
     t_user_account {
-        uuid id PK
-        uuid organisation_id "Not Null"
+        SERIAL id PK
+        SERIAL organisation_id "Not Null"
 
         varchar(100) username UK
         varchar(255) email UK
@@ -81,14 +81,14 @@ erDiagram
         
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by
+        SERIAL created_by
+        SERIAL updated_by
     }
     t_user_account }o..|| t_role : role_id
 
     t_user_profile {
-        uuid id PK
-        uuid user_account_id FK, UK
+        SERIAL id PK
+        SERIAL user_account_id FK, UK
         
         varchar(100) last_name
         varchar(100) middle_name
@@ -106,8 +106,8 @@ erDiagram
     t_user_account ||..|| t_user_profile : user_account_id
 
     t_user_address {
-        uuid id PK
-        uuid user_account_id FK
+        SERIAL id PK
+        SERIAL user_account_id FK
 
         varchar(100) country
         varchar(100) city
@@ -124,8 +124,8 @@ erDiagram
     t_user_account ||..o{ t_user_address : user_account_id
 
     t_user_setting {
-        uuid id PK
-        uuid user_account_id FK, UK
+        SERIAL id PK
+        SERIAL user_account_id FK, UK
         varchar(10) language_code FK
     }
     t_user_account ||..|| t_user_setting : user_account_id
@@ -139,8 +139,8 @@ erDiagram
     }
 
     t_user_account_group {
-        uuid id PK
-        uuid organisation_id "Not Null"
+        SERIAL id PK
+        SERIAL organisation_id "Not Null"
 
         varchar(100) name
         varchar(255) description
@@ -149,13 +149,13 @@ erDiagram
 
         timestamp created_at
         timestamp updated_at
-        uuid created_by
-        uuid updated_by
+        SERIAL created_by
+        SERIAL updated_by
     }
 
     t_user_account_group_mapping {
-        uuid user_account_id PK, FK
-        uuid user_account_group_id PK, FK
+        SERIAL user_account_id PK, FK
+        SERIAL user_account_group_id PK, FK
     }
 
     t_user_account ||..o{ t_user_account_group_mapping : user_account_id
@@ -164,7 +164,7 @@ erDiagram
 
     t_role {
         int id PK
-        uuid organisation_id "Not Null"
+        SERIAL organisation_id "Not Null"
 
         varchar(100) code UK
         varchar(100) name
@@ -177,7 +177,7 @@ erDiagram
     }
 
     t_user_account_permission_mapping {
-        uuid user_account_id PK, FK
+        SERIAL user_account_id PK, FK
         int permission_id PK, FK
     }
     t_user_account ||..o{ t_user_account_permission_mapping : user_account_id
@@ -191,11 +191,9 @@ erDiagram
     t_permission ||..o{ t_role_permission_mapping : permission_id
 
     t_user_account_group_permission_mapping {
-        uuid user_account_group_id PK, FK
+        SERIAL user_account_group_id PK, FK
         int permission_id PK, FK
     }
     t_user_account_group ||..o{ t_user_account_group_permission_mapping : user_account_group_id
     t_permission ||..o{ t_user_account_group_permission_mapping : permission_id
-
-    
 ```
