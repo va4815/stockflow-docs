@@ -25,6 +25,7 @@ The ADRs are intended to document significant architectural decisions rather tha
 | ADR-003 | UUID or BIGINT | Accepted | 12 Aug 2026 | 13 Aug 2026 | 12 Aug 2026 |
 | ADR-004 | Server Side Session or Token Based Authentication | Proposed | 13 Aug 2026 |  | 13 Aug 2026 |
 | ADR-005 | Container Deployment | Accepted | 13 Aug 2026 | 14 Aug 2026 | 14 Aug 2026 |
+| ADR-006 | Database Migration Tool | Proposed | 28 Aug 2026 |  | 28 Aug 2026 |
 
 
 
