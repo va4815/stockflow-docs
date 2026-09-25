@@ -9,7 +9,7 @@ The ADRs are intended to document significant architectural decisions rather tha
 ## Decision Status
 
 | Status | Description |
-|--------|-------------|
+|:---|:---|
 | Proposed | The decision is under evaluation and has not yet been finalised |
 | Accepted | The decision has been approved and is implemented or planned for implementation |
 | Rejected | The decision was evaluated but not adopted |
@@ -19,11 +19,11 @@ The ADRs are intended to document significant architectural decisions rather tha
 ## Architecture Decision Summary
 
 | ADR | Title | Status | Created Date | Decision Date | Updated Date |
-|-----|-------|--------|---------|---------|---------|
+|:---|:---|:---|:---|:---|:---|
 | ADR-001 | Modular Monolith Architecture | Accepted | 22 Jul 2026 | 22 Jul 2026 | 10 Aug 2026 |
 | ADR-002 | PostgreSQL Schema per Module | Accepted | 10 Aug 2026 | Jun 2026 | 11 Aug 2026 |
 | ADR-003 | UUID or BIGINT | Accepted | 12 Aug 2026 | 13 Aug 2026 | 12 Aug 2026 |
-| ADR-004 | Server Side Session or Token Based Authentication | Proposed | 13 Aug 2026 |  | 13 Aug 2026 |
+| ADR-004 | Authentication approach | Proposed | 13 Aug 2026 |  | 24 Sep 2026 |
 | ADR-005 | Container Deployment | Accepted | 13 Aug 2026 | 14 Aug 2026 | 14 Aug 2026 |
 | ADR-006 | Database Migration Tool | Proposed | 28 Aug 2026 |  | 28 Aug 2026 |
 
