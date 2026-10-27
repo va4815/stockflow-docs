@@ -6,12 +6,10 @@ StockFlow is an order and inventory management system designed for small merchan
 
 ## Project Goals
 
-- Build a centralised backend platform that supports multiple ordering channels
-- Share inventory across `POS`, `Self Checkout`, `Online Ordering`, and `Manual` workflows
-- Process orders concurrently across different channels while maintaining inventory consistency
-- Design clear module boundaries to support future migration towards microservices
-- Explore event-driven architecture patterns as a future extension
-- Practise Kubernetes and cloud-native deployment workflows
+- Help merchants maintain accurate and consistent inventory information across multiple sales channels and business systems
+- Explore reliable and maintainable approaches to system integration, inventory updates, and data synchronisation
+- Gain practical experience with unfamiliar technologies, software architecture patterns, and system integration techniques
+- Apply newly learned concepts by building a realistic, working system
 
 ## Architecture Overview
 
