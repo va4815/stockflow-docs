@@ -2,8 +2,7 @@
 
 ## Overview
 
-StockFlow is an order and inventory management system for small merchants such as family-based or early stage of their business. The objective of this project is to provide a accurate, lightweight and integration-friendly system without replacing the system that merchant is using. StockFlow can be a standalone system or integrate with other system. It also supports different channels such as `Online Store`, `In-Store Checkout` and `Mobile Purchase` for retail shop and becomes **The Source of Truth** across different channels.
-
+StockFlow is an order and inventory management system designed for small merchants, including family-run businesses and early-stage retailers. It provides a simple and reliable way to manage orders and stock without requiring merchants to replace the tools they already use. StockFlow can operate as a standalone system or connect with existing business systems. It supports sales from `Online Store`, `In-Store Checkouts`, and `Mobile Purchase`. By bringing information from these channels together, StockFlow gives the business one consistent and up-to-date view of its orders and inventory.
 
 ## Project Goals
 
