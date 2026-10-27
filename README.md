@@ -2,7 +2,8 @@
 
 ## Overview
 
-StockFlow is a multi-channel order and inventory management platform built with a modular monolith architecture. The system supports `Point of Sale (POS)`, `Self Checkout`, `Online Ordering`, and `Manual` workflows through a shared backend domain model. Centralised inventory and order management enable multiple channels to process transactions simultaneously while maintaining inventory consistency across the platform.
+StockFlow is an order and inventory management system for small merchants such as family-based or early stage of their business. The objective of this project is to provide a accurate, lightweight and integration-friendly system without replacing the system that merchant is using. StockFlow can be a standalone system or integrate with other system. It also supports different channels such as `Online Store`, `In-Store Checkout` and `Mobile Purchase` for retail shop and becomes **The Source of Truth** across different channels.
+
 
 ## Project Goals
 
