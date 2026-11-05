@@ -26,6 +26,7 @@ The ADRs are intended to document significant architectural decisions rather tha
 | ADR-004 | Authentication approach | Proposed | 13 Aug 2026 |  | 24 Sep 2026 |
 | ADR-005 | Container Deployment | Accepted | 13 Aug 2026 | 14 Aug 2026 | 14 Aug 2026 |
 | ADR-006 | Database Migration Tool | Proposed | 28 Aug 2026 |  | 28 Aug 2026 |
+| ADR-007 | Refactor Architecture from multi-tenant to single merchant | Proposed | 1 Nov 2026 |  | 1 Nov 2026 |
 
 
 
