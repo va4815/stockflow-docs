@@ -11,6 +11,14 @@ StockFlow is an order and inventory management system designed for small merchan
 - Gain practical experience with unfamiliar technologies, software architecture patterns, and system integration techniques
 - Apply newly learned concepts by building a realistic, working system
 
+
+## How StockFlow works
+
+Merchants can integrate StockFlow with their existing system such as ERP, CRM and e-commerce platform, or use StockFlow as a standalone inventory management system. The primary goal is to reduce the inventory inconsistencies, minimise overselling and provide a reliable view of stock availability across connected systems.
+
+![alt text](images/SF_OpOverview.png)
+
+
 ## Architecture Overview
 
 StockFlow is designed as a multi-channel backend platform using modular monolith architecture. The system exposes separate channel gateways for `Point of Sale (POS)`, `Self Checkout`, `Online Ordering`, and `Manual` workflows.
