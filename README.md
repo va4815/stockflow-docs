@@ -32,6 +32,40 @@ StockFlow allows users to create and manage orders through different channels ba
 
 ![alt text](images/SF_OrderFlow.png)
 
+## System Infrastructure Overview
+
+StockFlow has two infrastructure configurations for local development environment and cloud environment hosted on Amazon Web Services (AWS).
+
+The development environment uses Docker to run the application services locally, while the cloud environment is designed to use AWS-managed infrastructure for application deployment, database hosting and file storage.
+
+
+### Development Setup
+
+The development environment runs on a local machine using Docker containers. It consists of the StockFlow Backend, Keycloak, PostgreSQL, Nginx and the Admin Portal.
+
+Nginx acts as a reverse proxy, routing incoming requests to the appropriate application services. Keycloak handles authentication and identity management, while PostgreSQL provides persistent database storage.
+
+Application logs, database backups and static files are stored on the local SSD.
+
+![alt text](images/SF_Dev_Infra.png)
+
+
+### Cloud Setup
+
+In Cloud environment, it uses AWS Cloud service. The admin portal, database and backend service including StockFlow backend and Keycloak use ECS Cluster. It uses S3 Bucket for different file log, including Keycload backup, Application log, database backup and static data. Also it uses API gateway to route to backend APIs without exposing the backend ip address.
+
+
+The cloud environment is designed to run on Amazon Web Services (AWS), using managed services for application hosting, database storage and file management.
+
+- Amazon ECS: Runs the containerised application services, including the StockFlow Backend, Keycloak and Admin Portal.
+- Amazon RDS (PostgreSQL): Provides a managed relational database for persistent application data.
+- Amazon S3: Stores static files, application logs and backups, including database and Keycloak backups.
+- Amazon API Gateway: Provides an entry point for backend API requests, routing traffic to the appropriate backend services.
+
+This setup separates application services from persistent storage and provides a foundation for future scalability and infrastructure improvements.
+
+![alt text](images/SF_AWS_Infra.png)
+
 
 ## Architecture Overview
 
