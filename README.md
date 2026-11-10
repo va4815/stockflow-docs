@@ -18,6 +18,15 @@ Merchants can integrate StockFlow with their existing system such as ERP, CRM an
 
 ![alt text](images/SF_OpOverview.png)
 
+## Core Features
+
+- Supports `POS`, `Self Checkout`, `Online Ordering` and `Manual Ordering` through channel gateways.
+- Maintains a centralised inventory system to synchronise stock levels across multiple sales channels.
+- Creates, tracks and manages orders from different sales channels.
+- Manages products, categories, pricing and shared product information.
+- Supports user management, roles, permissions and Role-Based Access Control (RBAC).
+
+
 ## Order Channel Overview
 
 Each merchant has different sales channel requirements. Some businesses sell online through platforms such as TikTok Shop or eBay, while others primarily serve local customers through in-store purchases.
@@ -92,16 +101,6 @@ Each gateway acts as an entry point to the system and is responsible for functio
     Admin_Gateway --> StockFlow_Backend;
     StockFlow_Backend --> Database;
 ```
-
-## Core Features
-
-- Supports `POS`, `Self Checkout`, `Online Ordering`, and `Manual` ordering workflows through separate channel gateways.
-- Maintains a centralised inventory source across all sales channels.
-- Creates, tracks, and manages orders from multiple channels.
-- Manages products, categories, pricing, and shared product data.
-- Supports user accounts, roles, authorities, and permission-based access control.
-- Separates external traffic by channel before forwarding requests to the backend application.
-
 
 ## Technical Decisions
 
