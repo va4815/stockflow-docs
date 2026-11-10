@@ -18,6 +18,20 @@ Merchants can integrate StockFlow with their existing system such as ERP, CRM an
 
 ![alt text](images/SF_OpOverview.png)
 
+## Order Channel Overview
+
+Each merchant has different sales channel requirements. Some businesses sell online through platforms such as TikTok Shop or eBay, while others primarily serve local customers through in-store purchases.
+
+To accommodate these different business needs, StockFlow supports three main order channels: `In-Store Orders`, `Online Orders` and `Manual Orders`.
+
+StockFlow allows users to create and manage orders through different channels based on their roles and permissions:
+
+- `Merchant Manager`: Can manually create, amend and manage orders, as well as use the POS system to assist customers in-store.
+- `Merchant Staff`: Can use the POS system to create and process customer orders in-store.
+- `Customer`: Can independently place orders through self-checkout terminals in-store or through the online store.
+
+![alt text](images/SF_OrderFlow.png)
+
 
 ## Architecture Overview
 
