@@ -76,31 +76,17 @@ This setup separates application services from persistent storage and provides a
 ![alt text](images/SF_AWS_Infra.png)
 
 
-## Architecture Overview
+## System Design Overview
 
-StockFlow is designed as a multi-channel backend platform using modular monolith architecture. The system exposes separate channel gateways for `Point of Sale (POS)`, `Self Checkout`, `Online Ordering`, and `Manual` workflows.
+All incoming requests pass through the API gateway before reaching the StockFlow backend. The gateway exposes separate API routes for administrative users, merchant staff using the POS system, and customers. This separation allows routing, authentication, authorization, and other policies to be tailored to each client type.
 
-Each gateway acts as an entry point to the system and is responsible for functions such as authentication, request validation and API response handling. The `StockFlow Backend` owns the core business logic, including inventory management, order management and product management.
+The StockFlow backend follows a modular monolith architecture. It is deployed as a single application, while its business capabilities are organised into clearly defined modules, such as User, Order, Inventory, and Product.
 
-```mermaid
-  flowchart TD;
-    Restaurant_Staff[Restaurant Staff] --> Point_of_Sale["Point of Sale (POS)"];
-    Retail_Staff[Retail Staff] --> Point_of_Sale;
-    Customer[Customer] --> Online_Ordering[Online Ordering];
-    Customer --> Self_Checkout[Self Checkout];
-    Merchant_Staff[Merchant Staff] --> Manual_Workflow[Manual Workflow];
-    Back_Office_Staff[Back Office Staff] --> Manual_Workflow;
+Each module owns its business logic and the corresponding schema within a shared PostgreSQL database. Modules communicate through well-defined interfaces and do not directly access schemas owned by other modules. These boundaries improve maintainability and reduce coupling while retaining the operational simplicity of a monolith.
 
-    Point_of_Sale --> POS_Gateway[POS Gateway];
-    Online_Ordering --> Customer_Gateway[Customer Gateway];
-    Self_Checkout --> Customer_Gateway;
-    Manual_Workflow --> Admin_Gateway[Admin Gateway];
+If future scaling or operational requirements justify it, an individual module can be extracted into an independently deployable service with minimal impact on the rest of the system.
 
-    POS_Gateway --> StockFlow_Backend[StockFlow Backend];
-    Customer_Gateway --> StockFlow_Backend;
-    Admin_Gateway --> StockFlow_Backend;
-    StockFlow_Backend --> Database;
-```
+![alt text](images/SF_SystemDesignOverview.png)
 
 ## Technical Decisions
 
