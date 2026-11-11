@@ -88,25 +88,6 @@ If future scaling or operational requirements justify it, an individual module c
 
 ![alt text](images/SF_SystemDesignOverview.png)
 
-## Technical Decisions
-
-- **Modular Monolith Architecture**
-  - The system starts as a single backend application to simplify development, testing, and deployment during the early stages of the project.
-
-- **Service Boundaries**
-  - The backend application is separated into modules such as inventory, order, product, and authentication. This keeps module responsibilities clear and provides flexibility to extract individual modules into independent microservices in the future if specific services require independent scaling.
-
-- **Multiple Gateways**
-  - The system uses separate gateways for `POS`, `Customer`, and `Manual` gateway to isolate traffic, apply channel-specific request handling, and avoid exposing the internal backend structure publicly.
-
-- **PostgreSQL as the Primary Database**
-  - PostgreSQL supports multiple schemas within a single database, allowing tables to be logically separated by module, such as `inventory`, `product`, `order`, and `authentication`.
-  - The system uses a relational database to support structured domain data and transactional consistency.
-
-- **Cloud-Native Deployment**
-  - The project is designed to deploy a containerised backend using Docker and Kubernetes to practise production-style infrastructure patterns.
-
-
 ## Status Definitions
 
 The following statuses are used to indicate the current state of documentation sections and related repositories.
