@@ -30,25 +30,13 @@ This allows organisations to focus more on business operations and customer serv
 
 ## User Roles
 
-StockFlow defines user roles to represent different levels of access across the platform, organisations, shops, and customer-facing ordering workflows.
-
-### Initial Scope Roles
-
 | Role | Description | Main Responsibilities |
 |---|---|---|
-| `Platform Owner` | Owner or operator of the StockFlow platform | Manage organisation accounts, platform-level configuration, and subscription-related administration |
-| `Organisation Owner` | Business organisation owner using StockFlow to manage their sales channels | Organisation profile, products, inventory, orders, and staff access |
-| `Shop Manager` | Shop manager responsible for daily operations | Manage products, categories, inventory updates, and eligible order within permitted shop scope |
-| `Shop Staff` | Operational user responsible for day-to-day order handling | Create orders, view product information, check stock availability, and support customer checkout workflows |
+| `Platform Admin` | Operator of the StockFlow system | Setup accounts and assist `Merchant Admin` or `Merchant Manager` operations |
+| `Merchant Admin` | Business administrator for settlement operations | Manage account settings, staff access, settlement records and administrative business tasks |
+| `Merchant Manager` | Merchant manager responsible for daily operations | Manage products, categories, inventory updates, and eligible order within permitted scope |
+| `Merchant Staff` | Operational user responsible for day-to-day order handling | Create orders, view product information, check stock availability, and support customer checkout workflows |
 | `Customer` | External customer placing orders through supported customer-facing ordering workflows | Browse products, add items to cart, place online orders, and complete checkout |
-
-### Future Scope Roles
-
-| Role | Description | Main Responsibilities |
-|---|---|---|
-| `Platform Admin` | Platform administrator responsible for supporting organisations | Handle organisation enquiries, operational issues, and platform support tasks |
-| `Organisation Admin` | Business organisation administrator responsible for account and settlement operations | Manage organisation account settings, staff access, settlement records, and administrative business tasks |
-
 
 Access control is based on roles and authorities. Detailed role-permission mapping will be documented in [`authentication-access-control.md`](./authentication-access-control.md).
 
