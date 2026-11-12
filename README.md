@@ -35,8 +35,8 @@ To accommodate these different business needs, StockFlow supports three main ord
 
 StockFlow allows users to create and manage orders through different channels based on their roles and permissions:
 
-- `Merchant Manager`: Can manually create, amend and manage orders, as well as use the POS system to assist customers in-store.
-- `Merchant Staff`: Can use the POS system to create and process customer orders in-store.
+- `Shop Manager`: Can manually create, amend and manage orders, as well as use the POS system to assist customers in-store.
+- `Shop Staff`: Can use the POS system to create and process customer orders in-store.
 - `Customer`: Can independently place orders through self-checkout terminals in-store or through the online store.
 
 ![alt text](images/SF_OrderFlow.png)
@@ -78,7 +78,7 @@ This setup separates application services from persistent storage and provides a
 
 ## System Design Overview
 
-All incoming requests pass through the API gateway before reaching the StockFlow backend. The gateway exposes separate API routes for administrative users, merchant staff using the POS system, and customers. This separation allows routing, authentication, authorization, and other policies to be tailored to each client type.
+All incoming requests pass through the API gateway before reaching the StockFlow backend. The gateway exposes separate API routes for administrative users, shop staff using the POS system, and customers. This separation allows routing, authentication, authorization, and other policies to be tailored to each client type.
 
 The StockFlow backend follows a modular monolith architecture. It is deployed as a single application, while its business capabilities are organised into clearly defined modules, such as User, Order, Inventory, and Product.
 

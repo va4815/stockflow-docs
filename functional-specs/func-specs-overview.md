@@ -32,10 +32,10 @@ This allows organisations to focus more on business operations and customer serv
 
 | Role | Description | Main Responsibilities |
 |---|---|---|
-| `Platform Admin` | Operator of the StockFlow system | Setup accounts and assist `Merchant Admin` or `Merchant Manager` operations |
-| `Merchant Admin` | Business administrator for settlement operations | Manage account settings, staff access, settlement records and administrative business tasks |
-| `Merchant Manager` | Merchant manager responsible for daily operations | Manage products, categories, inventory updates, and eligible order within permitted scope |
-| `Merchant Staff` | Operational user responsible for day-to-day order handling | Create orders, view product information, check stock availability, and support customer checkout workflows |
+| `Platform Admin` | Operator of the StockFlow system | Setup accounts and assist `Merchant Owner` or `Shop Manager` operations |
+| `Merchant Owner` | Business owner to manage their business settlement | Manage account settings, staff access, settlement records and administrative business tasks |
+| `Shop Manager` | Shop manager responsible for daily operations | Manage products, categories, inventory updates, and eligible order within permitted scope |
+| `Shop Staff` | Operational user responsible for day-to-day order handling | Create orders, view product information, check stock availability, and support customer checkout workflows |
 | `Customer` | External customer placing orders through supported customer-facing ordering workflows | Browse products, add items to cart, place online orders, and complete checkout |
 
 Access control is based on roles and authorities. Detailed role-permission mapping will be documented in [`authentication-access-control.md`](./authentication-access-control.md).
@@ -43,7 +43,7 @@ Access control is based on roles and authorities. Detailed role-permission mappi
 
 ### Product Management
 
-Product Management is responsible for maintaining the product catalogue used across StockFlow. Organisations can manage product details, categories, and pricing from the backend system.
+Product Management is responsible for maintaining the product catalogue used across StockFlow. Merchants can manage product details, categories, and pricing from the backend system.
 
 Key capabilities include:
 
@@ -91,13 +91,9 @@ Key capabilities include:
 
 - Managing user accounts
 - Supporting user authentication
-- Managing roles such as `Platform Owner`, `Organisation Owner`, `Shop Manager`, and `Shop Staff`
+- Managing roles such as `Platform Admin`, `Merchant Owner`, `Shop Manager`, and `Shop Staff`
 - Assigning authorities such as `PRODUCT_READ`, `PRODUCT_DELETE`, `INVENTORY_UPDATE`, and `SHOP_ORDER_CREATE`
-- Supporting user groups for organising users by business function or responsibility
 - Protecting backend functions based on assigned roles and authorities
-- Supporting different access levels between platform-level users, organisation users, shop users, and customers
-- Organisation-owned data must be isolated from other organisations
-- Organisation users must not access users, products, inventory, shops, or orders belonging to another organisation
 - Shop-level users must access only shops within their permitted scope
 
 ### Gateway Workflows
@@ -307,8 +303,7 @@ Detailed business rules for each functional area will be documented in separate 
 
 ### Gateway Workflow Rules
 
-- External clients should access StockFlow through the gateway appropriate to their client type and workflow.
-- `POS Gateway`, `Customer Gateway`, and `Administration Gateway` should expose only the workflows relevant to their clients.
+- External clients should access StockFlow through the gateway appropriate to their workflow.
 - Gateways should validate incoming requests before forwarding them to the backend application.
 - Gateways should not contain core business logic such as inventory deduction, order state management, or product rules.
 - The internal backend application and database should not be exposed directly to external clients.
