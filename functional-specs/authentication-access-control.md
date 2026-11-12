@@ -2,22 +2,7 @@
 
 ## Purpose
 
-The purpose of Authentication and Access Control is to ensure that users can access the platform securely and only perform actions that match their assigned responsibilities. StockFlow supports different types of users, including platform-level users, organisation owners, shop managers, shop staff, and customers, each with different access requirements.
-
-```mermaid
-flowchart TD
-    Platform["StockFlow Platform"]
-
-    Platform --> OrganisationA["Organisation A"]
-    OrganisationA --> ShopA["Shop A"]
-    OrganisationA --> ShopB["Shop B"]
-    OrganisationA --> UserA["Organisation A Users"]
-
-    Platform --> OrganisationB["Organisation B"]
-    OrganisationB --> ShopC["Shop C"]
-    OrganisationB --> UserB["Organisation B Users"]
-```
-
+The purpose of Authentication and Access Control is to ensure that users can access the StockFlow securely and only perform actions that match their assigned responsibilities. StockFlow supports different types of users, including merchant owner, shop managers, shop staff, and customers, each with different access requirements.
 
 ## Scope
 
@@ -33,7 +18,6 @@ Authentication and Access Control provides the following capabilities for StockF
 - Authority-based permission checks
 - Assignment of roles to users
 - Assignment of authorities to roles
-- Organisation data isolation to prevent unauthorised access to another organisation's data
 
 ### Future Scope
 
@@ -44,17 +28,16 @@ Authentication and Access Control provides the following capabilities for StockF
 
 StockFlow uses `Users`, `Roles`, `Authorities`, and `User Groups` to manage access across the platform and individual organisations. These components define who can access the system, what actions they are permitted to perform, and which organisation or business data they are allowed to access.
 
-
 ### Users
 
 A user represents an individual who can access StockFlow.
 
-Users may include platform operators, organisation owners, shop employees, and customers. Each user has an account and may be assigned roles, authorities through roles, and user group memberships.
+Users may include platform admin, organisation owners, shop employees, and customers. Each user has an account and may be assigned roles, authorities through roles, and user group memberships.
 
 Key user capabilities include:
 
 - Creating and managing user accounts
-- Associating users with an organisation and assigning access to one or more shops where applicable
+- Assigning access to one or more shops where applicable
 - Assigning one or more roles to a user
 - Adding users to one or more user groups
 - Updating user account information
@@ -65,12 +48,12 @@ Key user capabilities include:
 
 A user group represents a collection of users who share a common business function, team, department, location, or operational responsibility.
 
-User groups help organisations organise users and apply common access settings more efficiently.
+User groups help merchants organise users and apply common access settings more efficiently.
 
 Examples of user groups include:
 
 - Shop Managers
-- POS Staff
+- Shop Staff
 - Customer Support
 
 Key user group capabilities include:
@@ -86,8 +69,8 @@ A role groups related authorities under a named business responsibility, such as
 
 Initial roles include:
 
-- `Platform Owner`
-- `Organisation Owner`
+- `Platform Admin`
+- `Merchant Admin`
 - `Shop Manager`
 - `Shop Staff`
 - `Customer`
@@ -112,7 +95,6 @@ Authority categories include:
 - Inventory management
 - Order management
 - User and role management
-- Organisation administration
 
 Initial authorities include:
 
@@ -122,40 +104,34 @@ Initial authorities include:
 - `SHOP_ORDER_CREATE`
 - `CUSTOMER_ORDER_READ_SELF`
 - `PLATFORM_USER_CREATE`
-- `ORGANISATION_USER_UPDATE`
-- `ORGANISATION_ROLE_ASSIGN`
-
 
 ## User Roles
 
-StockFlow defines user roles for both platform-level users and users within organisations. Each role is associated with a set of authorities that determines which functions and data the user is permitted to access.
+StockFlow defines user roles for both platform-level users and users within merchants. Each role is associated with a set of authorities that determines which functions and data the user is permitted to access.
 
-### Platform Owner
+### Platform Admin
 
-The `Platform Owner` is responsible for operating and administering the StockFlow platform.
+The `Platform Admin` is responsible for helping merchant owner when they do not understand the setting or configuration.
 
 Main responsibilities include:
 
-- Creating and managing organisation accounts
-- Viewing platform-level organisation information
-- Managing organisation access to the platform
-- Managing platform-level roles and authorities
-- Reviewing platform operations and organisation support requirements
+- Creating and managing merchant accounts
+- Managing merchants access to the platform
+- Reviewing platform operations and merchant support requirements
 - Accessing platform administration functions
 
-### Organisation Owner
+### Merchant Owner
 
-The `Organisation Owner` is responsible for administering the business organisation using StockFlow.
+The `Merchant Owner` is responsible for administering the business using StockFlow.
 
 Main responsibilities include:
 
-- Managing the organisation profile
+- Managing the business profile
 - Creating and managing shops
-- Managing organisation users and shop access
-- Assigning organisation-level and shop-level roles
-- Managing products, categories, and catalogues
+- Managing users and shop access
+- Assigning roles
+- Managing products and categories
 - Reviewing inventory and orders across permitted shops
-- Accessing organisation-wide operational information
 
 ### Shop Manager
 
@@ -186,7 +162,7 @@ Main responsibilities include:
 
 ### Customer
 
-The `Customer` is an external user who purchases products from an organisation through customer-facing ordering workflows.
+The `Customer` is an external user who purchases products from a merchant through customer-facing ordering workflows.
 
 Main responsibilities include:
 
