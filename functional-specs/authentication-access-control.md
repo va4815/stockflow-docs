@@ -380,7 +380,7 @@ An assigned authority permits a user to perform the corresponding action or oper
 
 ### Platform User Management Authorities
 
-| Authority | Platform Owner | Organisation Owner | Shop Manager | Shop Staff | Customer |
+| Authority | Platform Owner | Merchant Owner | Shop Manager | Shop Staff | Customer |
 |---|---:|---:|---:|---:|---:|
 | `PLATFORM_USER_CREATE` | ✓ | - | - | - | - |
 | `PLATFORM_USER_READ` | ✓ | - | - | - | - |
@@ -388,23 +388,24 @@ An assigned authority permits a user to perform the corresponding action or oper
 | `PLATFORM_USER_DISABLE` | ✓ | - | - | - | - |
 | `PLATFORM_USER_DELETE` | ✓ | - | - | - | - |
 
-### Organisation User Management Authorities
+### Merchant User Management Authorities
 
-| Authority | Platform Owner | Organisation Owner | Shop Manager | Shop Staff | Customer |
+| Authority | Platform Owner | Merchant Owner | Shop Manager | Shop Staff | Customer |
 |---|---:|---:|---:|---:|---:|
-| `ORGANISATION_USER_CREATE` | ✓ | ✓ | - | - | - |
-| `ORGANISATION_USER_READ` | ✓ | ✓ | ✓ | - | - |
-| `ORGANISATION_USER_UPDATE` | ✓ | ✓ | - | - | - |
-| `ORGANISATION_USER_DISABLE` | ✓ | ✓ | - | - | - |
-| `SHOP_USER_ASSIGN` | ✓ | ✓ | - | - | - |
-| `SHOP_USER_REMOVE` | ✓ | ✓ | - | - | - |
-| `SHOP_USER_ACCESS_READ` | ✓ | ✓ | - | - | - |
-
-- Shop Managers may view or update organisation user information only when the required authority has been assigned and the user is associated with a shop within the manager’s permitted scope
+| `SHOP_MANAGER_USER_CREATE` | ✓ | ✓ | - | - | - |
+| `SHOP_MANAGER_USER_READ` | ✓ | ✓ | ✓ | - | - |
+| `SHOP_MANAGER_USER_UPDATE` | ✓ | ✓ | - | - | - |
+| `SHOP_MANAGER_USER_DISABLE` | ✓ | ✓ | - | - | - |
+| `SHOP_STAFF_USER_CREATE` | ✓ | ✓ | - | - | - |
+| `SHOP_STAFF_USER_READ` | ✓ | ✓ | ✓ | ✓ | - |
+| `SHOP_STAFF_USER_UPDATE` | ✓ | ✓ | ✓ | ✓ | - |
+| `SHOP_STAFF_USER_DISABLE` | ✓ | ✓ | ✓ | - | - |
+| `SHOP_STAFF_USER_ASSIGN` | ✓ | ✓ | ✓ | - | - |
+| `SHOP_STAFF_USER_REMOVE` | ✓ | ✓ | ✓ | - | - |
 
 ### Customer Account Management Authorities
 
-| Authority | Platform Owner | Organisation Owner | Shop Manager | Shop Staff | Customer |
+| Authority | Platform Owner | Merchant Owner | Shop Manager | Shop Staff | Customer |
 |---|---:|---:|---:|---:|---:|
 | `CUSTOMER_ACCOUNT_READ` | ✓ | - | - | - | - |
 | `CUSTOMER_ACCOUNT_UPDATE` | ✓ | - | - | - | - |
@@ -414,11 +415,10 @@ An assigned authority permits a user to perform the corresponding action or oper
 | `CUSTOMER_ACCOUNT_DELETE` | ✓ | - | - | - | - |
 
 - A `Customer` can create and manage only their own account
-- `Customer` accounts belong to the StockFlow platform rather than a specific organisation. A `Customer` may use services provided by multiple organisations through a single account
 
 ### Role Management Authorities
 
-| Authority | Platform Owner | Organisation Owner | Shop Manager | Shop Staff | Customer |
+| Authority | Platform Owner | Merchant Owner | Shop Manager | Shop Staff | Customer |
 |---|---:|---:|---:|---:|---:|
 | `PLATFORM_ROLE_CREATE` | ✓ | - | - | - | - |
 | `PLATFORM_ROLE_READ` | ✓ | - | - | - | - |
@@ -426,66 +426,62 @@ An assigned authority permits a user to perform the corresponding action or oper
 | `PLATFORM_ROLE_ASSIGN` | ✓ | - | - | - | - |
 | `PLATFORM_ROLE_REMOVE` | ✓ | - | - | - | - |
 | `PLATFORM_ROLE_DISABLE` | ✓ | - | - | - | - |
-| `ORGANISATION_ROLE_CREATE` | ✓ | ✓ | - | - | - |
-| `ORGANISATION_ROLE_READ` | ✓ | ✓ | ✓ | - | - |
-| `ORGANISATION_ROLE_UPDATE` | ✓ | ✓ | - | - | - |
-| `ORGANISATION_ROLE_ASSIGN` | ✓ | ✓ | - | - | - |
-| `ORGANISATION_ROLE_REMOVE` | ✓ | ✓ | - | - | - |
-| `ORGANISATION_ROLE_DISABLE` | ✓ | ✓ | - | - | - |
 
-The `Platform Owner` can manage platform-level roles. An `Organisation Owner` can manage organisation-level roles belonging to their own organisation.
+The `Platform Owner` can manage platform-level roles. An `Merchant Owner` can manage the roles belonging to their own business.
 
 ### Authority Management Authorities
 
-| Authority | Platform Owner | Organisation Owner | Shop Manager | Shop Staff | Customer |
+| Authority | Platform Owner | Merchant Owner | Shop Manager | Shop Staff | Customer |
 |---|---:|---:|---:|---:|---:|
 | `PLATFORM_AUTHORITY_CREATE` | ✓ | - | - | - | - |
 | `PLATFORM_AUTHORITY_READ` | ✓ | - | - | - | - |
 | `PLATFORM_ROLE_AUTHORITY_ASSIGN` | ✓ | - | - | - | - |
 | `PLATFORM_ROLE_AUTHORITY_REMOVE` | ✓ | - | - | - | - |
-| `ORGANISATION_AUTHORITY_READ` | ✓ | ✓ | ✓ | - | - |
-| `ORGANISATION_ROLE_AUTHORITY_ASSIGN` | ✓ | ✓ | - | - | - |
-| `ORGANISATION_ROLE_AUTHORITY_REMOVE` | ✓ | ✓ | - | - | - |
+| `MERCHANT_AUTHORITY_READ` | ✓ | ✓ | ✓ | - | - |
+| `MERCHANT_ROLE_AUTHORITY_ASSIGN` | ✓ | ✓ | - | - | - |
+| `MERCHANT_ROLE_AUTHORITY_REMOVE` | ✓ | ✓ | - | - | - |
 
 ### User Group Management Authorities
 
-| Authority | Platform Owner | Organisation Owner | Shop Manager | Shop Staff | Customer |
+| Authority | Platform Owner | Merchant Owner | Shop Manager | Shop Staff | Customer |
 |---|---:|---:|---:|---:|---:|
-| `ORGANISATION_USER_GROUP_CREATE` | - | ✓ | ✓ | - | - |
-| `ORGANISATION_USER_GROUP_READ` | - | ✓ | ✓ | ✓ | - |
-| `ORGANISATION_USER_GROUP_UPDATE` | - | ✓ | ✓ | - | - |
-| `ORGANISATION_USER_GROUP_ADD_USER` | - | ✓ | ✓ | - | - |
-| `ORGANISATION_USER_GROUP_REMOVE_USER` | - | ✓ | ✓ | - | - |
-| `ORGANISATION_USER_GROUP_DISABLE` | - | ✓ | - | - | - |
-| `ORGANISATION_USER_GROUP_DELETE` | - | ✓ | - | - | - |
+| `USER_GROUP_CREATE` | ✓ | ✓ | ✓ | - | - |
+| `USER_GROUP_READ` | ✓ | ✓ | ✓ | ✓ | - |
+| `USER_GROUP_UPDATE` | ✓ | ✓ | ✓ | - | - |
+| `USER_GROUP_ADD_USER` | ✓ | ✓ | ✓ | - | - |
+| `USER_GROUP_REMOVE_USER` | ✓ | ✓ | ✓ | - | - |
+| `USER_GROUP_DISABLE` | ✓ | ✓ | - | - | - |
+| `USER_GROUP_DELETE` | ✓ | ✓ | - | - | - |
 
 ### Product Management Authorities
 
-| Authority | Platform Owner | Organisation Owner | Shop Manager | Shop Staff | Customer |
+| Authority | Platform Owner | Merchant Owner | Shop Manager | Shop Staff | Customer |
 |---|---:|---:|---:|---:|---:|
-| `PRODUCT_CREATE` | - | ✓ | ✓ | - | - |
-| `PRODUCT_READ` | - | ✓ | ✓ | ✓ | - |
-| `PRODUCT_READ_PUBLIC` | - | - | - | - | ✓ |
-| `PRODUCT_UPDATE` | - | ✓ | ✓ | - | - |
-| `PRODUCT_DISABLE` | - | ✓ | ✓ | - | - |
+| `PRODUCT_CREATE` | ✓ | ✓ | ✓ | - | - |
+| `PRODUCT_READ` | ✓ | ✓ | ✓ | ✓ | - |
+| `PRODUCT_READ_PUBLIC` | ✓ | - | - | - | ✓ |
+| `PRODUCT_UPDATE` | ✓ | ✓ | ✓ | - | - |
+| `PRODUCT_DISABLE` | ✓ | ✓ | ✓ | - | - |
 
 ### Inventory Management Authorities
 
-| Authority | Platform Owner | Organisation Owner | Shop Manager | Shop Staff | Customer |
+| Authority | Platform Owner | Merchant Owner | Shop Manager | Shop Staff | Customer |
 |---|---:|---:|---:|---:|---:|
-| `INVENTORY_READ` | - | ✓ | ✓ | ✓ | - |
-| `INVENTORY_UPDATE` | - | ✓ | ✓ | - | - |
+| `INVENTORY_CREATE` | ✓ | ✓ | ✓ | ✓ | - |
+| `INVENTORY_READ` | ✓ | ✓ | ✓ | ✓ | - |
+| `INVENTORY_UPDATE` | ✓ | ✓ | ✓ | - | - |
+| `INVENTORY_DELETE` | ✓ | ✓ | - | - | - |
 
 ### Order Management Authorities
 
-| Authority | Platform Owner | Organisation Owner | Shop Manager | Shop Staff | Customer |
+| Authority | Platform Owner | Merchant Owner | Shop Manager | Shop Staff | Customer |
 |---|-------------:|---:|---:|---:|---:|
-| `SHOP_ORDER_CREATE`      | - | ✓ | ✓ | ✓ | - |
-| `SHOP_ORDER_READ`        | - | ✓ | ✓ | ✓ | - |
-| `SHOP_ORDER_UPDATE`      | - | ✓ | ✓ | - | - |
-| `SHOP_ORDER_CANCEL`      | - | ✓ | ✓ | - | - |
+| `SHOP_ORDER_CREATE`      | ✓ | ✓ | ✓ | ✓ | - |
+| `SHOP_ORDER_READ`        | ✓ | ✓ | ✓ | ✓ | - |
+| `SHOP_ORDER_UPDATE`      | ✓ | ✓ | ✓ | - | - |
+| `SHOP_ORDER_CANCEL`      | ✓ | ✓ | ✓ | - | - |
 | `CUSTOMER_ORDER_CREATE_SELF` | - | - | - | - | ✓ |
-| `CUSTOMER_ORDER_READ_SELF`   | - | - | - | - | ✓ |
-| `CUSTOMER_ORDER_UPDATE_SELF`   | - | - | - | - | ✓ |
-| `CUSTOMER_ORDER_CANCEL_SELF`   | - | - | - | - | ✓ |
+| `CUSTOMER_ORDER_READ_SELF`   | ✓ | - | - | - | ✓ |
+| `CUSTOMER_ORDER_UPDATE_SELF`   | ✓ | - | - | - | ✓ |
+| `CUSTOMER_ORDER_CANCEL_SELF`   | ✓ | - | - | - | ✓ |
 
