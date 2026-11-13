@@ -174,7 +174,6 @@ Main responsibilities include:
 - Managing their own account and delivery or collection information
 - Cancelling eligible orders where permitted by the organisation's cancellation rules
 
-
 ## Functional Capabilities
 
 The Authentication and Access Control module provides the following capabilities for managing user accounts, authentication, roles, authorities, and user groups within StockFlow.
@@ -213,12 +212,12 @@ The following workflows describe the main steps involved in user account managem
 
 - A new user account is created through one of the following methods:
   - A `Customer` creates their own account without requiring an authorised user
-  - An authorised user creates an account for a platform-level or organisation-level user
+  - An authorised user creates an account for merchant user
 - StockFlow validates the submitted account information
 - StockFlow creates the account:
-  - A customer account is created without an organisation association
-  - An organisation-level account is associated with the relevant organisation
-  - A platform-level account is created without an organisation association
+  - A customer account is created without an association
+  - A merchant account is associated with the relevant business
+  - A platform account is created without an merchant association
 - Predefined roles or user groups may be assigned where applicable
 
 #### User Account Viewing and Update Workflow
@@ -233,7 +232,7 @@ The following workflows describe the main steps involved in user account managem
 
 - A user submits their account credentials
 - StockFlow verifies the credentials and account status
-- StockFlow identifies the user’s assigned roles, authorities, user groups, organisation membership, and permitted shop access
+- StockFlow identifies the user’s assigned roles, authorities, user groups, and permitted shop access
 - Access is granted when authentication succeeds and the account is permitted to access StockFlow
 - Access is denied when authentication fails or the account is not permitted to log in
 
@@ -300,7 +299,7 @@ The following workflows describe the main steps involved in user account managem
 
 #### Authority Creation Workflow
 
-- An authorised platform-level user creates an authority
+- An authorised platform user creates an authority
 - The user provides the authority name, description, and relevant capability category
 - StockFlow validates the authority information
 - StockFlow saves the authority
@@ -328,16 +327,16 @@ The following workflows describe the main steps involved in user account managem
 
 #### User Group Creation Workflow
 
-- An authorised organisation-level user creates a user group for a team, department, location, or operational responsibility
+- An authorised merchant user creates a user group for a team, department, location, or operational responsibility
 - StockFlow verifies the requesting user’s permission
-- StockFlow associates the user group with the relevant organisation
+- StockFlow associates the user group with the relevant user
 - StockFlow saves the user group
 
 #### Add User to User Group Workflow
 
 - An authorised user selects a user and a user group
 - StockFlow verifies the requesting user’s permission
-- StockFlow verifies that the user and user group belong to the same organisation
+- StockFlow verifies that the user and user group belong to the same shop
 - StockFlow adds the user to the group
 
 #### Remove User from User Group Workflow
@@ -346,14 +345,6 @@ The following workflows describe the main steps involved in user account managem
 - StockFlow verifies the requesting user’s permission
 - StockFlow removes the user from the group
 
-#### Associate User Group with Organisation Workflow
-
-- An authorised user associates a user group with an organisation
-- StockFlow verifies the requesting user’s permission
-- StockFlow ensures that the group and its members remain within the permitted organisation scope
-- StockFlow prevents the group from containing users associated with another organisation
-
-
 ### Shared Access Control Workflows
 
 #### Protected Function Access Workflow
@@ -361,18 +352,9 @@ The following workflows describe the main steps involved in user account managem
 - An authenticated user requests access to a protected function
 - StockFlow verifies the user’s authentication status
 - StockFlow checks the user’s assigned roles and associated authorities
-- StockFlow verifies the user’s organisation membership, permitted shop access, and data scope where applicable
+- StockFlow verifies the user’s permitted shop access, and data scope where applicable
 - StockFlow allows the request only when all required access conditions are satisfied
 - StockFlow denies the request when any required condition is not satisfied
-
-#### Organisation Data Isolation Workflow
-
-- An organisation-level user requests access to organisation-owned data
-- StockFlow identifies the organisation associated with the authenticated user
-- StockFlow verifies that the requested data belongs to the same organisation
-- StockFlow restricts the request to data belonging to the user’s organisation
-- StockFlow denies access to data belonging to another organisation
-- StockFlow verifies that the user is permitted to access the requested shop where shop-level access is required
 
 #### Restricted Role Assignment Workflow
 
@@ -394,7 +376,7 @@ The following workflows describe the main steps involved in user account managem
 
 The following matrix defines the default authorities assigned to each predefined StockFlow role.
 
-An assigned authority permits a user to perform the corresponding action or operation. Organisation-level roles and authorities are restricted to the organisation in which they are defined and assigned.
+An assigned authority permits a user to perform the corresponding action or operation.
 
 ### Platform User Management Authorities
 
