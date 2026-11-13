@@ -26,13 +26,13 @@ Authentication and Access Control provides the following capabilities for StockF
 
 ## Access Control
 
-StockFlow uses `Users`, `Roles`, `Authorities`, and `User Groups` to manage access across the platform and individual organisations. These components define who can access the system, what actions they are permitted to perform, and which organisation or business data they are allowed to access.
+StockFlow uses `Users`, `Roles`, `Authorities`, and `User Groups` to manage access across the platform and merchants. These components define who can access the system, what actions they are permitted to perform, and business data they are allowed to access.
 
 ### Users
 
 A user represents an individual who can access StockFlow.
 
-Users may include platform admin, organisation owners, shop employees, and customers. Each user has an account and may be assigned roles, authorities through roles, and user group memberships.
+Users may include platform admin, merchant owner, shop employees, and customers. Each user has an account and may be assigned roles, authorities through roles, and user group memberships.
 
 Key user capabilities include:
 
@@ -61,7 +61,7 @@ Key user group capabilities include:
 - Creating and maintaining user groups
 - Adding users to a user group
 - Removing users from a user group
-- Associating a user group with an organisation
+- Associating a user group
 
 ### Roles
 
@@ -172,7 +172,7 @@ Main responsibilities include:
 - Placing orders through online, retail, or restaurant ordering workflows
 - Viewing the status and details of their own orders
 - Managing their own account and delivery or collection information
-- Cancelling eligible orders where permitted by the organisation's cancellation rules
+- Cancelling eligible orders where permitted by the cancellation rules
 
 ## Functional Capabilities
 
@@ -200,7 +200,7 @@ The Authentication and Access Control module provides the following capabilities
     * Create user groups
     * Add users to user groups
     * Remove users from user groups
-    * Associate user groups with an organisation
+    * Associate user groups
 
 ## Business Workflows
 
@@ -265,7 +265,7 @@ The following workflows describe the main steps involved in user account managem
 - An authorised user creates a role to represent a business responsibility
 - The user provides a role name and description
 - StockFlow validates the role information and the user’s permission
-- StockFlow saves the role within the permitted platform or organisation scope
+- StockFlow saves the role within the permitted platform
 
 #### Role Assignment to User Workflow
 
@@ -362,7 +362,7 @@ The following workflows describe the main steps involved in user account managem
 - StockFlow checks the requesting user’s roles, authorities, and access scope
 - StockFlow checks whether the requesting user is permitted to assign the selected role
 - StockFlow rejects the assignment when the selected role exceeds the requesting user’s permitted level
-- StockFlow also rejects the assignment when the users or role belong to incompatible platform, organisation, or shop scopes
+- StockFlow also rejects the assignment when the users or role belong to incompatible platform, or shop scopes
 
 #### Unauthorised Access Handling Workflow
 

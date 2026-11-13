@@ -4,7 +4,7 @@
 
 Many merchants operate across multiple sales channels, such as online stores, retail shops, or restaurants. As the business grows, they often need to manage products, inventory, and orders across separate systems.
 
-StockFlow provides a centralised backend platform for merchants who want to manage products, inventory, and orders in one place. The system supports multiple ordering channels, including `Point of Sale (POS)`, `Self Checkout`, and `Online Ordering`, allowing organisations to manage different sales workflows through a shared backend system.
+StockFlow provides a centralised backend platform for merchants who want to manage products, inventory, and orders in one place. The system supports multiple ordering channels, including `Point of Sale (POS)`, `Self Checkout`, and `Online Ordering`, allowing merchants to manage different sales workflows through a shared backend system.
 
 The purpose of StockFlow is to reduce the complexity of managing separate platforms and provide a consistent foundation for multi-channel order and inventory management.
 
@@ -13,7 +13,7 @@ The purpose of StockFlow is to reduce the complexity of managing separate platfo
 The initial scope of StockFlow includes:
 
 - Order creation through `POS`, `Online Ordering`, `Self Checkout`, and `Manual` channels
-- Organisation review confirmation, modification, and cancellation of eligible orders
+- Merchant review confirmation, modification, and cancellation of eligible orders
 - Product creation, modification, and deletion
 - Product category creation, modification, and deletion
 - Inventory refill and stock adjustment
@@ -24,9 +24,9 @@ The initial scope of StockFlow includes:
 
 Merchants often spend significant time managing separate systems for POS ordering, inventory management, and online ordering. This can lead to duplicated product data, inconsistent stock levels, manual updates, and a higher risk of overselling.
 
-StockFlow addresses these problems by centralising product, inventory, and order management. All sales channels operate against the same inventory source, helping organisations maintain inventory consistency and reduce administrative work.
+StockFlow addresses these problems by centralising product, inventory, and order management. All sales channels operate against the same inventory source, helping merchants maintain inventory consistency and reduce administrative work.
 
-This allows organisations to focus more on business operations and customer service instead of maintaining the same data across multiple platforms.
+This allows merchants to focus more on business operations and customer service instead of maintaining the same data across multiple platforms.
 
 ## User Roles
 
@@ -112,13 +112,13 @@ Key capabilities include:
 
 ## Key Business Workflows
 
-This section describes the main business workflows supported by StockFlow. These workflows explain how organisation owners, shop staff, and customers interact with the system across product management, inventory management, and order processing.
+This section describes the main business workflows supported by StockFlow. These workflows explain how merchant owner, shop staff, and customers interact with the system across product management, inventory management, and order processing.
 
 ### Product Category Creation Workflow
 
-The Product Category Creation Workflow allows an authorised organisation user to create a product category for organising products in the system.
+The Product Category Creation Workflow allows an authorised user to create a product category for organising products in the system.
 
-1. The authorised organisation user logs in to the system.
+1. The authorised user logs in to the system.
 2. The user creates a new product category with required details such as category name, description, and status.
 3. The system validates the product category information.
 4. The system saves the product category record.
@@ -127,14 +127,14 @@ The Product Category Creation Workflow allows an authorised organisation user to
 Expected result:
 
 - A new product category is created successfully.
-- Products can be assigned to the category for product management, search, and catalogue organisation.
+- Products can be assigned to the category for product management, search, and catalogue.
 
 
 ### Product Creation Workflow
 
-The Product Creation Workflow allows an authorised organisation user to create a new product that can be used across different ordering channels.
+The Product Creation Workflow allows an authorised user to create a new product that can be used across different ordering channels.
 
-1. The authorised organisation user logs in to the system.
+1. The authorised user logs in to the system.
 2. The user creates a new product with required details such as product name, description, category, price, and status.
 3. The user assigns the product to one or more catalogues or ordering channels if required.
 4. The system validates the product information.
@@ -149,7 +149,7 @@ Expected result:
 
 ### Inventory Update Workflow
 
-The Inventory Update Workflow allows an organisation owner, shop manager, or authorised organisation user to update stock levels when inventory is refilled, adjusted, or corrected.
+The Inventory Update Workflow allows an merchant owner, shop manager, or authorised merchant user to update stock levels when inventory is refilled, adjusted, or corrected.
 
 1. The authorised user selects a product from the product catalogue.
 2. The user enters the inventory update details, such as quantity, update type, and reason.
@@ -199,7 +199,7 @@ The Self-Checkout Order Workflow allows a customer to create an in-store order t
 3. The user adds products to the order.
 4. The system checks product availability and inventory levels.
 5. The user submits the order request.
-6. The authorised organisation user reviews the order if confirmation is required.
+6. The authorised user reviews the order if confirmation is required.
 7. The system creates or confirms the order.
 8. The system updates or reserves inventory based on the confirmed order.
 
@@ -228,7 +228,7 @@ Expected result:
 
 - A customer order is created through the online channel.
 - Inventory is updated or reserved to prevent overselling.
-- The order can be reviewed and managed by the authorised organisation users.
+- The order can be reviewed and managed by the authorised users.
 
 ### Order Cancellation Workflow
 
@@ -257,7 +257,6 @@ Detailed business rules for each functional area will be documented in separate 
 
 ### Product Management Rules
 
-- A product must belong to an organisation.
 - A product must have required information such as name, category, price, and status before it can be used for ordering.
 - A product can be active, or disabled.
 - Disabled products should not be available for new orders.
@@ -267,8 +266,7 @@ Detailed business rules for each functional area will be documented in separate 
 
 ### Product Category Rules
 
-- A product category must belong to an organisation.
-- A product category should have a unique name within the same organisation.
+- A product category should have a unique name.
 - A product can be assigned to one or more product categories if required.
 - A product category should not be deleted if active products are still assigned to it, unless the products are reassigned or the category is disabled.
 
@@ -296,8 +294,8 @@ Detailed business rules for each functional area will be documented in separate 
 
 - Users must be authenticated before accessing protected backend functions.
 - User access should be controlled by assigned roles and authorities.
-- Platform-level users should only access platform administration and authorised organisation administration functions.
-- Organisation users should only access data belonging to their own organisation account and permitted shops.
+- Platform-level users should only access platform administration and authorised administration functions.
+- Merchant users should only access data belonging to their own account and permitted shops.
 - Customers should only access their own account, cart, and order information.
 - Sensitive operations, such as deleting products, updating inventory, or managing users, should require appropriate permissions.
 

@@ -2,7 +2,7 @@
 
 ## Purpose
 
-The purpose of Order Management is to create, process, track, and manage orders across StockFlow’s supported sales channels. It stores order details, order items, customer or organisation information, pricing, channel, and order status. Order Management also ensures that organisation users can only manage orders belonging to their own organisation, while customers can only access and manage their own orders.
+The purpose of Order Management is to create, process, track, and manage orders across StockFlow’s supported sales channels. It stores order details, order items, customer or merchant information, pricing, channel, and order status. Order Management also ensures that merchant users can manage their orders, while customers can only access and manage their own orders.
 
 ## Scope
 
@@ -11,7 +11,7 @@ Order Management provides the following capabilities for StockFlow.
 ### Initial Scope
 
 - Create order through `POS`, `Self Checkout`, `Online Ordering` and `Manual` workflows
-- Orders could be created by authorised organisation users or authenticated customers
+- Orders could be created by authorised users or authenticated customers
 - View order details and order history
 - Cancel order
 
@@ -29,7 +29,7 @@ Order Management uses the following concepts to describe how orders are created,
 
 ### Orders
 
-An order represents a customer purchase of one or more products from an organisation through a supported workflow. The order contains purchase information, including organisation, customer or staff user, order status, order items, order channel, and pricing information.
+An order represents a customer purchase of one or more products through a supported workflow. The order contains purchase information, including customer or staff user, order status, order items, order channel, and pricing information.
 
 ### Order Items
 
@@ -63,7 +63,7 @@ Order pricing represents the purchase values marked for the order and its order 
 
 ### Order Channels
 
-Order channel represents the source or workflow where the order is created. It is recorded on the order so that organisation users can trace how the order entered the system.
+Order channel represents the source or workflow where the order is created. It is recorded on the order so that users can trace how the order entered the system.
 
 Order channels include:
 - `POS` - orders created by restaurant or retail staff through the POS workflow
@@ -73,7 +73,7 @@ Order channels include:
 
 ### Order Ownership
 
-Order ownership defines which shop, customer, or user is allowed to access and manage the order. Each order belongs to one organisation and is associated with one shop responsible for creating or fulfilling the order.
+Order ownership defines which shop, customer, or user is allowed to access and manage the order. Each order is associated with one shop responsible for creating or fulfilling the order.
 
 ## User Roles and Responsibilities
 
@@ -84,14 +84,14 @@ The following roles define how users can access and manage the order.
 The `Platform Owner` is responsible for operating and supporting the StockFlow platform.
 
 Main responsibilities:
-- Support `Organisation Owner` to solve order-related platform issues
+- Support `Merchant Owner` to solve order-related platform issues
 - View order information if required
 - Investigate technical or operational issues when the order process is affected
 - Manage order configuration if needed
 
-### Organisation Owner
+### Merchant Owner
 
-The `Organisation Owner` has the highest level of order across the shops belonging to their organisation.
+The `Merchant Owner` has the highest level of order across the shops belonging to their business.
 
 Main responsibilities:
 - View orders
@@ -102,7 +102,7 @@ Main responsibilities:
 - Cancel orders
 - Complete orders
 - Review order history
-- Manage organisation users' order access
+- Manage order access
 - Resolve order issues
 
 ### Shop Manager
@@ -133,7 +133,7 @@ Main responsibilities:
 - Update orders
 - Support customer checkout
 - Complete orders
-- Report order issues to `Organisation Owner` or `Shop Manager`
+- Report order issues to `Merchant Owner` or `Shop Manager`
 
 ### Customer
 
@@ -156,7 +156,7 @@ The Order Management module provides the following capabilities for order workfl
        * `POS`: order created by shop staff
        * `Online Ordering`: order created by customers
        * `Self Checkout`: order created by customers at the shop
-       * `Manual`: order created by authorised organisation users or back office staff
+       * `Manual`: order created by authorised users or back office staff
 - Order Viewing
    * View the order information
    * When `Shop Manager` views the order, it includes:
@@ -179,17 +179,17 @@ The Order Management module provides the following capabilities for order workfl
        * customer information
        * order remarks
 - Order Confirmation
-   * Confirm the order from organisation users and move to next process
+   * Confirm the order from merchant users and move to next process
    * Update order status after confirmation
 - Order Cancellation
-   * Cancel the order from customers or organisation users
+   * Cancel the order from customers or merchant users
    * Update order status
    * Release the reserved inventory from the order
 - Order Completion
-   * Complete the order when the organisation finishes the order fulfilment
+   * Complete the order when the merchant finishes the order fulfilment
    * Update the order status when the order is completed
 - Order History
-   * Review the order records from organisation users or customers
+   * Review the order records from merchant users or customers
    * When `Shop Manager` views order history, it includes:
        * Order creation date
        * order status
@@ -210,15 +210,15 @@ The following workflows describe the main workflows for order management.
 
 ### Shop Order Creation Workflow
 
-- Authorised organisation user starts a new order
-- System checks the user's permission and organisation scope
-- Authorised organisation user submits the products and quantities to the system
-- System validates the selected products whether they belong to the organisation
+- Authorised user starts a new order
+- System checks the user's permission
+- Authorised user submits the products and quantities to the system
+- System validates the selected products
 - System checks the product availability and price
 - System calculates the total amount of the order
 - System checks the inventory stocks before creating the order
 - System creates the order at corresponding channel
-- System records the order information including items, prices, organisation, staff user and order channel
+- System records the order information including items, prices, staff user and order channel
 - System reserves inventory for the order
 - System returns the order information to the user
 
@@ -227,19 +227,19 @@ The following workflows describe the main workflows for order management.
 - Customer starts a new order through `Online Ordering` or `Self Checkout` channel
 - System verifies the customer account's permission
 - Customer submits the products and quantities to the system
-- System validates the selected products whether they belong to the organisation
+- System validates the selected products
 - System checks the product availability and price
 - System calculates the total amount of the order
 - System checks the inventory stocks before creating the order
 - System creates the order at corresponding channel
-- System records the order information including items, prices, organisation, customer and order channel
+- System records the order information including items, prices, customer and order channel
 - System reserves inventory for the order
 - System returns the order information to the user
 
 ### Order Confirmation Workflow
 
-- Authorised organisation user opens the `Pending` order
-- System checks the user's permission and organisation scope
+- Authorised user opens the `Pending` order
+- System checks the user's permission
 - System re-validates the order items and inventory before processing
 - System changes the order status to `Confirmed`
 - System records the order confirmation action to order history
@@ -247,19 +247,19 @@ The following workflows describe the main workflows for order management.
 
 ### Order Update Workflow
 
-- Authorised organisation user opens the order
-- System checks the user's permission and organisation scope
+- Authorised user opens the order
+- System checks the user's permission
 - System validates the product availability and price
 - System re-calculates the total amount of the order
 - System checks the inventory stocks before updating the order
-- System updates the order information including items, prices, organisation and staff user
+- System updates the order information including items, prices and staff user
 - System reserves the updated inventory if order items or quantities have changed
 - System records the order update action to order history
 - System returns the updated order details
 
 ### Order Cancellation Workflow
 
-- Authorised organisation user or customer requests to cancel the order
+- Authorised user or customer requests to cancel the order
 - System checks the user's permission
 - System checks the order whether it is cancellable
 - System releases the reserved stock for the order
@@ -269,7 +269,7 @@ The following workflows describe the main workflows for order management.
 
 ### Order Completion Workflow
 
-- Authorised organisation user opens the order
+- Authorised user opens the order
 - System checks the user's permission
 - System checks the order whether it is completable
 - System deducts the stocks from reserved inventory

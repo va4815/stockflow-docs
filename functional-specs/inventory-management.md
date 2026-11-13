@@ -4,7 +4,7 @@
 
 Inventory Management is to maintain accurate and consistent stock information across StockFlow’s supported channels.
 
-Inventory Management tracks stock quantities for products owned by an organisation, including on-hand, reserved, and available stock. It supports stock additions, reservations, releases, deductions, adjustments, and movement history while ensuring that inventory changes remain associated with the correct organisation and stock location.
+Inventory Management tracks stock quantities for products, including on-hand, reserved, and available stock. It supports stock additions, reservations, releases, deductions, adjustments, and movement history while ensuring that inventory changes remain associated with the correct stock location.
 
 The module also prevents overselling by validating stock availability and handling concurrent inventory updates during order processing.
 
@@ -14,7 +14,7 @@ Inventory Management provides the following capabilities for StockFlow.
 
 ### Initial Scope
 
-- Create and maintain inventory records for organisation products
+- Create and maintain inventory records
 - Check on-hand, reserved, and available stock quantities
 - Add stock to an inventory record
 - Check stock availability
@@ -27,7 +27,6 @@ Inventory Management provides the following capabilities for StockFlow.
 - View inventory movement history
 - Prevent stock quantities from becoming negative
 - Handle concurrent stock updates to reduce the risk of overselling
-- Restrict inventory access to the relevant organisation
 
 ### Future Scope
 
@@ -40,7 +39,7 @@ Inventory Management uses the following concepts to track stock ownership, locat
 
 ### Inventory Items
 
-Inventory item represents the stock record for an organisation-owned product at a specific stock locaiton.
+Inventory item represents the stock record at a specific stock locaiton.
 
 Examples:
 
@@ -219,7 +218,7 @@ The following workflows describe the main steps of quantities change at the stoc
 
 - User selects an inventory item
 - Enter the quantity to be adjusted to the item
-- System checks the user's permission and organisation scope
+- System checks the user's permission
 - System validates the requested quantity
 - System increases or decreases on-hand quantity
 - System re-calculates available stocks
