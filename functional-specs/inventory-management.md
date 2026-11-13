@@ -44,12 +44,6 @@ Inventory item represents the stock record for an organisation-owned product at 
 
 Examples:
 
-Restaurants - 
-
-* Coffee (Regular size)
-* Spaghetti Bolognese
-* Cheese Cake (1 Slice)
-
 Retail -
 
 * Logo T Shirt Mens
@@ -62,7 +56,6 @@ Stock location represents the physical location where the inventory is stored.
 
 Examples:
 
-* The Noodle Fridge (Restaurant)
 * The Captain Sport Store (Retail)
 * The Captain Sport Store Warehouse (Warehouse)
 
@@ -115,17 +108,17 @@ The following roles define how users can access and manage the inventory.
 
 ### Platform Owner
 
-The `Platform Owner` is responsible for supporting organisations to solve platform issues when they have troubles.
+The `Platform Owner` is responsible for supporting merchant to solve platform issues when they have troubles.
 
 Main responsibilities:
-- Support `Organisation Owner` to solve inventory-related platform issues
+- Support `Merchant Owner` to solve inventory-related platform issues
 - View inventory information if required
 - Manage platform-level inventory configuration
 - Investigate technical or operational issues affecting inventory processing
 
-### Organisation Owner
+### Merchant Owner
 
-The `Organisation Owner` has the highest level of inventory access within their own organisation.
+The `Merchant Owner` has the highest level of inventory access within their business.
 
 Main responsibilities:
 
@@ -135,7 +128,7 @@ Main responsibilities:
 - Add stock to inventory
 - Adjust stock
 - View inventory movement history
-- Manage organisation users' inventory access
+- Manage staff's inventory access
 - Review and resolve inventory difference
 
 ### Shop Manager
@@ -161,7 +154,7 @@ Main responsibilities:
 - View product stock availability
 - Check stock availability
 - Reserve and release stock through order-processing workflows
-- Report to `Organisation Owner` or `Shop Manager` to refill stocks
+- Report to `Merchant Owner` or `Shop Manager` to refill stocks
 
 ## Functional Capabilities
 
@@ -191,15 +184,14 @@ The following workflows describe the main steps of quantities change at the stoc
 
 - User selects an inventory item
 - Enter the quantity to be added to the item
-- System checks the user's permission and organisation scope
+- System checks the user's permission
 - System validates the quantity if it is greater than zero
 - System updates on-hand quantity
 - System makes an inventory movement record on the item
 
 ### Stock Reservation Workflow
 
-- Customer or authorised organisation user creates an order
-- System verifies the items belong to the organisation
+- Customer or authorised user creates an order
 - System checks available stock on the inventory item
 - System updates reserved stocks (increase)
 - System udpates available stocks (decrease)
@@ -209,7 +201,7 @@ The following workflows describe the main steps of quantities change at the stoc
 
 - User selects an inventory item
 - Enter the quantity to be deducted to the item
-- System checks the user's permission and organisation scope
+- System checks the user's permission
 - System validates the quantity if it is greater than zero
 - System updates on-hand quantity
 - System makes an inventory movement record on the item
