@@ -59,3 +59,48 @@ sequenceDiagram
 
 ```
 
+### API Request
+
+StockFlow uses **JWT-based Bearer authentication** to secure API requests. The StockFlow Backend acts as an OAuth 2.0 Resource Server, validating access tokens issued by Keycloak and enforcing Role-Based Access Control (RBAC) before processing requests.
+
+The API request follows these steps:
+
+1. **API Request:** The client application (Web, POS or Admin) sends an API request with a Bearer JWT access token through the API Gateway.
+2. **Request Routing:** The API Gateway forwards the request and access token to the StockFlow Backend.
+3. **Token Validation:** The backend validates the JWT signature and claims using Spring Security to verify the token's authenticity and validity.
+4. **Authorisation:** The backend checks the user's roles and permissions to determine whether the requested operation is permitted.
+5. **Data Retrieval:** If authorised, the backend processes the request and retrieves the relevant data from PostgreSQL.
+6. **API Response:** The backend returns an appropriate HTTP response:
+   - **200 OK:** The request is successful, and the requested data is returned in JSON format.
+   - **401 Unauthorised:** The access token is missing, invalid or expired.
+   - **403 Forbidden:** The user is authenticated but does not have sufficient permissions.
+7. **Response Routing:** The API Gateway forwards the response to the client application.
+
+
+```mermaid
+sequenceDiagram
+    participant Clients as Web / POS / Admin
+    participant Gateway as Nginx / API Gateway
+    participant Keycloak as Keycloak
+    participant Backend as StockFlow Backend
+    participant Database as PostgreSQL
+
+    Clients->>Gateway: 1. API request
+    Gateway->>Backend: 2. Bearer JWT
+    Backend->>Backend: 3. Validate JWT signature and claims
+    Backend->>Backend: 4. Check roles and permissions
+    Backend->>Database: 5. Retrieve data
+    Database->>Backend: 6. Return data
+
+alt Authorised
+    Backend->>Gateway: 7a. 200 OK + Json response
+else Invalid or expired token
+    Backend->>Gateway: 7b. 401 Unauthorised
+else Insufficient permissions
+    Backend->>Gateway: 7c. 403 Forbidden
+end
+
+    Gateway->>Clients: 8. Return response
+
+```
+
