@@ -104,3 +104,51 @@ end
 
 ```
 
+
+
+### Refresh Token
+
+When an access token expires or approaches expiry, the client application can request a new access token using its refresh token without requiring the user to sign in again.
+
+The refresh token request follows these steps:
+
+1. **Refresh Token Request:** The client application (Web, POS or Admin) sends a refresh token request through the API Gateway.
+2. **Request Routing:** The API Gateway forwards the request to the StockFlow Backend.
+3. **Token Refresh:** The backend submits the refresh token to Keycloak's token endpoint to request new tokens.
+4. **Token Validation:** Keycloak validates the refresh token, associated session and applicable token policies.
+5. **Token Response:** Keycloak processes the request and returns either:
+   - **Success:** A new access token and, where applicable, a new refresh token.
+   - **Failure:** An authentication error if the refresh token is invalid, expired or revoked.
+6. **Response Routing:** The backend forwards the authentication result through the API Gateway to the client application.
+7. **Client Authentication State:** If successful, the client updates its stored tokens and continues making authenticated API requests. Otherwise, it clears the invalid authentication state and requires the user to sign in again.
+
+```mermaid
+
+sequenceDiagram
+    participant Clients as Web / POS / Admin
+    participant Gateway as Nginx / API Gateway
+    participant Keycloak as Keycloak
+    participant Backend as StockFlow Backend
+    
+
+    Clients->>Gateway: 1. Refresh token request
+    Gateway->>Backend: 2. Forward refresh token
+    Backend->>Keycloak: 3. Request new tokens using refresh token
+    Keycloak->>Keycloak: 4. Validate refresh token and session
+
+    alt Valid refresh token
+        Keycloak-->>Backend: 5a. New access token + refresh token
+        Backend-->>Gateway: 6a. Return new tokens
+    else Invalid or expired refresh token
+        Keycloak-->>Backend: 5b. Token refresh error
+        Backend-->>Gateway: 6b. Return authentication error
+    end
+
+    Gateway-->>Clients: 7. Return response
+
+    opt Refresh token invalid or expired
+        Clients->>Clients: 8. Clear authentication state
+        Clients->>Clients: 9. Require user to sign in again
+    end
+
+```
