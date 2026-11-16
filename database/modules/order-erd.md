@@ -15,7 +15,6 @@ erDiagram
     t_order {
         SERIAL id PK
         
-        SERIAL organisation_id "Not Null"
         SERIAL shop_id "Not Null"
         varchar(3) currency_code "Not Null"
 
@@ -40,7 +39,6 @@ erDiagram
         SERIAL id PK
         SERIAL order_id FK "Not Null"
 
-        SERIAL organisation_id "Not Null"
         SERIAL product_id "Not Null"
 
         varchar(255) product_name "Not Null"
@@ -60,8 +58,6 @@ erDiagram
     t_order_history {
         SERIAL id PK
         SERIAL order_id FK "Not Null"
-
-        SERIAL organisation_id "Not Null"
         
         varchar(30) event_type "Not Null"
         varchar(20) previous_status "Not Null"
