@@ -25,7 +25,6 @@ title: Inventory Schema
 erDiagram
     t_inventory {
         SERIAL id PK
-        SERIAL organisation_id "Not Null"
         SERIAL shop_id "Not Null"
         SERIAL product_id "Not Null"
 
@@ -40,7 +39,6 @@ erDiagram
 
     t_inventory_movement {
         SERIAL id PK
-        SERIAL organisation_id "Not Null"
         SERIAL shop_id "Not Null"
         SERIAL product_id "Not Null"
 
@@ -61,7 +59,6 @@ erDiagram
     t_inventory_reservation {
         SERIAL id PK
 
-        SERIAL organisation_id "Not Null"
         SERIAL shop_id "Not Null"
         
         SERIAL order_id "Not Null"
