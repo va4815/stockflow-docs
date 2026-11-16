@@ -8,8 +8,6 @@ This section describes the purpose and relationships of each table in the Authen
 
 - Each `User Account` is assigned one `Role`
 - Each `User Account` can have multiple direct `Permission`
-- Each `User Account` has one `User Profile`
-- Each `User Account` can have multiple `Address`
 - Each `User Account` has one `User Setting`
 - Each `User Account` can belong to multiple `User Account Group`
 
@@ -30,15 +28,6 @@ This section describes the purpose and relationships of each table in the Authen
 - A `Permission` can be assigned to multiple `User Account Group`
 - A `Permission` can be assigned directly to multiple `User Account`
 
-### t_user_profile
-
-- Each `User Profile` belongs to one `User Account`
-
-### t_user_address
-
-- Each `Address` belongs to one `User Account`
-- A `User Account` can have multiple `Address`
-
 ### t_user_setting
 
 - Each `User Setting` belongs to one `User Account`
@@ -55,7 +44,7 @@ Examples:
 | code | name |
 |---------|---------|
 | `en-GB` | English (United Kingdom) |
-| `zh-HK` | Tradition Chinese (Hong Kong) |
+| `zh-HK` | Traditional Chinese (Hong Kong) |
 
 
 ```mermaid
@@ -65,16 +54,16 @@ title: Authentication and Access Control Schema
 erDiagram
     t_user_account {
         SERIAL id PK
-        SERIAL organisation_id "Not Null"
+        varchar(100) kc_id "Not Null"
 
-        varchar(100) username UK
+        varchar(100) username UK "Not Null"
         varchar(255) email UK
         
-        varchar(255) display_name
-        varchar(255) hashed_pwd
-        varchar(50) pwd_algorithm
+        varchar(100) first_name
+        varchar(100) last_name
+        boolean is_enabled
+        boolean is_email_verified
         
-        varchar(20) status
         timestamp last_login_at
 
         int role_id FK "Not Null"
@@ -85,43 +74,6 @@ erDiagram
         SERIAL updated_by
     }
     t_user_account }o..|| t_role : role_id
-
-    t_user_profile {
-        SERIAL id PK
-        SERIAL user_account_id FK, UK
-        
-        varchar(100) last_name
-        varchar(100) middle_name
-        varchar(100) first_name
-        
-        varchar(10) phone_country_code
-        varchar(30) phone_number
-        
-        DATE date_of_birth
-        varchar(20) gender
-        
-        timestamp created_at
-        timestamp updated_at
-    }
-    t_user_account ||..|| t_user_profile : user_account_id
-
-    t_user_address {
-        SERIAL id PK
-        SERIAL user_account_id FK
-
-        varchar(100) country
-        varchar(100) city
-        varchar(20) postcode
-
-        varchar(255) address_line_1
-        varchar(255) address_line_2
-
-        boolean is_default
-
-        timestamp created_at
-        timestamp updated_at
-    }
-    t_user_account ||..o{ t_user_address : user_account_id
 
     t_user_setting {
         SERIAL id PK
@@ -140,7 +92,6 @@ erDiagram
 
     t_user_account_group {
         SERIAL id PK
-        SERIAL organisation_id "Not Null"
 
         varchar(100) name
         varchar(255) description
@@ -164,7 +115,6 @@ erDiagram
 
     t_role {
         int id PK
-        SERIAL organisation_id "Not Null"
 
         varchar(100) code UK
         varchar(100) name
