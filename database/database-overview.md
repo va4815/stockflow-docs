@@ -10,49 +10,16 @@ The purpose of this document is to provide a high-level overview of the StockFlo
 The diagram provides a high-level view of the StockFlow database structure and separates database schema to align with the backend modules. Each schema owns the tables responsible for its module, helping maintain clear ownership and separation of concerns.
 
 ```mermaid
-flowchart LR
+flowchart TB
 
     PostgreSQL[("PostgreSQL Database")]
 
-    subgraph AuthenticationSchema["Authentication Schema"]
-        Role["role"]
-        UserAccount["user_account"]
-        UserAccountGroup["user_account_group"]
-        Permission["permission"]
-        RolePermission["role_permission"]
-    end
-
-    subgraph OrganisationSchema["Organisation Schema"]
-        Organisation["organisation"]
-        OrganisationUser["organisation_user"]
-        OrganisationUserRole["organisation_user_role"]
-        OrganisationSetting["organisation_setting"]
-        Shop["shop"]
-    end
-
-    subgraph ProductSchema["Product Schema"]
-        Category["category"]
-        Product["product"]
-        ProductCategory["product_category"]
-        ProductPrice["product_price"]
-        SalesChannel["sales_channel"]
-        ProductChannelAvailability["product_channel_availability"]
-    end
-
-    subgraph InventorySchema["Inventory Schema"]
-        Inventory["inventory"]
-        InventoryMovement["inventory_movement"]
-        InventoryReservation["inventory_reservation"]
-    end
-
-    subgraph OrderSchema["Order Schema"]
-        CustomerOrder["customer_order"]
-        OrderItem["order_item"]
-        OrderHistory["order_history"]
-    end
+    AuthenticationSchema["Authentication Schema"]
+    ProductSchema["Product Schema"]
+    InventorySchema["Inventory Schema"]
+    OrderSchema["Order Schema"]
 
     PostgreSQL --> AuthenticationSchema
-    PostgreSQL --> OrganisationSchema
     PostgreSQL --> ProductSchema
     PostgreSQL --> InventorySchema
     PostgreSQL --> OrderSchema
@@ -62,6 +29,18 @@ flowchart LR
 ## Module Database Designs
 
 ### Authentication
-- Owns `user account`, `profile`, `user group`, `role`, and `permission` tables for authentication.
+- Owns `user account`, `profile`, `user group`, `role`, and `permission` tables
 - Link to [`modules/authentication-erd.md`](./modules/authentication-erd.md)
+
+### Product
+- Owns `category`, `product`, `shop`, `currency` and `language` tables
+- Link to [`modules/product-erd.md`](./modules/product-erd.md)
+
+### Inventory
+- Owns `inventory`, `inventory reservation` and `inventory movement` tables
+- Link to [`modules/inventory-erd.md`](./modules/inventory-erd.md)
+
+### Order
+- Owns `order`, `order item` and `order history` tables
+- Link to [`modules/order-erd.md`](./modules/order-erd.md)
 
