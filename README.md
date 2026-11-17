@@ -24,7 +24,7 @@ Merchants can integrate StockFlow with their existing system such as ERP, CRM an
 - Maintains a centralised inventory system to synchronise stock levels across multiple sales channels.
 - Creates, tracks and manages orders from different sales channels.
 - Manages products, categories, pricing and shared product information.
-- Supports user management, roles, permissions and Role-Based Access Control (RBAC).
+- Supports user management, roles, permissions and Permission-Based Access Control (PBAC).
 
 
 ## Order Channel Overview
